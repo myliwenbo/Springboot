@@ -32,3 +32,17 @@
   ```shell
   git push -u origin master
   ```
+
+# 删除
+
+* 显示所有本地分支
+
+  ```shell
+  git branch
+  ```
+
+* 删除即可，用命令删除即可。
+
+  ```shell
+   rm -rf
+  ```
