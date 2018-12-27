@@ -16,7 +16,6 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
-// / 配置mybatis的接口类放的地方
 @MapperScan(basePackages = { "cn.lwb.mapper2" }, sqlSessionFactoryRef = "twoSqlSessionFactory", sqlSessionTemplateRef = "twoSqlSessionTemplate")
 public class TWOConfig {
     @Value("${spring.datasource.minor.driver-class-name}")
@@ -43,10 +42,6 @@ public class TWOConfig {
 
     /**
      * 生成SqlSessionFactory 需要注入 DataSource
-     *
-     * @param dataSource
-     * @return
-     * @throws Exception
      */
     @Bean(name = "twoSqlSessionFactory")
     public SqlSessionFactory sqlSessionFactoryOne(@Qualifier("twoDataSource") DataSource dataSource) throws Exception {
@@ -61,9 +56,6 @@ public class TWOConfig {
 
     /**
      * 事物控制
-     *
-     * @param dataSource
-     * @return
      */
     @Bean(name = "twoTransactionManager")
     public DataSourceTransactionManager testTransactionManager(@Qualifier("twoDataSource") DataSource dataSource) {
@@ -72,10 +64,6 @@ public class TWOConfig {
 
     /**
      * spring整合mybatis
-     * 
-     * @param sqlSessionFactory
-     * @return
-     * @throws Exception
      */
     @Bean(name = "twoSqlSessionTemplate")
     public SqlSessionTemplate sqlSessionTemplateOne(@Qualifier("twoSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {

@@ -21,7 +21,7 @@ import com.alibaba.druid.pool.DruidDataSource;
  *          DataSource 数据源 <br/>
  *          DataSourceTransactionManager 事物管理器<br/>
  *          SqlSessionFactory mybatis工厂<br/>
- *          SqlSessionTemplate MyBatis-Spring管理SqlSession<br>
+ *          SqlSessionTemplate MyBatis-Spring管理SqlSession <br>
  * @author lwb
  *
  */
@@ -55,13 +55,9 @@ public class ONEConfig {
 
     /**
      * 生成SqlSessionFactory 需要注入 DataSource
-     *
-     * @param dataSource
-     * @return
-     * @throws Exception
      */
     @Bean(name = "oneSqlSessionFactory")
-    @Primary // 表示这个数据源是默认数据源
+    @Primary //用于配置默认数据源，切记只有主数据源才配置，其他数据源不用配置
     public SqlSessionFactory sqlSessionFactoryOne(@Qualifier("oneDataSource") DataSource dataSource) throws Exception {
         System.out.println("主配");
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
@@ -74,12 +70,10 @@ public class ONEConfig {
 
     /**
      * 事物控制--需要注入datasource
-     *
-     * @param dataSource
-     * @return
+    
      */
     @Bean(name = "oneTransactionManager")
-    @Primary // 表示这个数据源是默认数据源
+    @Primary //用于配置默认数据源，切记只有主数据源才配置，其他数据源不用配置
     public DataSourceTransactionManager testTransactionManager(@Qualifier("oneDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
@@ -87,13 +81,9 @@ public class ONEConfig {
     /**
      * spring整合mybatis
      * 需要注入oneSqlSessionFactory
-     * 
-     * @param sqlSessionFactory
-     * @return
-     * @throws Exception
      */
     @Bean(name = "oneSqlSessionTemplate")
-    @Primary // 表示这个数据源是默认数据源
+    @Primary //用于配置默认数据源，切记只有主数据源才配置，其他数据源不用配置
     public SqlSessionTemplate sqlSessionTemplateOne(@Qualifier("oneSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         SqlSessionTemplate template = new SqlSessionTemplate(sqlSessionFactory); // 使用上面配置的Factory
         return template;
