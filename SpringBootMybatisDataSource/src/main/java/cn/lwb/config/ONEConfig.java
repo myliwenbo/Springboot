@@ -70,7 +70,6 @@ public class ONEConfig {
 
     /**
      * 事物控制--需要注入datasource
-    
      */
     @Bean(name = "oneTransactionManager")
     @Primary //用于配置默认数据源，切记只有主数据源才配置，其他数据源不用配置
