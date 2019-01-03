@@ -3,17 +3,17 @@ server:
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: org.mariadb.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     druid:
       primary:
         # 这里需要注明的是 2.0之后是 JDBC-URL  2.0之前是 url
-        url: jdbc:mysql://192.168.6.10:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+        url: jdbc:mysql://192.168.6.131:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
         username: root
-        password: 12345678
-      minor:
-        url: jdbc:mysql://192.168.6.10:3306/test2?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+        password: root
+      minor: 
+        url: jdbc:mysql://192.168.6.131:3306/test1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
         username: root
-        password: 12345678
+        password: root
       # 初始化大小，最小，最大
       initial-size: 10
       max-active: 100

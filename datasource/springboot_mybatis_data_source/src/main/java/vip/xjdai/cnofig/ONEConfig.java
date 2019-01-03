@@ -1,7 +1,7 @@
 package vip.xjdai.cnofig;
 
-import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import javax.sql.DataSource;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -11,11 +11,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
-
-
+import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 
 /**
  *  注意，配置类需要对
@@ -30,8 +30,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 @Configuration
 // / 配置mybatis的接口类放的地方
 @MapperScan(basePackages = "vip.xjdai.mapper1",
-            //
-            sqlSessionFactoryRef = "oneSqlSessionFactory",sqlSessionTemplateRef = "oneSqlSessionTemplate")
+        //
+        sqlSessionFactoryRef = "oneSqlSessionFactory", sqlSessionTemplateRef = "oneSqlSessionTemplate")
 public class ONEConfig {
 
     //  @Value ("${spring.datasource.primary.driver-class-name}")
@@ -59,9 +59,8 @@ public class ONEConfig {
     @Bean(name = "oneDataSource")
     @Primary
     @ConfigurationProperties("spring.datasource.druid.primary")
-    public DataSource dataSource()
-    {
-      return DruidDataSourceBuilder.create().build();
+    public DataSource dataSource() {
+        return DruidDataSourceBuilder.create().build();
 
     }
 
@@ -74,13 +73,16 @@ public class ONEConfig {
      */
     @Bean(name = "oneSqlSessionFactory")
     @Primary // 表示这个数据源是默认数据源
-    public SqlSessionFactory sqlSessionFactoryOne(@Qualifier("oneDataSource") DataSource dataSource) throws Exception
-    {
+    public SqlSessionFactory sqlSessionFactoryOne(@Qualifier("oneDataSource") DataSource dataSource) throws Exception {
         System.out.println("主配");
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
+        // 加载全局的配置文件，修复驼峰转换问题!
+        factoryBean.setConfigLocation(
+            new DefaultResourceLoader().getResource("classpath:mybatis-config.xml"));
         // 加载特定的mapper.xml映射文件
-        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/one/*.xml"));
+        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
+            .getResources("classpath:mapper/one/*.xml"));
         return factoryBean.getObject();
 
     }
@@ -93,8 +95,7 @@ public class ONEConfig {
      */
     @Bean(name = "oneTransactionManager")
     @Primary // 表示这个数据源是默认数据源
-    public DataSourceTransactionManager testTransactionManager(@Qualifier("oneDataSource") DataSource dataSource)
-    {
+    public DataSourceTransactionManager testTransactionManager(@Qualifier("oneDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
 
@@ -108,8 +109,7 @@ public class ONEConfig {
      */
     @Bean(name = "oneSqlSessionTemplate")
     @Primary // 表示这个数据源是默认数据源
-    public SqlSessionTemplate sqlSessionTemplateOne(@Qualifier("oneSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception
-    {
+    public SqlSessionTemplate sqlSessionTemplateOne(@Qualifier("oneSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         SqlSessionTemplate template = new SqlSessionTemplate(sqlSessionFactory); // 使用上面配置的Factory
         return template;
     }

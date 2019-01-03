@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import vip.xjdai.SpringbootMybatisDataSourceApplication;
 import vip.xjdai.mapper1.OneStockMapper;
 import vip.xjdai.mapper2.TwoStockMapper;
@@ -21,11 +22,10 @@ public class Demo {
     TwoStockMapper twoStockMapper;
 
     @Test
-    public void index()
-    {
+    public void index() {
         Stock test = new Stock();
-        test.setId(5);
-        test.setName("小明");
+        test.setId(6);
+        test.setName("111");
         oneStockMapper.insert(test);
         twoStockMapper.insert(test);
         Stock entity = oneStockMapper.selectByPrimaryKey(5);
