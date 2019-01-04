@@ -11,3 +11,8 @@
 >
 > springboot+德鲁伊 [配置](https://github.com/myliwenbo/Springboot/tree/master/datasource/SpringBootDruid)
 
+
+
+# sptingboot+分页插件
+
+> https://github.com/myliwenbo/Springboot/tree/master/datasource/sptingboot-mybatis
