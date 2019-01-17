@@ -3,7 +3,7 @@ package vip.xjdai.model;
 public class Stock {
     private Integer id;
 
-    private String name;
+    private String  name;
 
     public Integer getId() {
         return id;
@@ -21,12 +21,8 @@ public class Stock {
         this.name = name == null ? null : name.trim();
     }
 
-
-  @Override
-  public String toString () {
-    return "Stock{" +
-        "id=" + id +
-        ", name='" + name + '\'' +
-        '}';
-  }
+    @Override
+    public String toString() {
+        return "Stock{" + "id=" + id + ", name='" + name + '\'' + '}';
+    }
 }

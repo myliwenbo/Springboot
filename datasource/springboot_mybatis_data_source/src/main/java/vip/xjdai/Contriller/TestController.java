@@ -21,8 +21,7 @@ public class TestController {
     TwoStockMapper twoStockMapper;
 
     @RequestMapping("test")
-    public List<Stock> test()
-    {
+    public List<Stock> test() {
         Stock test = new Stock();
         test.setId(10);
         test.setName("小明");
