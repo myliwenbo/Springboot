@@ -9,6 +9,8 @@
 > springboot-develop-skill
 >
 > * 包含了JSON、XML、AOP简单实用
+>
+> springboot-quartz quartz动态任务流程
 
 # 注意
 * 需要注意的是 SpringBoot_Swagger的POM文件对应有第三方UI，官方的UI太难看了所以使用了第三方UI
