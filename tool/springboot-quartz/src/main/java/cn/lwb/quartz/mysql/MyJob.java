@@ -1,4 +1,4 @@
-package cn.lwb.quartz.job;
+package cn.lwb.quartz.mysql;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;

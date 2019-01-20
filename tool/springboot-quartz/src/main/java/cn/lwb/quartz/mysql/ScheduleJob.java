@@ -1,4 +1,4 @@
-package cn.lwb.quartz.pojo;
+package cn.lwb.quartz.mysql;
 
 import java.util.Date;
 

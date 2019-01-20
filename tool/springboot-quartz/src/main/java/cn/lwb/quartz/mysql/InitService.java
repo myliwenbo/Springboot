@@ -1,11 +1,10 @@
-package cn.lwb.quartz.servlet;
+package cn.lwb.quartz.mysql;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
 import cn.lwb.quartz.QuatzUtils;
-import cn.lwb.quartz.job.MyJob;
 
 @Service
 public class InitService {

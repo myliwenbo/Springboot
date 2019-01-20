@@ -44,13 +44,13 @@ public class QuatzUtils {
     }
 
     /**
-     * 获取任务调度器
+     * 获取任务触发器
      * @param jobName   任务名称
      * @param expression 任务表达式
-     * @return 达式调度构建器
+     * @return 达式调任务触发器
      */
     public static CronScheduleBuilder getTriggerExpression(String expression) {
-        // 表达式调度构建器
+        // 表达式任务触发器
         CronScheduleBuilder scheduleBuilder = CronScheduleBuilder
             .cronSchedule(expression);
         //次数触发器
@@ -74,8 +74,10 @@ public class QuatzUtils {
         newTrigger.withDescription(null);
         //触发器名称  触发器分组
         newTrigger.withIdentity(triggerName, TRIGGER_GROUP_NAME);
+        //设置三秒启动
+        Date date = new Date(System.currentTimeMillis() + 3 * 1000L);
         //默认当前时间启动
-        newTrigger.startAt(new Date(System.currentTimeMillis() + 3 * 1000L));
+        newTrigger.startAt(date);
         newTrigger.startNow();
         CronScheduleBuilder triggerExpression = getTriggerExpression(expression);
         newTrigger.withSchedule(triggerExpression);
