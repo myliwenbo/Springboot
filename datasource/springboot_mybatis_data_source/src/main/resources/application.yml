@@ -7,11 +7,11 @@ spring:
     druid:
       primary:
         # 这里需要注明的是 2.0之后是 JDBC-URL  2.0之前是 url
-        url: jdbc:mysql://192.168.6.131:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+        url: jdbc:mysql://192.168.6.132:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
         username: root
         password: root
       minor: 
-        url: jdbc:mysql://192.168.6.131:3306/test1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+        url: jdbc:mysql://192.168.6.132:3306/test1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
         username: root
         password: root
       # 初始化大小，最小，最大

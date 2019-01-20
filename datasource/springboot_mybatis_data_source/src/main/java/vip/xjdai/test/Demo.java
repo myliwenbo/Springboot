@@ -25,7 +25,7 @@ public class Demo {
     public void index() {
         Stock test = new Stock();
         test.setId(6);
-        test.setName("111");
+        test.setName("888");
         oneStockMapper.insert(test);
         twoStockMapper.insert(test);
         Stock entity = oneStockMapper.selectByPrimaryKey(5);
