@@ -1,0 +1,11 @@
+#spring:
+#  jpa:
+#    generate-ddl: false # 是否生成ddl语句 
+#    show-sql: true      # 是否打印sql语句  
+#    hibernate: 
+#      ddl-auto: none    # 自动生成ddl，由于指定了具体的ddl，此处设置为none 
+#  datasource:
+#   platform: h2
+#   schema: 
+#    - classpath:schema.sql
+#      
