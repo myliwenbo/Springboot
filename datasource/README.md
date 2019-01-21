@@ -10,6 +10,13 @@
 > > 修复BUG[连接](https://github.com/myliwenbo/Springboot/tree/master/datasource/springboot_mybatis_data_source)，主要是修复了读取mybatis配置文件的问题，没修复前读取mybatis全局配置文件可能会出问题..
 >
 > springboot+德鲁伊 [配置](https://github.com/myliwenbo/Springboot/tree/master/datasource/SpringBootDruid)
+>
+> springboot-mybatis-generator 主要是Mybatis生成器的信息
+>
+> * [代码](https://github.com/myliwenbo/Springboot/tree/master/datasource/springboot-mybatis-generator)
+> * 自定义注解
+> * 自定义注释
+> * 自定义MapperAPI注释
 
 
 
