@@ -1,4 +1,4 @@
-package cn.lwb.plugin;
+package cn.lwb.generator.mybatis.plugin;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

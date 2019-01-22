@@ -1,4 +1,4 @@
-package cn.lwb.generator;
+package cn.lwb.generator.mybatis;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -11,10 +11,10 @@ import org.mybatis.generator.internal.DefaultShellCallback;
 
 public class RunCode {
 
-    public void generator() throws Exception {
+    public static void main(String[] args) throws Exception {
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
-        File configFile = new File("generatorConfig.xml");
+        File configFile = new File("mysqlGeneratorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         //覆盖之前的文件..
@@ -22,14 +22,8 @@ public class RunCode {
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback,
             warnings);
         myBatisGenerator.generate(null);
-    }
-
-    public static void main(String[] args) throws Exception {
-        try {
-            RunCode generatorSqlmap = new RunCode();
-            generatorSqlmap.generator();
-        } catch (Exception e) {
-            e.printStackTrace();
+        for (String warning : warnings) {
+            System.out.println(warning);
         }
     }
 }
