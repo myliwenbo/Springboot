@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+
+
+    <!-- 能读取spring配置文件
+    scope：作用域
+    name：在 logback.xml 使用的键
+    source：application.properties 文件中的键
+    defaultValue：默认值
+ 	-->
+    <!--<springProperty scope = "context" name = "logName" source = "spring.application.name"-->
+        <!-- 日志级别 -->
+	<springProperty scope="context" name="LOG_ROOT_LEVEL" source="logging.level.root" defaultValue="INFO" />
+
+
+
+    <!--myibatis log -->
+	<logger name="com.apache.ibatis" level="TRACE" />
+	<logger name="java.sql.Connection" level="DEBUG" />
+	<logger name="java.sql.Statement" level="DEBUG" />
+	<logger name="java.sql.PreparedStatement" level="DEBUG" />
+	
+    <!--配置spring的 log-->
+	<logger name="org.springframework" level="ERROR" />
+	<logger name="org.apache.commons" level="ERROR" />
+	
+	
+    <!--RPC-->
+	<logger name="org.apache.zookeeper" level="ERROR" />
+	<logger name="com.alibaba.dubbo.monitor" level="ERROR" />
+	<logger name="com.alibaba.dubbo.remoting" level="ERROR" />
+	
+	
+    <!-- hibernate sql 专为 Hibernate 定制的日志打印 -->
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" />
+	<logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="DEBUG" />
+	<logger name="org.hibernate.SQL" level="DEBUG" />
+	<logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />
+	<logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />
+    <!-- 彩色日志，依赖的渲染类  -->
+	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+	<conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+    
+    <!--定义日志文件的存储地址，相对路径，相对于项目目录下. -->
+	<property name="LOG_PATH" value="/home/logs/customer" />
+    <!-- 文件大小 -->
+	<property name="LOG_SIZE" value="1MB" />
+    <!-- 文件大小 -->
+	<property name="CODING" value="UTF-8" />
+    <!-- 表示只保留最近 10 天的日志 -->
+	<property name="MAX_HISTORY" value="10" />
+    <!-- 日志文件路径+日期-->
+	<property name="LOG_DIR" value="${LOG_PATH}/customer_%d{yyyy-MM-dd}" />
+	
+	
+    <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+	<property name="LOG_FORMAT" value="- [%d{yyyyMMdd HH:mm:ss.SSS}] | [%level] | [${HOSTNAME}] | [%thread] | [%logger{36}] | --> %msg|%n " />
+    <!-- 控制台彩色输出 -->
+    <!--
+	yyyy-MM-dd HH:mm:ss.SSS: 日志时间
+	LOG_LEVEL_PATTERN： 日志级别
+	PID： 进程id
+	t： 线程名
+	logger: 打印日志类名
+	LOG_EXCEPTION_CONVERSION_WORD： 日志转换器
+	-->
+	<property name="CONSOLE_LOG_PATTERN"
+		value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+    <!-- 控制台输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>${CODING}</charset>
+		</encoder>
+        <!--配置控制台输出级别-->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>debug</level>
+		</filter>
+	</appender>
+    <!--按照一定条件生成日志文件-->
+	<appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 正在记录的日志文件的路径及文件名 -->
+		<file>${LOG_PATH}/${APPDIR}/log_error.log</file>
+        <!-- 追加方式记录日志,默认为true -->
+		<append>true</append>
+        <!-- 配置只记录ERROR日志 -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<OnMismatch>DENY</OnMismatch>
+			<OnMatch>ACCEPT</OnMatch>
+		</filter>
+        <!-- 设置滚动策略-->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名 -->
+			<FileNamePattern>${LOG_DIR}_err.%i.log</FileNamePattern>
+            <!--日志文件保留天数 -->
+			<MaxHistory>${MAX_HISTORY}</MaxHistory>
+            <!--按照文件大小进行切割-->
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${LOG_SIZE}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+        <!--日志文件最大值，当大于该值后，则不进行记录，如果配置这个就不能配置文件切割!!!!-->
+        <!--<triggeringPolicy class = "ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy" >-->
+        <!--<MaxFileSize >${LOG_SIZE}</MaxFileSize >-->
+        <!--</triggeringPolicy >-->
+        <!--日志的文件格式化-->
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出到文件-->
+			<pattern>${LOG_FORMAT}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+        <!-- 输出的日志内容格式化 -->
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>${LOG_FORMAT}</pattern>
+		</layout>
+	</appender>
+	
+	
+    <!-- 日志异步到数据库 -->
+	<appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+        <!-- 日志异步到数据库 -->
+		<connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+			<driverClass>org.mariadb.jdbc.Driver</driverClass>
+			<url>jdbc:mysql://192.168.6.10:3306/test</url>
+			<user>root</user>
+			<password>12345678</password>
+		</connectionSource>
+	</appender>
+    <!-- 日志输出级别 -->
+    <!-- 级别依次为【从高到低】：FATAL > ERROR > WARN > INFO > DEBUG > TRACE -->
+    <!-- package为根包，也就是只要是发生在这个根包下面的所有日志操作行为的权限都是DEBUG-->
+	<root name="package" level="${LOG_ROOT_LEVEL}">
+        <!--控制台名称-->
+		<appender-ref ref="STDOUT" />
+        <!--文件 输出名称-->
+		<appender-ref ref="FILE_ERROR" />
+	</root>
+    <!-- 指定某个包下的日志输入级别 -->
+	<logger name="vip.xjdai" level="INFO">
+        <!--控制台名称-->
+		<appender-ref ref="STDOUT" />
+        <!--文件 输出名称-->
+		<appender-ref ref="FILE_ERROR" />
+	</logger>
+    <!-- 生产环境生效 -->
+	<springProfile name="prod">
+		<root level="error">
+			<appender-ref ref="STDOUT" />
+			<appender-ref ref="FILE" />
+		</root>
+	</springProfile>
+    <!-- 测试和开发环境日志级别为INFO/并且记录日志文件 -->
+    <!--	<springProfile name="dev,test">
+			&lt;!&ndash; 日志输出级别 &ndash;&gt;
+			<root level="INFO">
+				<appender-ref ref="STDOUT" />
+				<appender-ref ref="FILE" />
+			</root>
+		</springProfile>-->
+</configuration>

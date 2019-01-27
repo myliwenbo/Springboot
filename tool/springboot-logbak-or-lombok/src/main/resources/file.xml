@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+    
+    <!--定义日志文件的存储地址，相对路径，相对于项目目录下. -->
+	<property name="LOG_PATH" value="home/logs/customer" />
+    <!-- 文件大小 -->
+	<property name="LOG_SIZE" value="1MB" />
+    <!-- 文件大小 -->
+	<property name="CODING" value="UTF-8" />
+    <!-- 表示只保留最近 10 天的日志 -->
+	<property name="MAX_HISTORY" value="10" />
+    <!-- 日志文件路径+日期-->
+	<property name="LOG_DIR" value="${LOG_PATH}/customer_%d{yyyy-MM-dd}" />
+	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+	<conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+	
+	  <!--格式化输出：
+	      %d :表示日期
+	      %d{yyyyMMdd HH:mm:ss.SSS} :表示日期
+	      %thread :表示线程名，
+	      %t :表示线程名，
+	      %-5level:级别从左显示5个字符宽度
+	      %msg :日志消息
+	      %m :日志消息
+	      %n :是换行符
+	      %p :日志级别
+	      %level：日志级别
+	      %c :类的全名
+	      %logger{36}——日志输出者的名字
+	      ${HOSTNAME} :启动的计算机名称
+	      %i :索引【从数字0开始递增】
+	  -->
+	<property name="CONSOLE_LOG_PATTERN"
+		value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+	
+	<!-- 参考：console.xml -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>${CODING}</charset>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>OFF</level>
+		</filter>
+	</appender>
+	
+	
+    <!--按照一定条件生成日志文件-->
+	<appender name="fileError" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--  当前记录的LOG，-->
+		<file>${LOG_PATH}/log_error.log</file>
+        <!-- 追加方式记录日志,默认为true -->
+		<append>true</append>
+        <!-- 设置滚动策略-->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出的文件名 -->
+			<FileNamePattern>${LOG_DIR}_err.%i.log</FileNamePattern>
+            <!--日志文件保留天数 -->
+			<MaxHistory>${MAX_HISTORY}</MaxHistory>
+            <!--按照文件大小进行切割-->
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>${LOG_SIZE}</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+        <!--日志的文件格式化-->
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--格式化输出到文件-->
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+        <!-- 输出的日志内容格式化 -->
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+		</layout>
+		<!-- 级别过滤器，只会输出 ERROR 级别的数据 -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<OnMismatch>DENY</OnMismatch>
+			<OnMatch>ACCEPT</OnMatch>
+		</filter>
+	</appender>
+    
+    
+    <!-- 日志输出级别 -->
+    <!-- 级别依次为【从高到低】：OFF > ERROR > WARN > INFO > DEBUG > TRACE -->
+    <!--  
+  		name="cn.lwb"	下面的所有日志操作行为的权限
+  		level="级别"		用来控制输出级别
+    -->
+	<root level="INFO">
+        <!--控制台名称-->
+		<appender-ref ref="console" />
+        <!--文件 输出名称-->
+		<appender-ref ref="fileError" />
+	</root>
+</configuration>
