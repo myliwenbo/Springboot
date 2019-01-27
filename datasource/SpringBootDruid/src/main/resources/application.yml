@@ -4,9 +4,9 @@
 spring: 
   datasource: 
     druid: 
-      url: jdbc:mysql://192.168.6.10/test?characterEncoding=UTF-8&amp;autoReconnect=true&amp;zeroDateTimeBehavior=convertToNull&amp;allowMultiQueries=true
+      url: jdbc:mysql://192.168.6.132:3306/quartz?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
       username: root
-      password: 12345678
+      password: root
       # 配置MySQL的驱动程序类，这里需要注意一下驱动
       driver-class-name: com.mysql.jdbc.Driver
       # 配置当前要使用的数据源的操作类型
@@ -30,3 +30,7 @@ spring:
       # 打开PSCache，并且指定每个连接上PSCache的大小
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
+mybatis: 
+  config-location: classpath:mybatis.xml # 配置mybatis文件所在
+  type-aliases-package: cn.lwb.pojo
+  mapper-locations: classpath:mapper/*.xml # 配置mapper文件
