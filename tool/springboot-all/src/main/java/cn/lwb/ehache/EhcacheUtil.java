@@ -1,4 +1,4 @@
-package cn.lwb.ehcache;
+package cn.lwb.ehache;
 
 import java.io.IOException;
 import java.io.InputStream;

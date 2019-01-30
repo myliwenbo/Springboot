@@ -37,9 +37,14 @@ public class DynamicAcpect {
         Field[] declaredFields = clazz.getDeclaredFields();
         for (Field f : declaredFields) {
             f.setAccessible(true); // 设置属性是可以访问的(私有的也可以)
-            String name = f.getName();
-            Object bean = SpringContextUtil.getBean(name + "2");
-            f.set(target, bean);
+            Class<?> type = f.getType();
+            //判断是不是接口
+            boolean interface1 = type.isInterface();
+            if (interface1) {
+                String name = f.getName();
+                Object bean = SpringContextUtil.getBean(name + "2");
+                f.set(target, bean);
+            }
         }
     }
 

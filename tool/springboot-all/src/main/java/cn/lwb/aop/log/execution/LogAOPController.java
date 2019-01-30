@@ -1,4 +1,4 @@
-package cn.lwb.logaop.execution;
+package cn.lwb.aop.log.execution;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

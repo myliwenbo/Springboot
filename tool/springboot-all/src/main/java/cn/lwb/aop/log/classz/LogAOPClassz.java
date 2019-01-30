@@ -1,11 +1,11 @@
-package cn.lwb.logaop.bag;
+package cn.lwb.aop.log.classz;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("aop/package")
-public class AOPPackage {
+@RequestMapping("apo/classz")
+public class LogAOPClassz {
 
     @RequestMapping("aop")
     public String logAOPClass(String name) {

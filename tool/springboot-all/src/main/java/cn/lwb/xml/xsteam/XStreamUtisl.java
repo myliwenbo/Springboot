@@ -1,4 +1,4 @@
-package cn.lwb.xml.xstream;
+package cn.lwb.xml.xsteam;
 
 import java.util.List;
 

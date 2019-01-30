@@ -1,4 +1,4 @@
-package cn.lwb.logaop.acpect;
+package cn.lwb.aop.log.acpect;
 
 import java.util.Arrays;
 import java.util.Enumeration;
@@ -34,13 +34,13 @@ public class WebLogAcpect {
 
     private Logger              logger    = LoggerFactory.getLogger(WebLogAcpect.class);
     //表达式：配置到当前包下所有类中的所有方法
-    private static final String PACKAGE   = "within(cn.lwb.logaop.classz..*)";
+    private static final String PACKAGE   = "within(cn.lwb.aop.log.classz..*)";
     //表达式：配置到当前类的所有方法
-    private static final String CLASS     = "within(cn.lwb.logaop.classz.LogAOPClassz) ";
+    private static final String CLASS     = "within(cn.lwb.aop.log.classz.LogAOPClassz) ";
     //表达式：方法为pulic的任意返回值的任意方法名的任意参数都能匹配到
-    private static final String POINT_CUT = "execution(public * cn.lwb.logaop.execution.*.*(..))";
+    private static final String POINT_CUT = "execution(public * cn.lwb.aop.log.execution.*.*(..))";
     //表达式：专门匹配该方法
-    private static final String MESSAGE   = "execution(public * cn.lwb.logaop.execution.LogAOPController.message(..))";
+    private static final String MESSAGE   = "execution(public * cn.lwb.aop.log.execution.LogAOPController.message(..))";
 
     /**
      * 定义切入点，切入点为 
