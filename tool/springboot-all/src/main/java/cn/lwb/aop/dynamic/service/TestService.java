@@ -1,4 +1,4 @@
-package cn.lwb.annotation.dynamic.service;
+package cn.lwb.aop.dynamic.service;
 
 public interface TestService {
 

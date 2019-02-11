@@ -1,11 +1,12 @@
-package cn.lwb.annotation.dynamic.controller;
+package cn.lwb.aop.dynamic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import cn.lwb.annotation.dynamic.service.TestService;
+import cn.lwb.aop.dynamic.controller.DynamicController;
+import cn.lwb.aop.dynamic.service.TestService;
 import cn.lwb.utils.SpringContextUtil;
 
 /**
@@ -18,17 +19,26 @@ import cn.lwb.utils.SpringContextUtil;
 @SpringBootTest
 public class DynamicDemo {
 
-    private TestService testServiceImpl;
+    private TestService       testServiceImpl;
+
+    private DynamicController dynamicController;
 
     /**
      * @throws Exception
      */
     @Test
     public void testName() throws Exception {
+        //特征信息
         String featureCode = "2";
         testServiceImpl = (TestService) SpringContextUtil
             .getBean("testServiceImpl" + featureCode);
         testServiceImpl.whoAmI();
-
     }
+
+    @Test
+    public void testDynamic() {
+        String dynamic = dynamicController.dynamic("");
+        System.out.println(dynamic);
+    }
+
 }

@@ -1,4 +1,4 @@
-package cn.lwb.annotation.dynamic.aop;
+package cn.lwb.aop.dynamic.acpect;
 
 import java.lang.reflect.Field;
 
@@ -18,7 +18,7 @@ import cn.lwb.utils.SpringContextUtil;
 public class DynamicAcpect {
 
     //表达式：配置到当前类的所有方法
-    private static final String CLASS = "within(cn.lwb.annotation.dynamic.controller.DynamicController) ";
+    private static final String CLASS = "within(cn.lwb.aop.dynamic.controller.DynamicController) ";
 
     @Pointcut(CLASS) //表示当前注解是一个切点
     public void dynamic() {

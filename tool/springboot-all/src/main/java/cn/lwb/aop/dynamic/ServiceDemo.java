@@ -1,4 +1,4 @@
-package cn.lwb.annotation;
+package cn.lwb.aop.dynamic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import cn.lwb.annotation.dynamic.service.TestService;
+import cn.lwb.aop.dynamic.service.TestService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

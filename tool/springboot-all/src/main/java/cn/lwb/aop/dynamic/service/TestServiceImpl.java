@@ -1,8 +1,6 @@
-package cn.lwb.annotation.dynamic.service.impl;
+package cn.lwb.aop.dynamic.service;
 
 import org.springframework.stereotype.Service;
-
-import cn.lwb.annotation.dynamic.service.TestService;
 
 @Service
 public class TestServiceImpl implements TestService {
