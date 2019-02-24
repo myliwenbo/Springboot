@@ -35,11 +35,28 @@ public class JobTaskServiceImpl implements JobTaskService {
     public void init() throws Exception {
         // 这里获取任务信息数据
         List<ScheduleJob> jobList = scheduleJobMapper.getAll();
-        for (ScheduleJob job : jobList) {
-            add(job);
+        for (ScheduleJob scheduleJob : jobList) {
+            //校验执行表达式
+            QuartzUtils.getCronScheduleBuilder(scheduleJob.getCronExpression());
+            //校验class是否存在
+            Object verifClass = QuartzUtils.verifClass(scheduleJob.getSpringId());
+            //校验spring类是否存在
+            QuartzUtils.verifyClassAndMethod(verifClass, scheduleJob.getMethodName());
+            //根据状态判断是否执行方法
+            //TODO
         }
     }
 
+    /**
+     * 从数据库中查询job
+     */
+    public ScheduleJob getTaskById(String jobId) {
+        return scheduleJobMapper.selectByPrimaryKey(jobId);
+    }
+
+    /**
+     * 获取所有定时任务
+     */
     @Override
     public List<ScheduleJob> listAll() {
         return scheduleJobMapper.getAll();
@@ -48,20 +65,13 @@ public class JobTaskServiceImpl implements JobTaskService {
     @Override
     public ScheduleJob add(ScheduleJob scheduleJob) {
         //校验执行表达式
-        QuartzUtils.getScheduleAndverifyCron(scheduleJob.getCronExpression());
+        QuartzUtils.getCronScheduleBuilder(scheduleJob.getCronExpression());
         //校验class是否存在
         Object verifClass = QuartzUtils.verifClass(scheduleJob.getSpringId());
         //校验spring类是否存在
         QuartzUtils.verifyClassAndMethod(verifClass, scheduleJob.getMethodName());
         scheduleJobMapper.insert(scheduleJob);
         return scheduleJob;
-    }
-
-    /**
-     * 从数据库中查询job
-     */
-    public ScheduleJob getTaskById(String jobId) {
-        return scheduleJobMapper.selectByPrimaryKey(jobId);
     }
 
     @Override
@@ -73,7 +83,6 @@ public class JobTaskServiceImpl implements JobTaskService {
             try {
                 QuartzUtils.addJobDetail(scheduleJob);
             } catch (SchedulerException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         } else if (update.getJobStatus().equals("0")) {

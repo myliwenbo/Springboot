@@ -1,7 +1,6 @@
 package vip.xjdai.web;
 
 import java.lang.reflect.Method;
-import java.util.Date;
 
 import org.apache.commons.lang3.StringUtils;
 import org.quartz.CronScheduleBuilder;
@@ -26,6 +25,35 @@ public class QuartzUtils {
     private static SchedulerFactory gSchedulerFactory  = new StdSchedulerFactory();
     private static String           JOB_GROUP_NAME     = "MY_JOBGROUP_NAME";
     private static String           TRIGGER_GROUP_NAME = "MY_TRIGGERGROUP_NAME";
+
+    public static Object verifClass(String springId) {
+        Object obj = null;
+        if (StringUtils.isNotBlank(springId)) {
+            obj = SpringUtils.getBean(springId);
+        } else {
+            throw new BizException("未找到目标类！");
+        }
+        return obj;
+    }
+
+    /**
+     * 校验方法和实体类
+     * @param springId   springBeanID
+     * @param methodName 方法名称
+     * @return
+     */
+    public static Method verifyClassAndMethod(Object obj, String methodName) {
+        Class<? extends Object> clazz = obj.getClass();
+        try {
+            Method method = clazz.getMethod(methodName);
+            if (method == null) {
+                throw new BizException("未找到目标方法！");
+            }
+            return method;
+        } catch (NoSuchMethodException | SecurityException e) {
+            throw new BizException("获取目标方法失败");
+        }
+    }
 
     /**
      * 创建一个任务默认分组
@@ -77,43 +105,25 @@ public class QuartzUtils {
     }
 
     /**
-     * 获取任务触发器
-     * @param jobName   任务名称
-     * @param expression 任务表达式
-     * @return 达式调任务触发器
-     */
-    public static CronScheduleBuilder getTriggerExpression(String expression) {
-        // 表达式任务触发器
-        CronScheduleBuilder scheduleBuilder = CronScheduleBuilder
-            .cronSchedule(expression);
-        //次数触发器
-        /*SimpleScheduleBuilder repeatHourlyForever = SimpleScheduleBuilder.repeatHourlyForever(5);*/
-        // 按新的cronExpression表达式构建一个新的trigger
-        //添加触发器
-        return scheduleBuilder;
-    }
-
-    /**
-     * 设置定时器
-     * @param triggerName
-     * @param expression
-     * @param description
+     * Trigger 说明
+     * <br/>
+     * job执行的时间触发规则
+     * @param triggerName  触发器名称
+     * @param cron 触发器表达式
      * @return
      */
-    public static Trigger setTrigger(String triggerName, String expression) {
-        //2.定时器
+    public static Trigger getTrigger(String triggerName, String triggerGroup,
+                                     String cron) {
+        //获取触发器类型
+        CronScheduleBuilder scheduleBuilder = QuartzUtils.getCronScheduleBuilder(cron);
+        //触发器
         TriggerBuilder<Trigger> newTrigger = TriggerBuilder.newTrigger();
         //添加描述
         newTrigger.withDescription(null);
         //触发器名称  触发器分组
-        newTrigger.withIdentity(triggerName, TRIGGER_GROUP_NAME);
-        //设置三秒启动
-        Date date = new Date(System.currentTimeMillis() + 3 * 1000L);
-        //默认当前时间启动
-        newTrigger.startAt(date);
-        newTrigger.startNow();
-        CronScheduleBuilder triggerExpression = getTriggerExpression(expression);
-        newTrigger.withSchedule(triggerExpression);
+        newTrigger.withIdentity(triggerName, triggerGroup);
+        //添加触发器
+        newTrigger.withSchedule(scheduleBuilder);
         //部署,创建Trigger
         return newTrigger.build();
     }
@@ -125,9 +135,18 @@ public class QuartzUtils {
      * @param expression    执行表达式
      * @throws Exception
      */
+
+    /**
+     * 启动任务
+     * @param triggerName   分组名称
+     * @param expression    任务表达式
+     * @param clazz         具体的任务
+     * @throws Exception
+     */
     public static <T> void startJob(String triggerName, String expression,
                                     Class<? extends Job> clazz) throws Exception {
-        Trigger setTrigger = setTrigger(triggerName, expression);
+        Trigger setTrigger = QuartzUtils.getTrigger(triggerName, TRIGGER_GROUP_NAME,
+            expression);
         JobDetail jobDetail = addJobDetail(triggerName, clazz);
         //3.注册任务和定时器
         Scheduler sched = gSchedulerFactory.getScheduler();
@@ -254,7 +273,6 @@ public class QuartzUtils {
      * @param triggerGroupName
      * @param time
      * @author qgw 
-     * @date 2016年1月27日 下午4:45:15 ^_^
      */
     public static void modifyJobTime(String triggerName, String triggerGroupName,
                                      String expression) {
@@ -282,52 +300,24 @@ public class QuartzUtils {
     }
 
     /**
-     * 获取任务表达式，并且进行异常处理
-     * 按新的cronExpression表达式构建一个新的trigger
-     * @param cronExpression 表达式
+     * <pre>
+     * 获取触发器类型
+     * 按新的cron表达式构建一个新的触发器
+     * </pre>
+     * @param cron cronExpression 表达式
      * @return
      */
-    public static CronScheduleBuilder getScheduleAndverifyCron(String cronExpression) {
+    public static CronScheduleBuilder getCronScheduleBuilder(String cron) {
         //添加触发器
         try {
             // 表达式任务触发器
-            CronScheduleBuilder scheduleBuilder = CronScheduleBuilder
-                .cronSchedule(cronExpression);
+            CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.cronSchedule(cron);
             //次数触发器
             /*SimpleScheduleBuilder repeatHourlyForever = SimpleScheduleBuilder.repeatHourlyForever(5);*/
             return scheduleBuilder;
         } catch (Exception e) {
             throw new BizException("cron表达式有误，不能被解析！");
 
-        }
-    }
-
-    public static Object verifClass(String springId) {
-        Object obj = null;
-        if (StringUtils.isNotBlank(springId)) {
-            obj = SpringUtils.getBean(springId);
-        } else {
-            throw new BizException("未找到目标类！");
-        }
-        return obj;
-    }
-
-    /**
-     * 校验方法和实体类
-     * @param springId   springBeanID
-     * @param methodName 方法名称
-     * @return
-     */
-    public static Method verifyClassAndMethod(Object obj, String methodName) {
-        Class<? extends Object> clazz = obj.getClass();
-        try {
-            Method method = clazz.getMethod(methodName);
-            if (method == null) {
-                throw new BizException("未找到目标方法！");
-            }
-            return method;
-        } catch (NoSuchMethodException | SecurityException e) {
-            throw new BizException("获取目标方法失败");
         }
     }
 
@@ -348,12 +338,8 @@ public class QuartzUtils {
             JobDetail jobDetail = addJobDetail(job.getJobName(), job.getJobGroup(),
                 clazz);
             jobDetail.getJobDataMap().put("scheduleJob", job);
-            //校验表达式
-            CronScheduleBuilder scheduleBuilder = getScheduleAndverifyCron(
+            QuartzUtils.getTrigger(job.getJobName(), job.getJobName(),
                 job.getCronExpression());
-            trigger = TriggerBuilder.newTrigger()
-                .withIdentity(job.getJobName(), job.getJobGroup())
-                .withSchedule(scheduleBuilder).build();
             scheduler.scheduleJob(jobDetail, trigger);
         } else {
             // Trigger已存在，那么更新相应的定时设置

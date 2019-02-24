@@ -87,8 +87,8 @@ public class QuartzAPI {
         newTrigger.withIdentity(triggerName, TRIGGER_GROUP_NAME);
         //设置三秒启动
         Date date = new Date(System.currentTimeMillis() + 3 * 1000L);
-        //默认当前时间启动
         newTrigger.startAt(date);
+        //默认当前时间启动
         newTrigger.startNow();
         CronScheduleBuilder triggerExpression = getTriggerExpression(expression);
         newTrigger.withSchedule(triggerExpression);
