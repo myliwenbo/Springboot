@@ -1,13 +1,13 @@
-package vip.xjdai.demo;
+package vip.xjdai.domain;
 
 public class User {
     private Integer userId;
 
-    private String userName;
+    private String  userName;
 
-    private String password;
+    private String  password;
 
-    private String phone;
+    private String  phone;
 
     public Integer getUserId() {
         return userId;
@@ -41,10 +41,10 @@ public class User {
         this.phone = phone == null ? null : phone.trim();
     }
 
-  public User (Integer userId, String userName, String password, String phone) {
-    this.userId = userId;
-    this.userName = userName;
-    this.password = password;
-    this.phone = phone;
-  }
+    public User(Integer userId, String userName, String password, String phone) {
+        this.userId = userId;
+        this.userName = userName;
+        this.password = password;
+        this.phone = phone;
+    }
 }
