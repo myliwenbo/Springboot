@@ -4,11 +4,13 @@ import org.apache.solr.client.solrj.beans.Field;
 
 public class User {
     @Field
-    private String name;
+    private String  name;
     @Field
-    private String id;
+    private String  id;
     @Field
-    private String password;
+    private String  password;
+    @Field
+    private Integer age;
 
     public String getName() {
         return name;
@@ -32,6 +34,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
 }

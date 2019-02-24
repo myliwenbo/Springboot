@@ -1,10 +1,10 @@
-package cn.lwb.quartz.mysql;
+package vip.xjdai.quartz.mysql;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
-import cn.lwb.quartz.QuatzUtils;
+import vip.xjdai.web.QuartzAPI;
 
 @Service
 public class InitService {
@@ -13,7 +13,7 @@ public class InitService {
     public void init() throws Exception {
         //去数据库查询
         System.out.println("初始化执行");
-        QuatzUtils.startJob("任务1", "0/2 * * * * ?", MyJob.class);
+        QuartzAPI.startJob("任务1", "0/2 * * * * ?", MyJob.class);
     }
 
 }

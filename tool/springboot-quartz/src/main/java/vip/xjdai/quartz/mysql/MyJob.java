@@ -1,4 +1,4 @@
-package cn.lwb.quartz.mysql;
+package vip.xjdai.quartz.mysql;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
