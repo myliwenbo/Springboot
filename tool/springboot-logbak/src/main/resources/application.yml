@@ -1,0 +1,21 @@
+
+# logback配置文件路径；如果配置文件放在根目录，则无需配置
+logging: 
+  level:
+    com:
+      looedu:
+        mapper: error
+  config: classpath:mybatis-log.xml  # spring官方建议取名，因为可以使用一些其他功能
+
+server: 
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.6.132:3306/quartz?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+    username: root
+    password: root
+mybatis: 
+  config-location: classpath:mybatis.xml # 配置mybatis文件所在
+  type-aliases-package: vip.xjdai.mybatis  #配置要扫描的包
+  mapper-locations: classpath:mapper/*.xml # 配置mapper文件

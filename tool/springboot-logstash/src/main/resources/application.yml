@@ -1,0 +1,6 @@
+
+# logback配置文件路径；如果配置文件放在根目录，则无需配置
+logging: 
+  config: classpath:logback.xml  # spring官方建议取名，因为可以使用一些其他功能
+server: 
+  port: 8080

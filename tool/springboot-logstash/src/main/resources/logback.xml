@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+
+
+	<property name="CODING" value="UTF-8" />
+	<property name="LOG_FORMAT" value="- [%d{yyyyMMdd HH:mm:ss.SSS}] | [%level] | [${HOSTNAME}] | [%thread] | [%logger{36}] |  %msg|%n " />
+
+
+	<!-- 控制台输出 -->
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>${LOG_FORMAT}</pattern>
+			<charset>${CODING}</charset>
+		</encoder>
+	</appender>
+
+	<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+		 <!-- 这是是logstash服务器地址端口 -->
+		<destination>localhost:8888</destination>
+		<!-- 输出的格式，推荐使用这个 -->
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+	</appender>
+
+
+	<!-- 级别依次为【从高到低】： ERROR > WARN > INFO > DEBUG > TRACE -->
+	<!--
+		level="输出级别" 配置输出的级别，
+		如果<appender>也配置了级别，那么就按照谁的级别高就输出谁的，
+		比如：appender配了ERROR 那么root配INFO，那么会按照 appender的输出级别
+		比如：root配了ERROR，appender配了INFO，那么会按照 root的输出级别
+	-->
+	<root level="INFO">
+		<!--
+			ref="appender的name值"
+		-->
+		<appender-ref ref="stash" />
+		<appender-ref ref="consoleAppender" />
+	</root>
+</configuration>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--
+	debug: 当此属性设置为true时，将打印出logback内部日志信息
+-->
+<configuration debug="false">
+
+	<!--设置变量，使用${LOG_FORMAT}，来使用变量 -->
+	<property name="LOG_FORMAT" value="- [ [%logger{36}] | --> %msg|%n " />
+
+
+	<!--appender 负责写日志的组件
+		name=""：指定appender名称
+		class=""：appender的全限定名
+	-->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender"> <!-- 控制台输出 -->
+		<!--对日志进行格式化 -->
+		<encoder>
+			<!--输出的格式 -->
+			<pattern>${LOG_FORMAT}</pattern>
+		</encoder>
+
+
+		<!-- 设置日志过滤器 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter"><!-- 临界值过滤器 -->
+			<level>INFO</level>
+		</filter>
+
+	</appender>
+
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender"><!-- 文件输出 -->
+		<!-- 当前记录的日志 -->
+		<file>log_error.log</file>
+		<!-- 当前记录的追加方式,默认追加，也就是true -->
+		<append>true</append>
+		<!--对日志进行格式化 -->
+		<encoder>
+			<!--输出的格式 -->
+			<pattern>${LOG_FORMAT}</pattern>
+		</encoder>
+
+
+		<!-- 配置滚动策略，按照时间来进行滚动 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 滚动规则
+				<fileNamePattern>%d{yyyy-MM-dd}.log</fileNamePattern> 按照天进行滚动
+				<fileNamePattern>%d{yyyy-MM}.log</fileNamePattern> 按照月滚动
+				<FileNamePattern>%d{yyyy-MM-dd}_err.%i.log</FileNamePattern> 按照天滚动并且设置文件自增 (i) 从1开始
+			-->
+			<fileNamePattern>%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- 保留时间 -->
+			<maxHistory>30</maxHistory>
+			<!--按照文件大小进行切割，当文件大于设置的值的时候就会进行切割成一个新的日志文件，当然需要定义自增角标 -->
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+
+
+		<!-- 设置日志过滤器 -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- 级别过滤器 -->
+			<level>INFO</level>
+			<!-- 如果跟该日志水平不匹配，则过滤掉 -->
+			<OnMismatch>DENY</OnMismatch>
+			<!-- 如果跟该日志水平相匹配，则接受 -->
+			<OnMatch>ACCEPT</OnMatch>
+		</filter>
+	</appender>
+
+	<!--用于设置一个包或者具体的某一个类的日志打印级别，以及指定<appender>
+		name="cn.lwb" 指定包名
+		name="cn.lwb.log.initialize.InitializeLog" 指定类名
+		level="" 可选属性，如果没有设置，默认继承root标签的日志级别，
+		addtivity=true 默认为true，将此loger的打印信息向上级传递，也就是 root标签
+	-->
+	<loger name="cn.lwb.log.tags.SpringbootLogbakOrLombokApplicationTests">
+
+	</loger>
+
+	<!--也是loger标签
+		level="" 配置日志级别
+
+	-->
+	<root level="">
+		<!-- 日志组件的name -->
+		<appender-ref ref="" />
+	</root>
+</configuration>
