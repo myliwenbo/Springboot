@@ -16,8 +16,8 @@
 	</appender>
 
 	<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-		 <!-- 这是是logstash服务器地址端口 -->
-		<destination>localhost:8888</destination>
+		 <!-- 这是是logstashIP和配置文件所配置的端口 -->
+		<destination>192.168.6.132:12000</destination>
 		<!-- 输出的格式，推荐使用这个 -->
 		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
 	</appender>
