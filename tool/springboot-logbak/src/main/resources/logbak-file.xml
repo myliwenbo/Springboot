@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
-
-
-
+	<!-- 文件大小 -->
 	<property name="CODING" value="UTF-8" />
-	<property name="LOG_FORMAT" value="- [%d{yyyyMMdd HH:mm:ss.SSS}] | [%level] | [${HOSTNAME}] | [%thread] | [%logger{36}] |  %msg|%n " />
 
+
+	<!--定义日志文件的存储地址，相对路径，相对于项目目录下. -->
+	<property name="LOG_PATH" value="home/logs/customer" />
+	<!-- 日志文件路径+日期 -->
+	<property name="LOG_DIR" value="${LOG_PATH}/customer_%d{yyyy-MM-dd}" />
+	<property name="LOG_FORMAT" value="%d{yyyy年MM月dd日 HH小时mm分钟ss秒} [%15t] [%5p] %70c | %m%n " />
 
 	<!-- 控制台输出 -->
 	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
@@ -15,11 +18,18 @@
 		</encoder>
 	</appender>
 
-	<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-		 <!-- 这是是logstashIP和配置文件所配置的端口 -->
-		<destination>192.168.6.133:12000</destination>
-		<!-- 输出的格式，推荐使用这个 -->
-		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+	<!-- 输出到文件 -->
+	<appender name="file" class="ch.qos.logback.core.FileAppender">
+		<!-- 跟src同级目录 -->
+		<file>log/file.log</file>
+		<!-- 默认append=true，即可追加而非覆盖 -->
+		<append>true</append>
+		<encoder>
+			<pattern>${LOG_FORMAT}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<!-- prudent=true表示日志写入线程安全，会降低效率，默认为false -->
+		<prudent>false</prudent>
 	</appender>
 
 
@@ -31,10 +41,7 @@
 		比如：root配了ERROR，appender配了INFO，那么会按照 root的输出级别
 	-->
 	<root level="INFO">
-		<!--
-			ref="appender的name值"
-		-->
-		<appender-ref ref="stash" />
+		<appender-ref ref="file" />
 		<appender-ref ref="consoleAppender" />
 	</root>
 </configuration>

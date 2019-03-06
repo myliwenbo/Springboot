@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+	<!-- 文件大小 -->
+	<property name="CODING" value="UTF-8" />
+
+
+	<!--定义日志文件的存储地址，相对路径，相对于项目目录下. -->
+	<property name="LOG_PATH" value="home/logs/customer" />
+	<!-- 日志文件路径+日期 -->
+	<property name="LOG_DIR" value="${LOG_PATH}/customer_%d{yyyy-MM-dd}" />
+	<property name="LOG_FORMAT" value="%d{yyyy年MM月dd日 HH小时mm分钟ss秒} [%15t] [%5p] %70c | %m%n " />
+
+	<!-- 控制台输出 -->
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>${LOG_FORMAT}</pattern>
+			<charset>${CODING}</charset>
+		</encoder>
+	</appender>
+
+
+	<!-- appender与过滤器整合，一个appender可含一个或多个filter，有多个filter时，按照配置先后顺序执行 -->
+	<appender name="filter" class="ch.qos.logback.core.FileAppender">
+		<file>log/filter.log</file>
+		<!-- 默认append=true，即可追加而非覆盖 -->
+		<append>true</append>
+		<!-- levelfilter:级别过滤器。根据日志级别进行过滤。如果日志级别等于配置级别level，则执行onMatch的；否则执行onMismatch -->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<!-- DENY：日志将立即被抛弃，不再经过其他过滤器，本appender也不进行处理 -->
+			<!-- ACCEPT：日志被立即处理，不再经过其他过滤器 -->
+			<!-- NEUTRAL：下一个过滤器继续过滤，若为最后一个过滤器且通过，则appender进行处理 -->
+			<!-- onMatch、onMismatch里内容要大写 -->
+			<!-- 匹配 -->
+			<onMatch>ACCEPT</onMatch>
+			<!-- 不匹配 -->
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		
+		<!-- ThresholdFilter临界值过滤器，过滤掉低于指定临界值的日志 -->
+		<!-- 当日志级别等于或高于临界值时，过滤器返回NEUTRAL；当日志级别低于临界值时，日志会被拒绝。 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<encoder>
+			<pattern>${LOG_FORMAT}</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<!-- prudent=true表示日志写入线程安全，会降低效率，默认为false -->
+		<prudent>false</prudent>
+	</appender>
+
+
+	<!-- 级别依次为【从高到低】： ERROR > WARN > INFO > DEBUG > TRACE -->
+	<!--
+		level="输出级别" 配置输出的级别，
+		如果<appender>也配置了级别，那么就按照谁的级别高就输出谁的，
+		比如：appender配了ERROR 那么root配INFO，那么会按照 appender的输出级别
+		比如：root配了ERROR，appender配了INFO，那么会按照 root的输出级别
+	-->
+	<root level="INFO">
+		<appender-ref ref="timeFile" />
+		<appender-ref ref="consoleAppender" />
+	</root>
+</configuration>
