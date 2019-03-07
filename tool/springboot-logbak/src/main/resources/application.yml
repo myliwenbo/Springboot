@@ -1,11 +1,9 @@
-
 # logback配置文件路径；如果配置文件放在根目录，则无需配置
 logging: 
-  config: classpath:logbak-size.xml  # spring官方建议取名，因为可以使用一些其他功能
-
+  config: classpath:logbak-logstash-example.xml  # spring官方建议取名，因为可以使用一些其他功能
 server: 
   port: 8080
-spring:
+spring: 
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://192.168.6.132:3306/quartz?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true

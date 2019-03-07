@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="false">
 
-
-
 	<!-- 能读取spring配置文件
 		scope：作用域
 		name：在 logback.xml 使用的键
@@ -10,6 +8,7 @@
 		defaultValue：默认值
 	-->
 	<!--<springProperty scope = "context" name = "logName" source = "spring.application.name" -->
+
 	<!-- 日志级别 -->
 	<springProperty scope="context" name="LOG_ROOT_LEVEL" source="logging.level.root" defaultValue="INFO" />
 
@@ -38,6 +37,8 @@
 	<logger name="org.hibernate.SQL" level="DEBUG" />
 	<logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />
 	<logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />
+
+
 	<!-- 彩色日志，依赖的渲染类 -->
 	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
 	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
@@ -45,6 +46,8 @@
 
 	<!--定义日志文件的存储地址，相对路径，相对于项目目录下. -->
 	<property name="LOG_PATH" value="/home/logs/customer" />
+
+
 	<!-- 文件大小 -->
 	<property name="LOG_SIZE" value="1MB" />
 	<!-- 文件大小 -->
@@ -57,15 +60,8 @@
 
 	<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
 	<property name="LOG_FORMAT" value="- [%d{yyyyMMdd HH:mm:ss.SSS}] | [%level] | [${HOSTNAME}] | [%thread] | [%logger{36}] | --> %msg|%n " />
+
 	<!-- 控制台彩色输出 -->
-	<!--
-		yyyy-MM-dd HH:mm:ss.SSS: 日志时间
-		LOG_LEVEL_PATTERN： 日志级别
-		PID： 进程id
-		t： 线程名
-		logger: 打印日志类名
-		LOG_EXCEPTION_CONVERSION_WORD： 日志转换器
-	-->
 	<property name="CONSOLE_LOG_PATTERN"
 		value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
 	<!-- 控制台输出 -->
@@ -79,6 +75,8 @@
 			<level>debug</level>
 		</filter>
 	</appender>
+
+
 	<!--按照一定条件生成日志文件 -->
 	<appender name="FILE_ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- 正在记录的日志文件的路径及文件名 -->
