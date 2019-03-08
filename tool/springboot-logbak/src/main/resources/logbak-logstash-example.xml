@@ -18,6 +18,7 @@
 			<charset>${CODING}</charset>
 		</encoder>
 	</appender>
+	
 	<!-- 滚动输出到文件，达到一定条件时，会将日志记录到其他文件 -->
 	<appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- 本地输出路径 -->
@@ -50,6 +51,7 @@
 			<OnMismatch>DENY</OnMismatch>
 		</filter>
 	</appender>
+	
 	<!-- 滚动输出到文件，达到一定条件时，会将日志记录到其他文件 -->
 	<appender name="warn" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- 本地输出路径 -->
@@ -82,6 +84,7 @@
 			<OnMismatch>DENY</OnMismatch>
 		</filter>
 	</appender>
+	
 	<!-- 滚动输出到文件，达到一定条件时，会将日志记录到其他文件 -->
 	<appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- 本地输出路径 -->
