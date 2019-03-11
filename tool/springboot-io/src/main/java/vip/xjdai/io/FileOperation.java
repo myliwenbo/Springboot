@@ -1,9 +1,10 @@
-package cn.lwb.io;
+package vip.xjdai.io;
 
 import java.io.File;
 import java.io.IOException;
 
 public class FileOperation {
+
     public static final String type = ".jar";
 
     public static void main(String[] args) {

@@ -20,7 +20,11 @@ public class Demo {
             log.debug("我是dbug");
             log.warn("我是警告");
             log.error("我是严重的错误");
-
         }
+
+    }
+
+    public static void main(String[] args) {
+        int i = 1 / 0;
     }
 }
