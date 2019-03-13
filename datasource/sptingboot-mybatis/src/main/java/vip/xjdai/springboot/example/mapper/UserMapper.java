@@ -1,8 +1,8 @@
-package vip.xjdai.mapper;
+package vip.xjdai.springboot.example.mapper;
 
 import java.util.List;
 
-import vip.xjdai.domain.User;
+import vip.xjdai.springboot.example.domain.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer userId);

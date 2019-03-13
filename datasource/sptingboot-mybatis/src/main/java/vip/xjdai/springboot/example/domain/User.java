@@ -1,4 +1,4 @@
-package vip.xjdai.domain;
+package vip.xjdai.springboot.example.domain;
 
 public class User {
     private Integer userId;

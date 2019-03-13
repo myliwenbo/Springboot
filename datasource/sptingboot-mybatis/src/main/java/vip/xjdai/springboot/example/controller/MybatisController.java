@@ -1,4 +1,4 @@
-package vip.xjdai.controller;
+package vip.xjdai.springboot.example.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
-import vip.xjdai.domain.User;
-import vip.xjdai.mapper.UserMapper;
+import vip.xjdai.springboot.example.domain.User;
+import vip.xjdai.springboot.example.mapper.UserMapper;
 
 @RestController
 @RequestMapping("mybatis")
