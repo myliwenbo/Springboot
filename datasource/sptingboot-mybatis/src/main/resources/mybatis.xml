@@ -7,6 +7,8 @@
 	<settings>
 		<!-- 开启驼峰自动映射 -->
 		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<!-- 开启二级缓存 -->
+		<setting name="cacheEnabled" value="true" />
 	</settings>
 	<!-- 批量起别名 -->
 	<typeAliases>

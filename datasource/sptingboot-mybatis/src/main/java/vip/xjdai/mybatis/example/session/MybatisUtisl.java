@@ -1,19 +1,18 @@
 /**
  * 
  */
-package vip.xjdai.mybatis.example;
+package vip.xjdai.mybatis.example.session;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.util.Date;
-import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import vip.xjdai.springboot.example.domain.User;
 import vip.xjdai.springboot.example.mapper.UserMapper;
 
 /**
@@ -39,16 +38,48 @@ public class MybatisUtisl {
 
     }
 
+    public static void close() {
+        openSession.close();
+    }
+
+    public static void clearCache() {
+        openSession.clearCache();
+    }
+
     public static <T> T getsqlSession(Class<T> type) throws Exception {
         SqlSession openSession = getsession();// 获取会话
         T mapper = openSession.getMapper(type);// 放入接口获取实现对象
         return mapper;
     }
 
-    public static void executeSpeed(UserMapper getsqlSession) {
+    public static void executeSpeed(UserMapper getsqlSession,
+                                    String methodName) throws Exception {
+        executeSpeed(getsqlSession, methodName, null);
+    }
+
+    public static void executeSpeed(UserMapper getsqlSession, String methodName,
+                                    Object args,
+                                    Class<?>... parameterTypes) throws Exception {
         Date first = new Date();
-        List<User> selectAllUser = getsqlSession.selectAllUser();
+        Class<? extends UserMapper> clazz = getsqlSession.getClass();
+        Method method;
+        if (parameterTypes == null) {
+            method = clazz.getMethod(methodName);
+        } else {
+            method = clazz.getMethod(methodName, parameterTypes);
+        }
+        Object invoke;
+        if (args == null) {
+            invoke = method.invoke(getsqlSession);
+        } else {
+            invoke = method.invoke(getsqlSession, args);
+        }
+        System.out.println(invoke.toString());
         System.out.println("获取时间:" + (new Date().getTime() - first.getTime()) + " ms");
+    }
+
+    public static void commit() {
+        openSession.commit();
     }
 
 }
