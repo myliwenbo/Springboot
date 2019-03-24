@@ -1,6 +1,6 @@
-package cn.lwb.mapper1;
+package vip.xjdai.one;
 
-import cn.lwb.model.Stock;
+import vip.xjdai.model.Stock;
 
 public interface OneStockMapper {
 

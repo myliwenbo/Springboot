@@ -1,4 +1,4 @@
-package cn.lwb.config;
+package vip.xjdai.two;
 
 import javax.sql.DataSource;
 
@@ -16,7 +16,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
-@MapperScan(basePackages = { "cn.lwb.mapper2" }, sqlSessionFactoryRef = "twoSqlSessionFactory", sqlSessionTemplateRef = "twoSqlSessionTemplate")
+@MapperScan(basePackages = { "vip.xjdai" }, sqlSessionFactoryRef = "twoSqlSessionFactory", sqlSessionTemplateRef = "twoSqlSessionTemplate")
 public class TWOConfig {
     @Value("${spring.datasource.minor.driver-class-name}")
     private String driverClassName;
@@ -49,7 +49,8 @@ public class TWOConfig {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
         // /*加载所有的mapper.xml映射文件*/
-        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/two/*.xml"));
+        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
+            .getResources("classpath:mapper/two/*.xml"));
         return factoryBean.getObject();
 
     }

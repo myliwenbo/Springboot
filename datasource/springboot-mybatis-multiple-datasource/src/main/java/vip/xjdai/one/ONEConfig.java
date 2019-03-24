@@ -1,4 +1,4 @@
-package cn.lwb.config;
+package vip.xjdai.one;
 
 import javax.sql.DataSource;
 
@@ -27,7 +27,7 @@ import com.alibaba.druid.pool.DruidDataSource;
  */
 @Configuration
 // / 配置mybatis的接口类放的地方
-@MapperScan(basePackages = "cn.lwb.mapper1", sqlSessionFactoryRef = "oneSqlSessionFactory", sqlSessionTemplateRef = "oneSqlSessionTemplate")
+@MapperScan(basePackages = "vip.xjdai.one", sqlSessionFactoryRef = "oneSqlSessionFactory", sqlSessionTemplateRef = "oneSqlSessionTemplate")
 public class ONEConfig {
 
     @Value("${spring.datasource.primary.driver-class-name}")
@@ -63,7 +63,8 @@ public class ONEConfig {
         SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
         factoryBean.setDataSource(dataSource);
         // 加载特定的mapper.xml映射文件
-        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/one/*.xml"));
+        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
+            .getResources("classpath:mapper/one/*.xml"));
         return factoryBean.getObject();
 
     }

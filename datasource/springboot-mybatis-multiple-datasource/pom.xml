@@ -9,11 +9,10 @@
 		<version>2.1.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>cn.lwb</groupId>
-	<artifactId>SpringBootMybatisDataSource</artifactId>
+	<groupId>vip.xjdai</groupId>
+	<artifactId>springboot-mybatis-multiple-datasource</artifactId>
 	<version>1.0</version>
-	<name>SpringBootMybatisDataSource</name>
-	<description>Demo project for Spring Boot</description>
+	<name>springboot-mybatis-multiple-datasource</name>
 
 	<properties>
 		<java.version>1.8</java.version>

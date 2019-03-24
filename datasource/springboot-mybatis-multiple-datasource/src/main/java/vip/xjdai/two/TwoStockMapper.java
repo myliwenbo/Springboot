@@ -1,6 +1,6 @@
-package cn.lwb.mapper2;
+package vip.xjdai.two;
 
-import cn.lwb.model.Stock;
+import vip.xjdai.model.Stock;
 
 public interface TwoStockMapper {
     int deleteByPrimaryKey(Integer id);

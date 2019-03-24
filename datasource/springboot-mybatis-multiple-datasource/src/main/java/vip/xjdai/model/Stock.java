@@ -1,4 +1,4 @@
-package cn.lwb.model;
+package vip.xjdai.model;
 
 public class Stock {
     private Integer id;
