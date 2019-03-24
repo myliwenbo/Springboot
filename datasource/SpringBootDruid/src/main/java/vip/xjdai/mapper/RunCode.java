@@ -1,4 +1,4 @@
-package cn.lwb.mapper;
+package vip.xjdai.mapper;
 
 import java.io.File;
 import java.util.ArrayList;

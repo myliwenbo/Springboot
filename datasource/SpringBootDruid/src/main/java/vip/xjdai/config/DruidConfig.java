@@ -1,4 +1,4 @@
-package cn.lwb.config;
+package vip.xjdai.config;
 
 import javax.sql.DataSource;
 
@@ -20,7 +20,7 @@ public class DruidConfig {
     @ConfigurationProperties(prefix = "spring.datasource.druid")
     public DataSource druidDataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
-        System.out.println("搭理data");
+        System.out.println("搭建data");
         return druidDataSource;
     }
 }

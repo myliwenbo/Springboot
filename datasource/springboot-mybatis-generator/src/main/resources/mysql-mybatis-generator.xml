@@ -104,6 +104,5 @@
 			<columnOverride column="" javaType="" />
 		</table>
 
-
 	</context>
 </generatorConfiguration>

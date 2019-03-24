@@ -1,4 +1,4 @@
-package cn.lwb.pojo;
+package vip.xjdai.pojo;
 
 import java.io.Serializable;
 import java.util.Date;

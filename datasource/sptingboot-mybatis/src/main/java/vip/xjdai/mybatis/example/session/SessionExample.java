@@ -5,8 +5,8 @@ package vip.xjdai.mybatis.example.session;
 
 import org.junit.Test;
 
-import vip.xjdai.springboot.example.domain.User;
-import vip.xjdai.springboot.example.mapper.UserMapper;
+import vip.xjdai.springboot.example.User;
+import vip.xjdai.springboot.example.UserMapper;
 
 /**
  * @author lwb

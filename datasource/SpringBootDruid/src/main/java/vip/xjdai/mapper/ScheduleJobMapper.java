@@ -1,10 +1,10 @@
-package cn.lwb.mapper;
+package vip.xjdai.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import cn.lwb.pojo.ScheduleJob;
+import vip.xjdai.pojo.ScheduleJob;
 
 public interface ScheduleJobMapper {
     /**

@@ -1,4 +1,4 @@
-package cn.lwb.config;
+package vip.xjdai.config;
 
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebInitParam;

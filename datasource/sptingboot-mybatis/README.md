@@ -1,6 +1,6 @@
 # springboot-mybatis说明
 
-- 添加了`分页插件`
+- 添加`分页插件`
 - `druid`数据源
 
 # 配置流程

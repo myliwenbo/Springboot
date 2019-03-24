@@ -4,7 +4,7 @@
 spring: 
   datasource: 
     druid: 
-      url: jdbc:mysql://192.168.6.132:3306/quartz?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+      url: jdbc:mysql://192.168.6.133:3306/quartz?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
       username: root
       password: root
       # 配置MySQL的驱动程序类，这里需要注意一下驱动
@@ -32,5 +32,5 @@ spring:
       maxOpenPreparedStatements: 20
 mybatis: 
   config-location: classpath:mybatis.xml # 配置mybatis文件所在
-  type-aliases-package: cn.lwb.pojo
+  type-aliases-package: vip.xjdai.pojo
   mapper-locations: classpath:mapper/*.xml # 配置mapper文件

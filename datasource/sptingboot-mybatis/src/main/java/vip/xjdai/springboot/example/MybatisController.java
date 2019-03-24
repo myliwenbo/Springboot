@@ -1,4 +1,4 @@
-package vip.xjdai.springboot.example.controller;
+package vip.xjdai.springboot.example;
 
 import java.util.List;
 
@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
-import vip.xjdai.springboot.example.domain.User;
-import vip.xjdai.springboot.example.mapper.UserMapper;
-
 @RestController
 @RequestMapping("mybatis")
 public class MybatisController {
@@ -20,6 +17,7 @@ public class MybatisController {
 
     @RequestMapping("mybatis")
     public PageInfo<User> testMapper() {
+
         for (int i = 0; i < 100; i++) {
             userMapper.insert(new User(i, "小明" + i, "" + i, "" + i));
         }
