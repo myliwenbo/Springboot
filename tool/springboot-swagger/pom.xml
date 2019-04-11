@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>cn.lwb</groupId>
-	<artifactId>SpringBoot_Swagger</artifactId>
+	<artifactId>springboot-swagger</artifactId>
 	<version>1.0</version>
-	<name>SpringBoot_Swagger</name>
+	<name>springboot-swagger</name>
 	<description></description>
 
 	<properties>

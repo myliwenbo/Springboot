@@ -11,7 +11,6 @@ import net.sf.ehcache.Ehcache;
 import net.sf.ehcache.Element;
 
 /**
- * Created by lmb on 2018/5/23.
  * 基于Ehcache框架的Ehcache操作工具类
  */
 public class EhcacheUtil {
@@ -25,7 +24,6 @@ public class EhcacheUtil {
      * 描  述: 根据ehcache.xml，创建CacheManager生产器
      * 参  数:
      * 返回值: net.sf.ehcache.CacheManager
-     * 创建时间: 2018/5/23
      */
     private static CacheManager createCacheManager() {
         CacheManager cacheManager;
