@@ -27,7 +27,7 @@
 
 		<!-- 数据库连接 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://192.168.6.132:3306/quartz" userId="root" password="root" />
+			connectionURL="jdbc:mysql://192.168.6.133:3306/quartz" userId="root" password="root" />
 
 		<!-- Model生成 -->
 		<javaModelGenerator targetPackage="test.model" targetProject="./src/main/java" />

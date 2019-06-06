@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: springboot-remote-calls
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: lwb
+Implementation-Vendor-Id: vip.xjdai
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/springboot-remote-calls
+Created-By: Maven Integration for Eclipse
+
