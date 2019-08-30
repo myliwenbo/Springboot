@@ -12,8 +12,6 @@
 	<!-- 日志级别 -->
 	<springProperty scope="context" name="LOG_ROOT_LEVEL" source="logging.level.root" defaultValue="INFO" />
 
-
-
 	<!--myibatis log -->
 	<logger name="com.apache.ibatis" level="TRACE" />
 	<logger name="java.sql.Connection" level="DEBUG" />

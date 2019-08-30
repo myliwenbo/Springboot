@@ -9,10 +9,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("/consoleLog")
-public class ConsoleLog {
+public class ConsoleLog
+{
 
     @RequestMapping(value = "/logTwo", method = RequestMethod.POST)
-    public void countOrder() {
+    public void countOrder()
+    {
         for (int i = 0; i < 10000; i++) {
             log.info("初始化-_-");
             log.error("错误!!!!!");
