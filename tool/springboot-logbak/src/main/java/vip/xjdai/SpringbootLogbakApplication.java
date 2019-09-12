@@ -6,9 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("vip.xjdai.mybatis")
-public class SpringbootLogbakApplication {
+public class SpringbootLogbakApplication
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         SpringApplication.run(SpringbootLogbakApplication.class, args);
     }
 
