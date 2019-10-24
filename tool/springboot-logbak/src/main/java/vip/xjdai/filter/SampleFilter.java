@@ -13,11 +13,15 @@ import ch.qos.logback.core.spi.FilterReply;
 public class SampleFilter extends Filter< ILoggingEvent >
 {
 
+    /**
+     * 自定义过滤器函数
+     * @param event
+     * @return
+     */
     @Override
     public FilterReply decide(ILoggingEvent event)
     {
-        if (getPackName(event.getLoggerName()).equals("com.example.bootstart.log") || getPackName(
-                event.getLoggerName()).equals("com.example.bootstart.log2")) {
+        if (getPackName(event.getLoggerName()).equals("vip.xjdai.annotation.test")) {
             return FilterReply.DENY;  //表示不打印这段日志
         } else {
             return FilterReply.ACCEPT; //则表示打印这段日志.

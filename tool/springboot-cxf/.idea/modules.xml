@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springboot-cxf.iml" filepath="$PROJECT_DIR$/springboot-cxf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-cxf-client/springboot-cxf-client.iml" filepath="$PROJECT_DIR$/springboot-cxf-client/springboot-cxf-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-cxf-server/springboot-cxf-server.iml" filepath="$PROJECT_DIR$/springboot-cxf-server/springboot-cxf-server.iml" />
+    </modules>
+  </component>
+</project>

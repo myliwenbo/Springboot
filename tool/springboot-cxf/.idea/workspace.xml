@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="99432db1-361c-43eb-b50c-5d38ac68dcd6" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Z:/apache-maven-3.5.3" />
+        <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
+        <option name="userSettingsFile" value="Z:\apache-maven-3.5.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="runMavenInBackground" value="false" />
+  </component>
+  <component name="ProjectId" id="1QdXMOfm8YxKCmrX2gICzStdZG5" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../java" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Demo\gitdemo\SpringDemo\tool\springboot-cxf\springboot-cxf-client\src\main\java\vip\xjdai\client" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.WebserviceSoap_WebserviceSoap_Client">
+    <configuration name="WebserviceHttpGet_WebserviceHttpGet_Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vip.xjdai.client.WebserviceHttpGet_WebserviceHttpGet_Client" />
+      <module name="springboot-cxf-client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebserviceHttpPost_WebserviceHttpPost_Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vip.xjdai.client.WebserviceHttpPost_WebserviceHttpPost_Client" />
+      <module name="springboot-cxf-client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebserviceSoap_WebserviceSoap12_Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vip.xjdai.client.WebserviceSoap_WebserviceSoap12_Client" />
+      <module name="springboot-cxf-client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebserviceSoap_WebserviceSoap_Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vip.xjdai.client.WebserviceSoap_WebserviceSoap_Client" />
+      <module name="springboot-cxf-client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot-cxf-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="vip.xjdai.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.WebserviceSoap_WebserviceSoap_Client" />
+        <item itemvalue="Application.WebserviceHttpGet_WebserviceHttpGet_Client" />
+        <item itemvalue="Application.WebserviceHttpPost_WebserviceHttpPost_Client" />
+        <item itemvalue="Application.WebserviceSoap_WebserviceSoap12_Client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="99432db1-361c-43eb-b50c-5d38ac68dcd6" name="Default Changelist" comment="" />
+      <created>1568101397527</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568101397527</updated>
+      <workItem from="1568101400650" duration="2119000" />
+      <workItem from="1568103762392" duration="765000" />
+      <workItem from="1568128672614" duration="2369000" />
+      <workItem from="1568614626224" duration="373000" />
+    </task>
+    <servers />
+  </component>
+</project>
