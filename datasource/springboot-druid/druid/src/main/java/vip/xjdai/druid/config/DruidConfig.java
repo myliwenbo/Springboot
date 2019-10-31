@@ -13,11 +13,13 @@ import javax.sql.DataSource;
  *
  */
 @Configuration
-public class DruidConfig {
+public class DruidConfig
+{
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.druid")
-    public DataSource druidDataSource() {
+    public DataSource druidDataSource()
+    {
         DruidDataSource druidDataSource = new DruidDataSource();
         System.out.println("搭建data");
         return druidDataSource;

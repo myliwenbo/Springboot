@@ -9,18 +9,19 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RunCode {
+public class RunCode
+{
 
-    public static void main(String[] args) throws Exception {
-        List<String> warnings = new ArrayList<String>();
-        boolean overwrite = true;
-        File configFile = new File("mysqlGeneratorConfig.xml");
-        ConfigurationParser cp = new ConfigurationParser(warnings);
-        Configuration config = cp.parseConfiguration(configFile);
+    public static void main(String[] args) throws Exception
+    {
+        List< String >      warnings   = new ArrayList< String >();
+        boolean             overwrite  = true;
+        File                configFile = new File("mysqlGeneratorConfig.xml");
+        ConfigurationParser cp         = new ConfigurationParser(warnings);
+        Configuration       config     = cp.parseConfiguration(configFile);
         //覆盖之前的文件..
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
-        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback,
-            warnings);
+        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config, callback, warnings);
         myBatisGenerator.generate(null);
         for (String warning : warnings) {
             System.out.println(warning);
