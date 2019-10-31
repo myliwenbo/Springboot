@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package vip.xjdai.mybatis.example.session;
 
@@ -19,7 +19,8 @@ import vip.xjdai.springboot.example.UserMapper;
  * @author lwb
  *
  */
-public class MybatisUtisl {
+public class MybatisUtisl
+{
 
     public static SqlSession openSession;
 
@@ -28,9 +29,10 @@ public class MybatisUtisl {
      * @return
      * @throws IOException
      */
-    public static SqlSession getsession() throws IOException {
-        InputStream inputStream = Resources.getResourceAsStream("mybatis.xml");// 获取xml地址
-        SqlSessionFactory build = new SqlSessionFactoryBuilder().build(inputStream);//通过xml创建会话
+    public static SqlSession getsession() throws IOException
+    {
+        InputStream       inputStream = Resources.getResourceAsStream("mybatis.xml");// 获取xml地址
+        SqlSessionFactory build       = new SqlSessionFactoryBuilder().build(inputStream);//通过xml创建会话
         if (openSession == null) {
             openSession = build.openSession();
         }
@@ -38,31 +40,37 @@ public class MybatisUtisl {
 
     }
 
-    public static void close() {
+    public static void close()
+    {
         openSession.close();
     }
 
-    public static void clearCache() {
+    /**
+     * 清楚缓存
+     */
+    public static void clearCache()
+    {
         openSession.clearCache();
     }
 
-    public static <T> T getsqlSession(Class<T> type) throws Exception {
+    public static < T > T getsqlSession(Class< T > type) throws Exception
+    {
         SqlSession openSession = getsession();// 获取会话
-        T mapper = openSession.getMapper(type);// 放入接口获取实现对象
+        T          mapper      = openSession.getMapper(type);// 放入接口获取实现对象
         return mapper;
     }
 
-    public static void executeSpeed(UserMapper getsqlSession,
-                                    String methodName) throws Exception {
+    public static void executeSpeed(UserMapper getsqlSession, String methodName) throws Exception
+    {
         executeSpeed(getsqlSession, methodName, null);
     }
 
-    public static void executeSpeed(UserMapper getsqlSession, String methodName,
-                                    Object args,
-                                    Class<?>... parameterTypes) throws Exception {
-        Date first = new Date();
-        Class<? extends UserMapper> clazz = getsqlSession.getClass();
-        Method method;
+    public static void executeSpeed(UserMapper getsqlSession, String methodName, Object args,
+                                    Class< ? >... parameterTypes) throws Exception
+    {
+        Date                          first = new Date();
+        Class< ? extends UserMapper > clazz = getsqlSession.getClass();
+        Method                        method;
         if (parameterTypes == null) {
             method = clazz.getMethod(methodName);
         } else {
@@ -78,7 +86,8 @@ public class MybatisUtisl {
         System.out.println("获取时间:" + (new Date().getTime() - first.getTime()) + " ms");
     }
 
-    public static void commit() {
+    public static void commit()
+    {
         openSession.commit();
     }
 

@@ -1,10 +1,9 @@
 /**
- * 
+ *
  */
 package vip.xjdai.mybatis.example.session;
 
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import vip.xjdai.springboot.example.User;
 import vip.xjdai.springboot.example.UserMapper;
 
@@ -12,14 +11,16 @@ import vip.xjdai.springboot.example.UserMapper;
  * @author lwb
  *
  */
-public class SessionExample {
+public class SessionExample
+{
 
     /**
      * 不同的Session相同的执行语句也是获取缓存中的数据
      * @throws Exception
      */
     @Test
-    public void testname() throws Exception {
+    public void testname() throws Exception
+    {
         try {
             UserMapper userMapperSession = MybatisUtisl.getsqlSession(UserMapper.class);
             MybatisUtisl.executeSpeed(userMapperSession, "selectAllUser");
@@ -35,7 +36,8 @@ public class SessionExample {
      * @throws Exception
      */
     @Test
-    public void sessionClose() {
+    public void sessionClose()
+    {
         try {
             UserMapper userMapperSession = MybatisUtisl.getsqlSession(UserMapper.class);
             MybatisUtisl.executeSpeed(userMapperSession, "selectAllUser");
@@ -55,7 +57,8 @@ public class SessionExample {
      * @throws Exception
      */
     @Test
-    public void sessionUpdate() {
+    public void sessionUpdate()
+    {
         try {
             UserMapper userMapperSession = MybatisUtisl.getsqlSession(UserMapper.class);
             MybatisUtisl.executeSpeed(userMapperSession, "selectAllUser");
@@ -65,8 +68,7 @@ public class SessionExample {
             user.setUserId(1);
             user.setPhone("1234567");
             user.setPassword("9999");
-            MybatisUtisl.executeSpeed(userMapperSession, "updateByPrimaryKeySelective",
-                user, User.class);
+            MybatisUtisl.executeSpeed(userMapperSession, "updateByPrimaryKeySelective", user, User.class);
             //可以看到三次查询的是数据库
             MybatisUtisl.executeSpeed(userMapperSession, "selectAllUser");
             //可以看到第四次查询是缓存
