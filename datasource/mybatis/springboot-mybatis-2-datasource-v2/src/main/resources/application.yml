@@ -1,0 +1,20 @@
+ server:
+  port: 8080
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    primary:
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://192.168.6.133:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+      username: root
+      password: root
+    minor: 
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://192.168.6.133:3306/test1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+      username: root
+      password: root
+mybatis:
+  config-location: classpath:mybatis-config.xml # 配置mybatis文件所在
+  type-aliases-package: vip.xjdai.model
