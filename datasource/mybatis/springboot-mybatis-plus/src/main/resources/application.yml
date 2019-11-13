@@ -44,3 +44,5 @@ spring:
 #  mapper-locations: classpath:mapper/*.xml # 配置mapper文件
 server:
   port: 8099
+mybatis-plus:
+  config-location:
