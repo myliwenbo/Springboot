@@ -1,4 +1,4 @@
-package com.example.demo.test;
+package vip.xjdai.demo.test;
 
 /**
  * 同步Demo
