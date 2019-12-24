@@ -13,6 +13,8 @@ import ch.qos.logback.core.spi.FilterReply;
 public class SampleFilter extends Filter< ILoggingEvent >
 {
 
+
+
     /**
      * 自定义过滤器函数
      * @param event
@@ -21,6 +23,7 @@ public class SampleFilter extends Filter< ILoggingEvent >
     @Override
     public FilterReply decide(ILoggingEvent event)
     {
+
         if (getPackName(event.getLoggerName()).equals("vip.xjdai.annotation.test")) {
             return FilterReply.DENY;  //表示不打印这段日志
         } else {

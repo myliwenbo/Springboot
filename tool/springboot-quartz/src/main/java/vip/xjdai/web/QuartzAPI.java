@@ -75,7 +75,6 @@ public class QuartzAPI {
      * 设置定时器
      * @param triggerName
      * @param expression
-     * @param description
      * @return
      */
     public static Trigger setTrigger(String triggerName, String expression) {

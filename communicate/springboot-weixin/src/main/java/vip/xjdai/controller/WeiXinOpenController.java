@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.Field;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,18 +25,19 @@ import vip.xjdai.common.weixin.WeixinUtils;
 import vip.xjdai.sned.FormatXmlProcess;
 
 /**
- * 
+ *
  * @author leo
  *
  */
 @RestController
 @RequestMapping("/openwx")
-public class WeiXinOpenController {
+public class WeiXinOpenController
+{
 
     @RequestMapping(value = { "/mingwen" })
-    public void mingwen(@RequestBody(required = false) String reqDate,
-                        HttpServletRequest request,
-                        HttpServletResponse response) throws Exception {
+    public void mingwen(@RequestBody(required = false) String reqDate, HttpServletRequest request,
+                        HttpServletResponse response) throws Exception
+    {
         String result = "";
         /** 判断是否是微信接入激活验证，只有首次接入Token验证时才会收到echostr参数，此时需要把它直接返回 */
         String echostr = request.getParameter("echostr");
@@ -44,14 +46,13 @@ public class WeiXinOpenController {
         } else {
             //TODO 处理微信消息
             ReceiveXmlEntity buildResponseMessage = buildResponseMessage(reqDate);
-            result = new FormatXmlProcess().formatXmlAnswer(
-                buildResponseMessage.getFromUserName(),
-                buildResponseMessage.getToUserName(),
-                buildResponseMessage.getResultMessage());
+            result = new FormatXmlProcess().formatXmlAnswer(buildResponseMessage.getFromUserName(),
+                                                            buildResponseMessage.getToUserName(),
+                                                            buildResponseMessage.getResultMessage());
         }
         try {
             OutputStream os = response.getOutputStream();
-            os.write(result.getBytes("UTF-8"));
+            os.write(result.getBytes(StandardCharsets.UTF_8));
             os.flush();
             os.close();
         } catch (Exception e) {
@@ -60,18 +61,19 @@ public class WeiXinOpenController {
     }
 
     @RequestMapping(value = { "/getAccessToken" })
-    public String getAccessToken() throws Exception {
-        String appsecret = "";
-        String appid = "";
+    public String getAccessToken() throws Exception
+    {
+        String appsecret = "595ea9f7cf1075cd57e051c47804be7c";
+        String appid     = "wx7e35cee0956f9fed";
         return WeixinUtils.getAccessToken(appid, appsecret);
     }
 
-    public ReceiveXmlEntity buildResponseMessage(String reqDate) {
+    public ReceiveXmlEntity buildResponseMessage(String reqDate)
+    {
         ReceiveXmlEntity xmlToBean = xmlToBean(reqDate);
         //得到消息类型
-        String msgType = xmlToBean.getMsgType();
-        WeixinMessageType messageType = WeixinMessageType.valueOf(WeixinMessageType.class,
-            msgType.toUpperCase());
+        String            msgType     = xmlToBean.getMsgType();
+        WeixinMessageType messageType = WeixinMessageType.valueOf(WeixinMessageType.class, msgType.toUpperCase());
         switch (messageType) {
             //这里可以接入只能回复，也可以直接入指令，比如用户输入1 返回视频等~
             case TEXT:
@@ -108,17 +110,17 @@ public class WeiXinOpenController {
     /**
      * @param reqDate
      */
-    private ReceiveXmlEntity xmlToBean(String reqDate) {
+    private ReceiveXmlEntity xmlToBean(String reqDate)
+    {
         try {
-            SAXReader reader = new SAXReader();
-            InputStream in_nocode = new ByteArrayInputStream(reqDate.getBytes());
-            Document document = reader.read(in_nocode);
-            Element root = document.getRootElement();
-            ReceiveXmlEntity receiveXmlEntity = new ReceiveXmlEntity();
-            Class<? extends ReceiveXmlEntity> clazz = receiveXmlEntity.getClass();
+            SAXReader                           reader           = new SAXReader();
+            InputStream                         in_nocode        = new ByteArrayInputStream(reqDate.getBytes());
+            Document                            document         = reader.read(in_nocode);
+            Element                             root             = document.getRootElement();
+            ReceiveXmlEntity                    receiveXmlEntity = new ReceiveXmlEntity();
+            Class< ? extends ReceiveXmlEntity > clazz            = receiveXmlEntity.getClass();
             // 得到根元素的所有子节点
-            @SuppressWarnings("unchecked")
-            List<Element> elementList = root.elements();
+            @SuppressWarnings("unchecked") List< Element > elementList = root.elements();
             for (Element element : elementList) {
                 Field field = clazz.getDeclaredField(element.getName());
                 field.setAccessible(true);

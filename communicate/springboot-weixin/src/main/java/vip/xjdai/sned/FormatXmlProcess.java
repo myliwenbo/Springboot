@@ -7,17 +7,19 @@ import java.util.Date;
  * @author pamchen-1
  *
  */
-public class FormatXmlProcess {
+public class FormatXmlProcess
+{
     /**
      * 封装文字类的返回消息
-     * @param to 
-     * @param from 
+     * @param to
+     * @param from
      * @param content 消息
      * @return
      */
-    public String formatXmlAnswer(String to, String from, String content) {
-        StringBuffer sb = new StringBuffer();
-        Date date = new Date();
+    public String formatXmlAnswer(String to, String from, String content)
+    {
+        StringBuffer sb   = new StringBuffer();
+        Date         date = new Date();
         sb.append("<xml><ToUserName><![CDATA[");
         sb.append(to);
         sb.append("]]></ToUserName><FromUserName><![CDATA[");

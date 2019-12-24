@@ -8,7 +8,8 @@ import lombok.Data;
  *
  */
 @Data
-public class ReceiveXmlEntity {
+public class ReceiveXmlEntity
+{
     private String ToUserName   = "";
     private String FromUserName = "";
     private String CreateTime   = "";

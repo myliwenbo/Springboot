@@ -1,4 +1,4 @@
-package vip.xjdai.demo.test;
+package vip.xjdai.demo.thread;
 
 /**
  * 同步Demo
