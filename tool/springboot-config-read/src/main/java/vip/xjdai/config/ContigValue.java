@@ -1,16 +1,19 @@
 package vip.xjdai.config;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * 配置文件读取方式，一个一个读取
- * 
+ *
  * @author lwb
  *
  */
+@Data
 @Configuration
-public class ConfigOne {
+public class ContigValue
+{
 
     /**
      * 取配置文件值
@@ -33,11 +36,9 @@ public class ConfigOne {
     @Value("${spring.datasource.primary.password}")
     private String password;
 
-    public void read() {
-        System.out.println(this.driverClassName);
-        System.out.println(this.url);
-        System.out.println(this.username);
-        System.out.println(this.password);
+    public ContigValue read()
+    {
+        return this;
     }
 
 }

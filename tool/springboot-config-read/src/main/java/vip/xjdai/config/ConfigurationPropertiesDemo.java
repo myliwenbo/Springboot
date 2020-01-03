@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import cn.lwb.model.AttributeReadModel;
+
 import vip.xjdai.config.model.AttributeReadModel;
 
 /**
@@ -15,10 +15,10 @@ import vip.xjdai.config.model.AttributeReadModel;
  *
  */
 @Configuration
-public class ConfigTwo {
+public class ConfigurationPropertiesDemo {
 
     @Bean
-    @ConfigurationProperties(prefix = "spring.datasource.minor")
+    @ConfigurationProperties(prefix = "spring.datasource.minor" )
     public AttributeReadModel druidDataSource() {
         return new AttributeReadModel();
     }

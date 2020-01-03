@@ -16,10 +16,3 @@ spring:
       url: jdbc:mysql://192.168.6.10:3306/test2?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
       username: root
       password: 12345678
-
-      
-com:
-  dudu: 
-    name: "test"
-    want: "祝大家鸡年大吉吧"
-    jh: ${com.dudu.name}再次${com.dudu.want}
