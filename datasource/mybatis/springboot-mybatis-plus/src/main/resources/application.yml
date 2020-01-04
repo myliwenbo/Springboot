@@ -20,22 +20,18 @@ spring:
       # 配置一个连接在池中最小生存的时间，单位是毫秒
       minEvictableIdleTimeMillis: 300000
       validationQuery: select 'x'
-      testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
       # 打开PSCache，并且指定每个连接上PSCache的大小
-      poolPreparedStatements: true
       maxOpenPreparedStatements: 20
       stat-view-servlet:
         url-pattern: /druid/*
         reset-enable: false
         login-username: admin #用户名
         login-password: admin #密码
-        enabled: true
         allow:  # IP白名单 (没有配置或者为空，则允许所有访问)
         deny:   # IP黑名单 (存在共同时，deny优先于allow)
       web-stat-filter:  #配置druid过滤规则
-        enabled: true
         url-pattern: /*
         exclusions: "*.gif,*.png,*.jpg,*.html,*.js,*.css,*.ico,/druid/*" # 忽略资源
 #mybatis:
