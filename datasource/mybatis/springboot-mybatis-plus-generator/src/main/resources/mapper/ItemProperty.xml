@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zingfin.finance.mapper.ItemPropertyMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zingfin.finance.repository.entity.ItemProperty">
+    <result column="id" property="id" />
+    <result column="type" property="type" />
+    <result column="status" property="status" />
+    <result column="is_valid" property="isValid" />
+    <result column="op_time" property="opTime" />
+    <result column="last_ver" property="lastVer" />
+    <result column="create_time" property="createTime" />
+    <result column="app_id" property="appId" />
+        <result column="ext" property="ext" />
+        <result column="item_id" property="itemId" />
+        <result column="component_id" property="componentId" />
+        <result column="name" property="name" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        type,
+        status,
+        is_valid,
+        op_time,
+        last_ver,
+        create_time,
+        app_id,
+        ext, item_id, component_id, name
+    </sql>
+
+</mapper>

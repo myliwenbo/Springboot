@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+    <settings>
+        <!-- 开启驼峰自动映射 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 开启二级缓存 -->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <!-- 批量起别名 -->
+    <typeAliases>
+        <!-- 使用包扫描的方式，别名就是类名，不区分大小写 -->
+        <package name="vip.xjdai.domain"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <!-- 采用JDBC事物管理 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据库连接池 -->
+            <dataSource type="POOLED">
+                <!--方式2：写死在配置文件 -->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.6.133:3306/test?characterEncoding=utf-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--
+            Mapper映射文件的相对路径，相当于classpath下 也就是SRC下 -->
+        <mapper resource="mapper/CourseMapper.xml"/>
+        <mapper resource="mapper/SCMapper.xml"/>
+        <mapper resource="mapper/StudentMapper.xml"/>
+    </mappers>
+</configuration>

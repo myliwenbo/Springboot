@@ -12,7 +12,7 @@
 	<context:component-scan base-package="cn.lwb">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
-	<mvc:annotation-driven />
+	<mvc:annotation-driven/>
 
 	<mvc:interceptors>
 		<!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 -->

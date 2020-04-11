@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zingfin.finance.mapper.ItemMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zingfin.finance.repository.entity.Item">
+    <result column="id" property="id" />
+    <result column="type" property="type" />
+    <result column="status" property="status" />
+    <result column="is_valid" property="isValid" />
+    <result column="op_time" property="opTime" />
+    <result column="last_ver" property="lastVer" />
+    <result column="create_time" property="createTime" />
+    <result column="app_id" property="appId" />
+        <result column="ext" property="ext" />
+        <result column="name" property="name" />
+        <result column="apply_template_id" property="applyTemplateId" />
+        <result column="create_id" property="createId" />
+        <result column="limit_upper" property="limitUpper" />
+        <result column="limit_lower" property="limitLower" />
+        <result column="rate" property="rate" />
+        <result column="time_upper" property="timeUpper" />
+        <result column="time_lower" property="timeLower" />
+        <result column="refund_type" property="refundType" />
+        <result column="guarantee_type" property="guaranteeType" />
+        <result column="range_type" property="rangeType" />
+        <result column="org_id" property="orgId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        type,
+        status,
+        is_valid,
+        op_time,
+        last_ver,
+        create_time,
+        app_id,
+        ext, name, apply_template_id, create_id, limit_upper, limit_lower, rate, time_upper, time_lower, refund_type, guarantee_type, range_type, org_id
+    </sql>
+
+</mapper>
