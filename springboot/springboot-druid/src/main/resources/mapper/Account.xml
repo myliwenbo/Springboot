@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xjdai.demo.mapper.AccountMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="vip.xjdai.demo.mapper.Account">
+        <result column="id" property="id"/>
+        <result column="type" property="type"/>
+        <result column="status" property="status"/>
+        <result column="is_valid" property="isValid"/>
+        <result column="op_time" property="opTime"/>
+        <result column="last_ver" property="lastVer"/>
+        <result column="create_time" property="createTime"/>
+        <result column="app_id" property="appId"/>
+        <result column="name" property="name"/>
+        <result column="role_id" property="roleId"/>
+        <result column="user_login" property="userLogin"/>
+        <result column="password" property="password"/>
+        <result column="ext" property="ext"/>
+        <result column="org_id" property="orgId"/>
+        <result column="org_type" property="orgType"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        type,
+        status,
+        is_valid,
+        op_time,
+        last_ver,
+        create_time,
+        app_id,
+        name, role_id, user_login, password, ext, org_id, org_type
+    </sql>
+
+    <!-- 这个方法是我自己加的 -->
+    <select id="selectAllUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from account
+    </select>
+
+
+</mapper>

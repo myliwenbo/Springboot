@@ -1,0 +1,59 @@
+package ${package.Controller};
+
+
+import ${package.Manager}.${table.manager};
+import ${package.SaveEntity}.${table.saveEntity};
+import ${package.QueryEntity}.${table.queryEntity};
+import ${package.VoEntity}.${table.voEntity};
+
+import javax.annotation.Resource;
+
+import org.springframework.web.bind.annotation.*;
+import cn.vihost.farmplatform.core.exception.BizException;
+import cn.vihost.farmplatform.core.support.ResultMsg;
+import cn.vihost.farmplatform.core.util.ResultUtil;
+import io.swagger.annotations.ApiOperation;
+
+
+@RestController
+@RequestMapping("/api/bak/${table.entityHump}" )
+public class ${table.controllerName} {
+
+    @Resource
+    private ${table.manager} ${table.managerHump};
+
+
+    @ApiOperation(value ="保存内容$!{table.comment}",response = ${table.voEntity}.class)
+    @RequestMapping(value = "/v1/save", method = {RequestMethod.POST})
+    public ResultMsg save(@RequestBody ${table.saveEntity} ${table.saveEntityHump})throws BizException{
+        return ResultUtil.successResult(${table.managerHump}.save(${table.saveEntityHump}));
+    }
+
+
+    @ApiOperation(value ="删除$!{table.comment}数据，根据ID")
+    @RequestMapping(value = "/v1/remove", method = {RequestMethod.POST})
+    public ResultMsg remove(@RequestBody ${table.queryEntity} ${table.queryEntityHump}) throws BizException {
+        return ResultUtil.successResult(${table.managerHump}.remove( ${table.queryEntityHump}));
+    }
+
+    @ApiOperation(value ="修改$!{table.comment}数据，根据ID")
+    @RequestMapping(value = "/v1/updataElementById", method = {RequestMethod.POST})
+    public ResultMsg updataElementById(@RequestBody  ${table.queryEntity} ${table.queryEntityHump}) throws BizException {
+        return ResultUtil.successResult(${table.managerHump}.updataElementById(${table.queryEntityHump}));
+    }
+
+    //查单条-查询
+    @ApiOperation(value ="批量查询$!{table.comment}，非分页",response = ${table.voEntity}.class)
+    @RequestMapping(value = "/v1/selectByElement", method = {RequestMethod.POST})
+    public ResultMsg updataElement(@RequestBody ${table.queryEntity} ${table.queryEntityHump}) throws BizException {
+        return ResultUtil.successResult(${table.managerHump}.queyrListByElement(${table.queryEntityHump}));
+    }
+
+    //分页-条件分页
+    @ApiOperation(value ="分页查询$!{table.comment}",response = ${table.voEntity}.class)
+    @RequestMapping(value = "/v1/pageList", method = {RequestMethod.POST})
+    public ResultMsg pageList(@RequestBody ${table.queryEntity} ${table.queryEntityHump}) throws BizException {
+        return ResultUtil.successResult(${table.managerHump}.pageList( ${table.queryEntityHump}));
+    }
+
+}

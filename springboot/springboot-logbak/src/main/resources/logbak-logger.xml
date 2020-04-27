@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="false">
+    <!-- 文件大小 -->
+    <property name="CODING" value="UTF-8"/>
+    <!--定义日志文件的存储地址，相对路径，相对于项目目录下. -->
+    <property name="LOG_PATH" value="home/logs/customer"/>
+    <!-- 日志文件路径+日期 -->
+    <property name="LOG_DIR" value="${LOG_PATH}/%d{yyyy-MM-dd}"/>
+    <property name="LOG_FORMAT" value="%d{yyyy年MM月dd日 HH小时mm分钟ss秒} [%15t] [%5p] %70c | %m%n "/>
+
+    <!-- 控制台输出 -->
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${LOG_FORMAT}</pattern>
+            <charset>${CODING}</charset>
+        </encoder>
+    </appender>
+    <!--控制只打印警告数据-->
+    <logger name="vip.xjdai" level="WARN"/>
+
+    <!-- 级别依次为【从高到低】： ERROR > WARN > INFO > DEBUG > TRACE -->
+    <!--
+        level="输出级别" 配置输出的级别，
+        如果<appender>也配置了级别，那么就按照谁的级别高就输出谁的，
+        比如：appender配了ERROR 那么root配INFO，那么会按照 appender的输出级别
+        比如：root配了ERROR，appender配了INFO，那么会按照 root的输出级别
+    -->
+    <root level="INFO">
+        <appender-ref ref="consoleAppender"/>
+    </root>
+</configuration>

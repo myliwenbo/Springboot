@@ -1,0 +1,47 @@
+package ${package.Manager};
+
+import ${package.Service}.${table.service};
+import ${package.VoEntity}.${table.voEntity};
+import ${package.SaveEntity}.${table.saveEntity};
+import ${package.QueryEntity}.${table.queryEntity};
+import ${package.DtoEntity}.${table.dtoEntity};
+
+import lombok.extern.slf4j.Slf4j;
+import cn.vihost.farmplatform.core.exception.BizException;
+import cn.vihost.farmplatform.core.util.BeanCopyUtil;
+import javax.annotation.Resource;
+import org.springframework.stereotype.Service;
+
+
+@Service
+@Slf4j
+public class ${table.manager} {
+
+    @Resource
+    public ${table.service} ${table.serviceHump};
+
+    public ${table.voEntity} save(${table.saveEntity} ${table.saveEntityHump}) throws BizException {
+    ${table.dtoEntity} ${table.dtoEntityHump} =BeanCopyUtil.copy(${table.saveEntityHump},${table.dtoEntity}.class);
+        return BeanCopyUtil.copy(${table.serviceHump}.save(${table.dtoEntityHump}), ${table.voEntity}.class);
+    }
+
+    public ${table.voEntity} remove(${table.QueryEntity} ${table.queryEntityHump}) throws BizException {
+    ${table.dtoEntity} ${table.dtoEntityHump} =BeanCopyUtil.copy(${table.queryEntityHump},${table.dtoEntity}.class);
+        return BeanCopyUtil.copy(${table.serviceHump}.remove(${table.dtoEntityHump}.getId()), ${table.voEntity}.class);
+    }
+
+    public ${table.voEntity} updataElementById(${table.QueryEntity} ${table.queryEntityHump}) throws BizException {
+    ${table.dtoEntity} ${table.dtoEntityHump} =BeanCopyUtil.copy(${table.queryEntityHump},${table.dtoEntity}.class);
+        return BeanCopyUtil.copy(${table.serviceHump}.updataElementById(${table.dtoEntityHump}), ${table.voEntity}.class);
+    }
+
+    public ${table.voEntity} queyrListByElement(${table.QueryEntity} ${table.queryEntityHump}) throws BizException {
+    ${table.dtoEntity} ${table.dtoEntityHump} =BeanCopyUtil.copy(${table.queryEntityHump},${table.dtoEntity}.class);
+        return BeanCopyUtil.copy(${table.serviceHump}.queyrListByElement(${table.dtoEntityHump}), ${table.voEntity}.class);
+    }
+    public ${table.voEntity} pageList(${table.QueryEntity} ${table.queryEntityHump}) throws BizException {
+    ${table.dtoEntity} ${table.dtoEntityHump} =BeanCopyUtil.copy(${table.queryEntityHump},${table.dtoEntity}.class);
+
+        return BeanCopyUtil.copy(${table.serviceHump}.pageList(${table.dtoEntityHump},${table.queryEntityHump}.getPage()), ${table.voEntity}.class);
+    }
+}

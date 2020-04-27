@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xjdai.mapper.TUserMapper">
+  <resultMap id="BaseResultMap" type="vip.xjdai.mapper.TUser">
+    <!--@mbg.generated-->
+    <!--@Table t_user-->
+    <id column="tb_user_id" jdbcType="INTEGER" property="tbUserId" />
+    <result column="tb_user_name" jdbcType="VARCHAR" property="tbUserName" />
+    <result column="tb_password" jdbcType="VARCHAR" property="tbPassword" />
+    <result column="tb_phone" jdbcType="VARCHAR" property="tbPhone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    tb_user_id, tb_user_name, tb_password, tb_phone
+  </sql>
+
+    <!-- 这个方法是我自己加的 -->
+    <select id="selectAllUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+    </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where tb_user_id = #{tbUserId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from t_user
+    where tb_user_id = #{tbUserId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="tb_user_id" keyProperty="tbUserId" parameterType="vip.xjdai.mapper.TUser" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_user (tb_user_name, tb_password, tb_phone
+      )
+    values (#{tbUserName,jdbcType=VARCHAR}, #{tbPassword,jdbcType=VARCHAR}, #{tbPhone,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="tb_user_id" keyProperty="tbUserId" parameterType="vip.xjdai.mapper.TUser" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tbUserName != null">
+        tb_user_name,
+      </if>
+      <if test="tbPassword != null">
+        tb_password,
+      </if>
+      <if test="tbPhone != null">
+        tb_phone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tbUserName != null">
+        #{tbUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="tbPassword != null">
+        #{tbPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="tbPhone != null">
+        #{tbPhone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="vip.xjdai.mapper.TUser">
+    <!--@mbg.generated-->
+    update t_user
+    <set>
+      <if test="tbUserName != null">
+        tb_user_name = #{tbUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="tbPassword != null">
+        tb_password = #{tbPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="tbPhone != null">
+        tb_phone = #{tbPhone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tb_user_id = #{tbUserId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="vip.xjdai.mapper.TUser">
+    <!--@mbg.generated-->
+    update t_user
+    set tb_user_name = #{tbUserName,jdbcType=VARCHAR},
+      tb_password = #{tbPassword,jdbcType=VARCHAR},
+      tb_phone = #{tbPhone,jdbcType=VARCHAR}
+    where tb_user_id = #{tbUserId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,37 @@
+body {
+    padding: 0;
+    margin:0;
+    font-family: "Microsoft YaHei UI Light";
+  }
+   
+  .outer_label {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 220px;
+    background: -webkit-linear-gradient(left, #000099, #2154FA); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #000099, #2154FA); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #000099, #2154FA); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #000099 , #2154FA); /* 标准的语法 */
+    /*background-color: #000099;*/
+    text-align: center;
+    filter: brightness(1.4);
+  }
+  .inner_label {
+    position: absolute;
+    left:0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    margin: auto;
+    height: 50px;
+  }
+  .qxs-icon {
+    height: 40px;
+    width: 90%;
+    margin-bottom: 5px;
+    padding-left: 10%;
+    border: 0;
+    border-bottom: solid 1px lavender;
+  }

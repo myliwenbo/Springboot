@@ -1,0 +1,2776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.mapper.ScheduleJobMapper">
+  <resultMap id="BaseResultMap" type="test.model.ScheduleJob">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="job_name" jdbcType="VARCHAR" property="jobName" />
+    <result column="job_group" jdbcType="VARCHAR" property="jobGroup" />
+    <result column="method_name" jdbcType="VARCHAR" property="methodName" />
+    <result column="bean_class" jdbcType="VARCHAR" property="beanClass" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+    <result column="params" jdbcType="VARCHAR" property="params" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="job_name" jdbcType="VARCHAR" property="jobName" />
+		<result column="job_group" jdbcType="VARCHAR" property="jobGroup" />
+		<result column="method_name" jdbcType="VARCHAR" property="methodName" />
+		<result column="bean_class" jdbcType="VARCHAR" property="beanClass" />
+		<result column="status" jdbcType="INTEGER" property="status" />
+		<result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+		<result column="params" jdbcType="VARCHAR" property="params" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<result column="job_id" jdbcType="BIGINT" property="jobId" />
+		<result column="bean_name" jdbcType="VARCHAR" property="beanName" />
+		<result column="method_name" jdbcType="VARCHAR" property="methodName" />
+		<result column="params" jdbcType="VARCHAR" property="params" />
+		<result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+		<result column="status" jdbcType="TINYINT" property="status" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="job_name" jdbcType="VARCHAR" property="jobName" />
+		<result column="job_group" jdbcType="VARCHAR" property="jobGroup" />
+		<result column="method_name" jdbcType="VARCHAR" property="methodName" />
+		<result column="bean_class" jdbcType="VARCHAR" property="beanClass" />
+		<result column="status" jdbcType="INTEGER" property="status" />
+		<result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+		<result column="params" jdbcType="VARCHAR" property="params" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<result column="job_id" jdbcType="BIGINT" property="jobId" />
+		<result column="bean_name" jdbcType="VARCHAR" property="beanName" />
+		<result column="method_name" jdbcType="VARCHAR" property="methodName" />
+		<result column="params" jdbcType="VARCHAR" property="params" />
+		<result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+		<result column="status" jdbcType="TINYINT" property="status" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="job_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="job_group" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="bean_class" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+			<arg column="modify_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<constructor>
+			<arg column="job_id" javaType="java.lang.Long" jdbcType="BIGINT" />
+			<arg column="bean_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="method_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="params" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="cron_expression" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+			<arg column="remark" javaType="java.lang.String" jdbcType="VARCHAR" />
+			<arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+		</constructor>
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<result column="id" jdbcType="INTEGER" property="id" />
+		<result column="job_name" jdbcType="VARCHAR" property="jobName" />
+		<result column="job_group" jdbcType="VARCHAR" property="jobGroup" />
+		<result column="method_name" jdbcType="VARCHAR" property="methodName" />
+		<result column="bean_class" jdbcType="VARCHAR" property="beanClass" />
+		<result column="status" jdbcType="INTEGER" property="status" />
+		<result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+		<result column="params" jdbcType="VARCHAR" property="params" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (id, job_name, job_group,
+		method_name, bean_class, status,
+		cron_expression, params, remark,
+		create_time, modify_time)
+		values (#{id,jdbcType=INTEGER}, #{jobName,jdbcType=VARCHAR}, #{jobGroup,jdbcType=VARCHAR},
+		#{methodName,jdbcType=VARCHAR}, #{beanClass,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+		#{cronExpression,jdbcType=VARCHAR}, #{params,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="jobName != null">
+				job_name,
+			</if>
+			<if test="jobGroup != null">
+				job_group,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="beanClass != null">
+				bean_class,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="modifyTime != null">
+				modify_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="jobName != null">
+				#{jobName,jdbcType=VARCHAR},
+			</if>
+			<if test="jobGroup != null">
+				#{jobGroup,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="beanClass != null">
+				#{beanClass,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=INTEGER},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="modifyTime != null">
+				#{modifyTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<resultMap id="BaseResultMap" type="vip.xjdai.domain.ScheduleJob">
+		<result column="job_id" jdbcType="BIGINT" property="jobId" />
+		<result column="bean_name" jdbcType="VARCHAR" property="beanName" />
+		<result column="method_name" jdbcType="VARCHAR" property="methodName" />
+		<result column="params" jdbcType="VARCHAR" property="params" />
+		<result column="cron_expression" jdbcType="VARCHAR" property="cronExpression" />
+		<result column="status" jdbcType="TINYINT" property="status" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+	</resultMap>
+	<insert id="insert" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job (job_id, bean_name, method_name,
+		params, cron_expression, status,
+		remark, create_time)
+		values (#{jobId,jdbcType=BIGINT}, #{beanName,jdbcType=VARCHAR}, #{methodName,jdbcType=VARCHAR},
+		#{params,jdbcType=VARCHAR}, #{cronExpression,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT},
+		#{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="vip.xjdai.domain.ScheduleJob">
+		insert into schedule_job
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				job_id,
+			</if>
+			<if test="beanName != null">
+				bean_name,
+			</if>
+			<if test="methodName != null">
+				method_name,
+			</if>
+			<if test="params != null">
+				params,
+			</if>
+			<if test="cronExpression != null">
+				cron_expression,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="jobId != null">
+				#{jobId,jdbcType=BIGINT},
+			</if>
+			<if test="beanName != null">
+				#{beanName,jdbcType=VARCHAR},
+			</if>
+			<if test="methodName != null">
+				#{methodName,jdbcType=VARCHAR},
+			</if>
+			<if test="params != null">
+				#{params,jdbcType=VARCHAR},
+			</if>
+			<if test="cronExpression != null">
+				#{cronExpression,jdbcType=VARCHAR},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=TINYINT},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+</mapper>

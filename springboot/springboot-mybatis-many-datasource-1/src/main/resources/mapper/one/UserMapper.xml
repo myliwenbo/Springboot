@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xjdai.mapper.one.UserMapper">
+  <resultMap id="BaseResultMap" type="vip.xjdai.mapper.one.User">
+    <!--@mbg.generated-->
+    <!--@Table t_user-->
+    <id column="tb_user_id" jdbcType="INTEGER" property="userId" />
+    <result column="tb_user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="tb_password" jdbcType="VARCHAR" property="password" />
+    <result column="tb_phone" jdbcType="VARCHAR" property="tbPhone" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    tb_user_id, tb_user_name, tb_password, tb_phone
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where tb_user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from t_user
+    where tb_user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="tb_user_id" keyProperty="userId" parameterType="vip.xjdai.mapper.one.User" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_user (tb_user_name, tb_password, tb_phone
+      )
+    values (#{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{tbPhone,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="tb_user_id" keyProperty="userId" parameterType="vip.xjdai.mapper.one.User" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userName != null">
+        tb_user_name,
+      </if>
+      <if test="password != null">
+        tb_password,
+      </if>
+      <if test="tbPhone != null">
+        tb_phone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="tbPhone != null">
+        #{tbPhone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="vip.xjdai.mapper.one.User">
+    <!--@mbg.generated-->
+    update t_user
+    <set>
+      <if test="userName != null">
+        tb_user_name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        tb_password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="tbPhone != null">
+        tb_phone = #{tbPhone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tb_user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="vip.xjdai.mapper.one.User">
+    <!--@mbg.generated-->
+    update t_user
+    set tb_user_name = #{userName,jdbcType=VARCHAR},
+      tb_password = #{password,jdbcType=VARCHAR},
+      tb_phone = #{tbPhone,jdbcType=VARCHAR}
+    where tb_user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

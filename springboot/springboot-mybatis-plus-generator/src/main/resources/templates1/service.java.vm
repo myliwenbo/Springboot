@@ -1,0 +1,72 @@
+package ${package.Service};
+
+
+import ${package.DtoEntity}.${table.dtoEntity};
+import ${package.Dao}.${table.dao};
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import cn.vihost.farmplatform.core.exception.BizException;
+import cn.vihost.farmplatform.core.exception.ExceptionUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import org.apache.commons.lang3.ObjectUtils;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import java.util.List;
+import javax.annotation.Resource;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+
+@Service
+@Slf4j
+public class ${table.service} {
+
+    @Resource
+    public ${table.dao} ${table.daoHump};
+
+
+    /**
+     *
+     *
+     * @param ${table.dtoEntityHump}
+     * @return
+     * @throws BizException
+     */
+    public ${table.dtoEntity} save(${table.dtoEntity} ${table.dtoEntityHump}) throws BizException {
+        boolean flag = ${table.daoHump}.save(${table.dtoEntityHump});
+        if (!flag) {
+            log.error("${table.dtoEntityHump}保存失败,request:[{}]", ${table.dtoEntityHump});
+            throw ExceptionUtil.buildFailException(WebErrorCodeEnums.SAVE_ERROR);
+        }
+        return ${table.dtoEntityHump};
+    }
+
+    public Boolean remove(Long id) throws BizException {
+        boolean flag = ${table.daoHump}.removeById(id);
+        if (!flag) {
+            log.error("Item删除失败,id = {}]", id);
+            throw ExceptionUtil.buildFailException(WebErrorCodeEnums.DELETE_ERROR);
+        }
+        return flag;
+    }
+
+    public ${table.dtoEntity} updataElementById(${table.dtoEntity} ${table.dtoEntityHump}) throws BizException {
+        boolean flag = ${table.daoHump}.updateById(${table.dtoEntityHump});
+        if (!flag) {
+            log.error("${${table.daoHump}修改失败},request:[{}]", ${table.dtoEntityHump});
+            throw ExceptionUtil.buildFailException(WebErrorCodeEnums.UPDATE_ERROR);
+        }
+        return ${table.dtoEntityHump};
+    }
+
+
+    public List<${table.dtoEntity}>  queyrListByElement(${table.dtoEntity} ${table.dtoEntityHump}) throws BizException {
+        LambdaQueryWrapper<${table.dtoEntity}>  ${table.dtoEntityHump}Wrapper = new QueryWrapper<${table.dtoEntity}>().lambda();
+        return ${table.daoHump}.list(${table.dtoEntityHump}Wrapper);
+    }
+
+
+    public IPage<${table.dtoEntity}> pageList(${table.dtoEntity} ${table.dtoEntityHump},Page<${table.dtoEntity}> page) throws BizException {
+        LambdaQueryWrapper<${table.dtoEntity}>  ${table.dtoEntityHump}Wrapper = new QueryWrapper<${table.dtoEntity}>().lambda();
+        return ${table.daoHump}.page(page, ${table.dtoEntityHump}Wrapper);
+    }
+
+}
