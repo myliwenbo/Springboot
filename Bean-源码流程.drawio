@@ -1,1 +1,212 @@
-<mxfile host="app.diagrams.net" modified="2020-07-30T09:57:06.855Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36" version="13.5.5" etag="ft2UDMEAgNO3HesbrWpk" type="github"><diagram id="Etnedv46dAY7gMjNur62">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-07-30T09:57:36.438Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36" etag="GrHP33i4zuCeZ-jrLmgQ" version="13.5.5" type="github">
+  <diagram id="Etnedv46dAY7gMjNur62" name="第 1 页">
+    <mxGraphModel dx="2249" dy="839" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-2" target="ACQmqDJF5oWKlOfLao_k-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-2" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;AnnotationConfigApplicationContext&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="370" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-4" target="ACQmqDJF5oWKlOfLao_k-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-4" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;refresh&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="430" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-6" target="ACQmqDJF5oWKlOfLao_k-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-6" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;invokeBeanFactoryPostProcessors&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="490" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-8" target="ACQmqDJF5oWKlOfLao_k-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-8" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;invokeBeanFactoryPostProcessors&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="554.5" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-10" target="ACQmqDJF5oWKlOfLao_k-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-10" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;invokeBeanDefinitionRegistryPostProcessors&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="620" width="450" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-12" target="ACQmqDJF5oWKlOfLao_k-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-12" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;postProcessBeanDefinitionRegistry&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="680" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-15" target="ACQmqDJF5oWKlOfLao_k-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-15" target="ACQmqDJF5oWKlOfLao_k-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-15" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;processConfigBeanDefinitions&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="740" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-17" target="ACQmqDJF5oWKlOfLao_k-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-17" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;loadBeanDefinitions&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="800" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-19" target="ACQmqDJF5oWKlOfLao_k-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-19" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;获取到&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;span style=&quot;text-align: left&quot;&gt;beanMethods 循环&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="860" width="390" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-21" target="ACQmqDJF5oWKlOfLao_k-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-21" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;loadBeanDefinitionsForBeanMethod&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="950" width="390" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-22" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;一系列注解的解析，然后注册&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="1020" width="390" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-24" target="ACQmqDJF5oWKlOfLao_k-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-24" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;parse&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="440" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-26" target="ACQmqDJF5oWKlOfLao_k-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-26" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;parse&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="500" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-28" target="ACQmqDJF5oWKlOfLao_k-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-28" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;processConfigurationClass&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="560" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-31" target="ACQmqDJF5oWKlOfLao_k-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-31" target="ACQmqDJF5oWKlOfLao_k-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-31" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;doProcessConfigurationClass&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="620" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fontSize=21;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-33" target="ACQmqDJF5oWKlOfLao_k-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-33" value="&lt;span style=&quot;text-align: left ; background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;将BeanBeanA 放入到&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;Map中&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="690" width="390" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1205" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-35" value="&lt;span style=&quot;color: rgb(38, 38, 38); font-family: &amp;quot;source sans pro&amp;quot;, &amp;quot;helvetica neue&amp;quot;, arial, sans-serif; font-size: 21px; text-align: left; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;doProcessConfigurationClass&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="350" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-37" target="ACQmqDJF5oWKlOfLao_k-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-37" value="&lt;div style=&quot;text-align: left; font-size: 21px;&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px; word-spacing: 0.7px; background-color: rgb(255, 255, 255);&quot;&gt;判断是不是 特定注解类型&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="870" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-39" target="ACQmqDJF5oWKlOfLao_k-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-39" value="&lt;div style=&quot;text-align: left ; font-size: 21px&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;扫描到&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;BeanBeanA&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="790" width="390" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-42" target="ACQmqDJF5oWKlOfLao_k-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-42" target="ACQmqDJF5oWKlOfLao_k-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-42" value="&lt;div style=&quot;text-align: left; font-size: 21px;&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px; word-spacing: 0.7px;&quot;&gt;parse&lt;/span&gt;&lt;/font&gt;&lt;br style=&quot;font-size: 21px;&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="930" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-44" target="ACQmqDJF5oWKlOfLao_k-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-44" value="&lt;div style=&quot;text-align: left; font-size: 21px;&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px; word-spacing: 0.7px;&quot;&gt;parse&lt;/span&gt;&lt;/font&gt;&lt;br style=&quot;font-size: 21px;&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="430" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-46" target="ACQmqDJF5oWKlOfLao_k-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-46" value="&lt;div style=&quot;text-align: left ; font-size: 21px&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot; style=&quot;font-size: 21px&quot;&gt;&lt;span style=&quot;font-size: 21px ; word-spacing: 0.7px&quot;&gt;处理&lt;/span&gt;&lt;/font&gt;&lt;br style=&quot;font-size: 21px&quot;&gt;&lt;/div&gt;&lt;span style=&quot;color: rgb(38 , 38 , 38) ; font-family: &amp;#34;source sans pro&amp;#34; , &amp;#34;helvetica neue&amp;#34; , &amp;#34;arial&amp;#34; , sans-serif ; text-align: left ; word-spacing: 0.7px&quot;&gt;BeanBeanA&lt;/span&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="350" width="390" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-48" target="ACQmqDJF5oWKlOfLao_k-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-48" value="&lt;div style=&quot;text-align: left; font-size: 21px;&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px; word-spacing: 0.7px;&quot;&gt;processConfigurationClass&lt;/span&gt;&lt;/font&gt;&lt;br style=&quot;font-size: 21px;&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="500" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-50" target="ACQmqDJF5oWKlOfLao_k-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-50" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;doProcessConfigurationClass&lt;/span&gt;&lt;/font&gt;&lt;br style=&quot;font-size: 21px&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="570" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-52" target="ACQmqDJF5oWKlOfLao_k-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-52" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;retrieveBeanMethodMetadata&lt;/span&gt;&lt;/font&gt;&lt;br style=&quot;font-size: 21px&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="635" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-53" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-54" target="ACQmqDJF5oWKlOfLao_k-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-54" value="&lt;div style=&quot;text-align: left&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot;&gt;&lt;span style=&quot;word-spacing: 0.7px&quot;&gt;扫描到&lt;br&gt;BeanBeanB&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="695" width="390" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-56" target="ACQmqDJF5oWKlOfLao_k-42">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1690" y="950" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-56" value="&lt;div style=&quot;text-align: left&quot;&gt;循环将BeanBeanB包装成BeanMethod&lt;br&gt;放入到&amp;nbsp;beanMethods&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="780" width="390" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="1" source="ACQmqDJF5oWKlOfLao_k-58" target="ACQmqDJF5oWKlOfLao_k-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-58" value="" style="swimlane;html=1;startSize=20;horizontal=1;containerType=tree;strokeWidth=1;fontSize=21;fillColor=#fff2cc;strokeColor=#d6b656;gradientColor=none;swimlaneFillColor=#D1D1D1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="985" y="420" width="440" height="335" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-59" value="&lt;div style=&quot;text-align: left; font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px; word-spacing: 0.7px;&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot; style=&quot;font-size: 21px;&quot;&gt;parse&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="ACQmqDJF5oWKlOfLao_k-58">
+          <mxGeometry x="25" y="72.5" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-60" value="&lt;div style=&quot;text-align: left; font-size: 21px;&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px; word-spacing: 0.7px;&quot;&gt;doScan&lt;/span&gt;&lt;/font&gt;&lt;br style=&quot;font-size: 21px;&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="ACQmqDJF5oWKlOfLao_k-58">
+          <mxGeometry x="25" y="132.5" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="ACQmqDJF5oWKlOfLao_k-58" source="ACQmqDJF5oWKlOfLao_k-59" target="ACQmqDJF5oWKlOfLao_k-60">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-62" value="&lt;div style=&quot;text-align: left; font-size: 21px;&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px; word-spacing: 0.7px;&quot;&gt;findCandidateComponents&lt;/span&gt;&lt;/font&gt;&lt;br style=&quot;font-size: 21px;&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="ACQmqDJF5oWKlOfLao_k-58">
+          <mxGeometry x="25" y="192.5" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="ACQmqDJF5oWKlOfLao_k-58" source="ACQmqDJF5oWKlOfLao_k-60" target="ACQmqDJF5oWKlOfLao_k-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-64" value="&lt;div style=&quot;text-align: left; font-size: 21px;&quot;&gt;&lt;font color=&quot;#262626&quot; face=&quot;source sans pro, helvetica neue, arial, sans-serif&quot; style=&quot;font-size: 21px;&quot;&gt;&lt;span style=&quot;font-size: 21px; word-spacing: 0.7px;&quot;&gt;scanCandidateComponents&lt;/span&gt;&lt;/font&gt;&lt;br style=&quot;font-size: 21px;&quot;&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;fontSize=21;rounded=1;" vertex="1" parent="ACQmqDJF5oWKlOfLao_k-58">
+          <mxGeometry x="25" y="252.5" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-65" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=21;" edge="1" parent="ACQmqDJF5oWKlOfLao_k-58" source="ACQmqDJF5oWKlOfLao_k-62" target="ACQmqDJF5oWKlOfLao_k-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ACQmqDJF5oWKlOfLao_k-66" value="执行扫描" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=21;rounded=1;" vertex="1" parent="ACQmqDJF5oWKlOfLao_k-58">
+          <mxGeometry x="155" y="32.5" width="130" height="27.5" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
