@@ -1,0 +1,25 @@
+<mxfile host="app.diagrams.net" modified="2020-08-20T06:14:20.526Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36" etag="0Oo1exbzQhThtTHbu8jC" version="13.6.2" type="github">
+  <diagram id="isELAY1KJT7U8mkyXqvd" name="第 1 页">
+    <mxGraphModel dx="1087" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="dYDbFUW4tvWijvjgbMrU-1" value="监听器" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="260" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dYDbFUW4tvWijvjgbMrU-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="dYDbFUW4tvWijvjgbMrU-2" target="dYDbFUW4tvWijvjgbMrU-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dYDbFUW4tvWijvjgbMrU-2" value="发布事件" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="260" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="dYDbFUW4tvWijvjgbMrU-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="dYDbFUW4tvWijvjgbMrU-3" target="dYDbFUW4tvWijvjgbMrU-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dYDbFUW4tvWijvjgbMrU-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="274" y="410" width="280" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
