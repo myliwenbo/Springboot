@@ -1,0 +1,85 @@
+package ${package.Service};
+
+
+import ${package.Entity}.${table.Entity};
+import ${package.Entity}.${table.entity};
+import ${package.Dao}.${table.dao};
+import ${package.QueryEntity}.${table.queryEntity};
+import ${customize.WebErrorCodeEnums};
+import ${customize.ExcetListener};
+import com.alibaba.excel.EasyExcel;
+import java.io.IOException;
+import org.springframework.web.multipart.MultipartFile;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import cn.vihost.farmplatform.core.exception.BizException;
+import cn.vihost.farmplatform.core.exception.ExceptionUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import org.apache.commons.lang3.ObjectUtils;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import java.util.List;
+import javax.annotation.Resource;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+
+@Service
+@Slf4j
+public class ${table.service} {
+
+    @Resource
+    public ${table.dao} ${table.daoHump};
+
+
+    /**
+     *
+     *
+     * @param ${table.EntityHump}
+     * @return
+     * @throws BizException
+     */
+    public ${table.Entity} save(${table.Entity} ${table.EntityHump}) throws BizException {
+        boolean flag = ${table.daoHump}.save(${table.EntityHump});
+        if (!flag) {
+            log.error("${table.EntityHump}保存失败,request:[{}]", ${table.EntityHump});
+            throw ExceptionUtil.buildFailException(WebErrorCodeEnums.SAVE_ERROR);
+        }
+        return ${table.EntityHump};
+    }
+
+    public Boolean remove(Long id) throws BizException {
+        boolean flag = ${table.daoHump}.removeById(id);
+        if (!flag) {
+            log.error("Item删除失败,id = {}]", id);
+            throw ExceptionUtil.buildFailException(WebErrorCodeEnums.DELETE_ERROR);
+        }
+        return flag;
+    }
+
+    public ${table.Entity} updataElementById(${table.Entity} ${table.EntityHump}) throws BizException {
+        boolean flag = ${table.daoHump}.updateById(${table.EntityHump});
+        if (!flag) {
+            log.error("${${table.daoHump}修改失败},request:[{}]", ${table.EntityHump});
+            throw ExceptionUtil.buildFailException(WebErrorCodeEnums.UPDATE_ERROR);
+        }
+        return ${table.EntityHump};
+    }
+
+
+    public List<${table.Entity}>  queyrListByElement(${table.QueryEntity} ${table.queryEntityHump}) throws BizException {
+        LambdaQueryWrapper<${table.Entity}>  ${table.EntityHump}Wrapper = new QueryWrapper<${table.Entity}>().lambda();
+        return ${table.daoHump}.list(${table.EntityHump}Wrapper);
+    }
+
+
+    public IPage<${table.Entity}> pageList(${table.QueryEntity} ${table.queryEntityHump}) throws BizException {
+        LambdaQueryWrapper<${table.Entity}>  ${table.EntityHump}Wrapper = new QueryWrapper<${table.Entity}>().lambda();
+        return ${table.daoHump}.page(${table.queryEntityHump}.getPage(), ${table.EntityHump}Wrapper);
+    }
+
+    #if(${customize.entityExct})
+    public void importExcel(MultipartFile file) throws IOException {
+     EasyExcel.read(file.getInputStream(), ${table.entity}.class, new ExcetListener<>(${table.daoHump})).sheet().doRead();
+    }
+    #end
+
+}

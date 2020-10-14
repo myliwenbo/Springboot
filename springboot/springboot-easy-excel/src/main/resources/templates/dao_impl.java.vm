@@ -1,0 +1,27 @@
+package ${package.DaoImpl};
+
+import ${package.Dao}.${table.dao};
+import ${package.Mapper}.${table.mapperName};
+import ${superServiceImplClassPackage};
+import ${package.Entity}.${table.entity};
+import org.springframework.stereotype.Service;
+import com.zing.datacenter.repository.dao.impl.BaseDaoImpl;
+
+/**
+ * <p>
+ * $!{table.comment} 服务实现类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Service
+#if(${kotlin})
+open class ${table.daoImpl} : ${superServiceImplClass}<${table.mapperName}, ${table.Entity}>(), ${table.serviceName} {
+
+        }
+#else
+public class ${table.daoImpl} extends BaseDaoImpl<${table.mapperName}, ${table.Entity}> implements ${table.dao}{
+
+}
+#end

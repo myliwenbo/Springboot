@@ -19,20 +19,23 @@ public class FinancingGenerator {
     /**
      * JDBC
      */
-    private static final String URL = "";
-    private static final String USER_NAME = "";
-    private static final String PASSWORD = "";
+//    private static final String URL = "jdbc:mysql://106.14.136.81:3306/hnl_financing";
+//    private static final String USER_NAME = "hnl_financing";
+//    private static final String PASSWORD = "N^xHa#fG&2U4FPod";
+
+    private static final String URL = "jdbc:mysql://192.168.1.3:3306/data_center?characterEncoding=utf-8&useLocalSessionState=true&autoReconnect=true";
+    private static final String USER_NAME = "qikuairong";
+    private static final String PASSWORD = "Xon5WCSiWuBc0j,JHqk7";
 
     public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
-        //这里去添加要生成的表
-        FinancingGenerator.createStrategyConfig(mpg, "file_manage" ); //策略
+        FinancingGenerator.createStrategyConfig(mpg, "test_category");   //这里去添加要生成的表
         FinancingGenerator.createDateSource(mpg); //数据源
         FinancingGenerator.createGlobalConfig(mpg); //全局配置
         FinancingGenerator.createTemplateConfig(mpg); //配置模板
         FinancingGenerator.createInjectionConfig(mpg);//自定义配置
-        new TemplateConfigEnhance(mpg);//配置包信息
+        mpg.setTemplateEngine(new TemplateConfigEnhance(true));//配置包信息，配置是否导入导出
         mpg.execute();
     }
 
@@ -47,7 +50,7 @@ public class FinancingGenerator {
         dsc.setUrl(URL);
         dsc.setUsername(USER_NAME);
         dsc.setPassword(PASSWORD);
-        dsc.setDriverName("com.mysql.jdbc.Driver" );
+        dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setDbType(DbType.MYSQL);
         dsc.setTypeConvert(new MySqlTypeConvert());
         mpg.setDataSource(dsc);
@@ -68,8 +71,8 @@ public class FinancingGenerator {
         gc.setActiveRecord(true); // 开启 activeRecord 模式
         gc.setBaseResultMap(true); // XML ResultMap
         gc.setBaseColumnList(true);// XML columList
-        gc.setServiceName("I%sDao" ); // 实体命名方式，就会形成 UserService ，如果使用自定义路径则该规则不会生效
-        gc.setServiceImplName("%sDaoImpl" ); // 实体命名方式，就会形成 UserServiceImpl ，如果使用自定义路径则该规则不会生效
+        gc.setServiceName("I%sDao"); // 实体命名方式，就会形成 UserService ，如果使用自定义路径则该规则不会生效
+        gc.setServiceImplName("%sDaoImpl"); // 实体命名方式，就会形成 UserServiceImpl ，如果使用自定义路径则该规则不会生效
         mpg.setGlobalConfig(gc);
 
     }
@@ -85,13 +88,13 @@ public class FinancingGenerator {
         strategy.setNaming(NamingStrategy.underline_to_camel); // 数据库映射到实体的命名策略
         // 公共父类
         // strategy.setSuperControllerClass("com.alijiajituan.controller.BaseController");
-        strategy.setSuperEntityClass("cn.zingfin.finance.repository.entity.BaseDo" );
+        strategy.setSuperEntityClass("cn.zingfin.finance.repository.entity.BaseDo");
         strategy.setInclude(include); // 需要生成的表,和排除只能2选一
         //strategy.setExclude("bak_category_property", "user"); // 需要排除的表，除了排除的表其他的都生成
         // 自定义实体，公共字段
-        strategy.setSuperEntityColumns("id", "is_valid", "op_time", "last_ver", "status", "type", "create_time", "app_id" );
-        strategy.setVersionFieldName("last_ver" ); //乐观锁属性名称
-        strategy.setLogicDeleteFieldName("is_valid" );//逻辑删除属性名称
+        strategy.setSuperEntityColumns("id", "is_valid", "op_time", "last_ver", "status", "type", "create_time", "app_id");
+        strategy.setVersionFieldName("last_ver"); //乐观锁属性名称
+        strategy.setLogicDeleteFieldName("is_valid");//逻辑删除属性名称
         strategy.setRestControllerStyle(true); // 生成 @RestController 控制器
         strategy.setEntityLombokModel(true); // 添加lombok模型
         strategy.setEntityColumnConstant(true); //是否生成字段常量

@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import vip.xjdai.ioc.xml.set_.SpringActionSet;
-import vip.xjdai.ioc.xml.static_factory_.SpringActionFactory;
-import vip.xjdai.ioc.xml.statoc_.MongoFileOperationUtil;
+import vip.xjdai.ioc.xml.setbean.SpringActionSet;
+import vip.xjdai.ioc.xml.static_factory.SpringActionFactory;
+import vip.xjdai.ioc.xml.static_init.MongoFileOperationUtil;
 
 @Controller
 @RequestMapping("/statcitest")

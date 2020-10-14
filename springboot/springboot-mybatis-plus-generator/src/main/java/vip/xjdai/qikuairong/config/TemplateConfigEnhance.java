@@ -8,25 +8,26 @@ import java.util.Map;
 /**
  * 配置包相关信息
  */
-public class TemplateConfigEnhance {
+public class TemplateConfigEnhance extends VelocityTemplateEngineEnhance {
 
-    private AutoGenerator mpg;
+    private boolean entityExct;
 
-
-    public TemplateConfigEnhance(AutoGenerator mpg) {
-        this.mpg = mpg;
-        createVelocityTemplateEngine();
+    /**
+     * 是否开启导入导出
+     * @param entityExct
+     */
+    public TemplateConfigEnhance(Boolean entityExct) {
+        this.entityExct = entityExct;
     }
 
-    private void createVelocityTemplateEngine() {
-        TemplateConfigEnhance thiz = this;
-        VelocityTemplateEngineEnhance velocityTemplateEngineEnhance = new VelocityTemplateEngineEnhance() {
-            @Override
-            public void enhanceMap(Map<String, Object> objectMap) {
-                thiz.add(objectMap);
-            }
-        };
-        mpg.setTemplateEngine(velocityTemplateEngineEnhance);//定义模板的自定义属性
+    /**
+     * 添加
+     *
+     * @param objectMap
+     */
+    @Override
+    public void enhanceMap(Map<String, Object> objectMap) {
+        this.add(objectMap);
     }
 
     /**
@@ -36,11 +37,10 @@ public class TemplateConfigEnhance {
      */
     @SuppressWarnings("unchecked" )
     public void add(Map<String, Object> objectMap) {
-        TableInfoConfigEnhance table = new TableInfoConfigEnhance((TableInfo) objectMap.get("table" ));
         objectMap.put("package", new PackageConfigEnhance((Map<String, String>) objectMap.get("package" )).getPackageInfo()); //替换package信息
-        objectMap.put("table", table); //替换package信息
-//        objectMap.put("superClass", new SuperConfigEnhance()); //替换package信息
-
-
+        objectMap.put("table", new TableInfoConfigEnhance((TableInfo) objectMap.get("table" ))); //替换package信息
+        objectMap.put("entityExct", entityExct);
     }
+
+
 }

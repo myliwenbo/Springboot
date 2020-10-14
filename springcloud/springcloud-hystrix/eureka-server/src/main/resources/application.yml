@@ -1,0 +1,19 @@
+server:
+  port: 8011  #注册中心端口号
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    #服务注册中心实例的主机名
+    hostname: localhost
+  client:
+    #是否将自己注册到Eureka Server 默认为true
+    fetch-registry: false
+    #是否从Eureka Server查询注册信息
+    register-with-eureka: false
+    serviceUrl:
+      #服务注册中心的配置内容，指定服务注册中心的位置
+      defaultZone: http://localhost:8011/eureka/
+
+ 

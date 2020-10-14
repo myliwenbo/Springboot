@@ -1,0 +1,33 @@
+package ${package.DtoEntity};
+
+
+import ${package.Entity}.${table.entity};
+import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
+import javax.validation.constraints.NotNull;
+import lombok.EqualsAndHashCode;
+import com.baomidou.mybatisplus.annotation.TableName;
+#if(${entityLombokModel})
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.EqualsAndHashCode;
+import lombok.Data;
+#end
+
+/**
+ * <p>
+ * $!{table.comment}
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@TableName("${table.name}")
+@EqualsAndHashCode(callSuper = true)
+    #if(${entityLombokModel})
+@Data
+    #end
+public class ${table.dtoEntity} extends ${table.entity} {
+
+}

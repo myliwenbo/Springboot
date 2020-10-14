@@ -1,0 +1,23 @@
+package ${package.Dao};
+
+import ${package.Entity}.${table.entity};
+import ${superServiceClassPackage};
+import com.zing.datacenter.repository.dao.IBaseDao;
+
+/**
+ * <p>
+ * $!{table.comment} 服务类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+#if(${kotlin})
+interface ${table.dao} : ${superServiceClass}<${table.dtoEntity}>
+#else
+public interface ${table.dao} extends  IBaseDao<${table.Entity}> {
+
+}
+
+
+#end

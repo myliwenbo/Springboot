@@ -4,15 +4,13 @@ import com.google.common.collect.Lists;
 import org.junit.Test;
 import org.springframework.validation.annotation.Validated;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class ArrayListDemo {
 
     @Test
     public void list() throws Exception {
-        List<Integer> list = Lists.newLinkedList();
+        List<Integer> list = Lists.newArrayList();
         for (int i = 0; i < 100; i++) {
             list.add(i);
         }
@@ -27,6 +25,7 @@ public class ArrayListDemo {
 
     /**
      * 利用迭代器的子接口特有的方法 add 即可处理
+     *
      * @throws Exception
      */
     @Test
@@ -45,4 +44,28 @@ public class ArrayListDemo {
         }
         System.out.println(list.toString());
     }
+
+
+    @Test
+    public void listAdd() throws Exception {
+        ArrayList<Integer> list = Lists.newArrayList(5);
+        for (int i = 0; i < 10; i++) {
+            list.add(i);
+        }
+        list.add(5, 30);
+        System.out.println(list.toString());
+        list.remove(2);
+        System.out.println(list.toString());
+        list.add(5, null);
+        System.out.println(list.toString());
+        List<Integer> integers = Collections.synchronizedList(list);
+    }
+
+    @Test
+    public void listAddCapacity() throws Exception {
+        System.out.println(Integer.toBinaryString(15));
+        System.out.println(Integer.valueOf("0111", 2).toString());
+
+    }
+
 }

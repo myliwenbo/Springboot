@@ -15,7 +15,7 @@ public class Demo {
         Configuration configuration = new Configuration();
 
         DefaultSqlSessionFactory defaultSqlSessionFactory = new DefaultSqlSessionFactory(configuration);
-        defaultSqlSessionFactory.openSession()
+        defaultSqlSessionFactory.openSession();
 
     }
 }

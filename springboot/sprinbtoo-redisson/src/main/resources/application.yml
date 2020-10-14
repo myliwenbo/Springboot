@@ -1,0 +1,13 @@
+spring:
+  redis:
+    redisson:
+      # 配置单点模式
+      config: classpath:redisson.yml
+    jedis:
+      pool:
+        max-active: 8  #最大连接数
+        max-wait: -1 #最大阻塞等待时间(负数表示没限制)
+        max-idle: 8 #最大空闲
+
+
+

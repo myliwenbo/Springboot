@@ -42,8 +42,10 @@ public class TableInfoConfigEnhance extends TableInfo {
     private String manager = "";
     private String managerHump = "";
 
+
     public TableInfoConfigEnhance(TableInfo tableInfo) {
         BeanUtils.copyProperties(tableInfo, this);
+
         this.setEntity(tableInfo.getEntityName());
         this.setEntityHump(tableInfo.getEntityPath());
 

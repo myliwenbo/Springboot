@@ -1,0 +1,10 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: eureka-client    #客户端名称
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8011/eureka/  #注册中心地址

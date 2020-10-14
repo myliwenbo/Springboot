@@ -1,10 +1,0 @@
-spring:
-  redis:
-    host: 47.98.172.30
-    password: myliwenbo
-    port: 60112
-    database: 0 #数据库索引
-    timeout: 1000   #连接超时时间
-    jedis:      pool:        max-active: 8  #最大连接数
-        max-wait: -1 #最大阻塞等待时间(负数表示没限制)
-        max-idle: 8 #最大空闲

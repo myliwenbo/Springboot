@@ -2,6 +2,7 @@ package ${package.Service};
 
 
 import ${package.DtoEntity}.${table.dtoEntity};
+import ${package.Entity}.${table.entity};
 import ${package.Dao}.${table.dao};
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import cn.vihost.farmplatform.core.exception.BizException;
@@ -68,5 +69,11 @@ public class ${table.service} {
         LambdaQueryWrapper<${table.dtoEntity}>  ${table.dtoEntityHump}Wrapper = new QueryWrapper<${table.dtoEntity}>().lambda();
         return ${table.daoHump}.page(page, ${table.dtoEntityHump}Wrapper);
     }
+
+    #if(${entityExct})
+    public void importExcel(MultipartFile file) throws IOException {
+     EasyExcel.read(file.getInputStream(), ${table.entity}.class, new ExcetListener<>(${table.daoHump})).sheet().doRead();
+    }
+    #end
 
 }
