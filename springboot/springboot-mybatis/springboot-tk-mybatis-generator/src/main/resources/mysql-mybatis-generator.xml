@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="DB2Tables" targetRuntime="MyBatis3">
+		<!-- 生成java代码的时候不去掉属性的`下划线` -->
+		<property name="useActualColumnNames" value="false" />
+
+		<!-- 生成的 Java 文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+		<!-- 格式化java代码 -->
+		<property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+		<!-- 格式化XML代码 -->
+		<property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+
+
+		<!--beginningDelimiter和endingDelimiter：指明数据库的用于标记数据库对象名的符号，比如ORACLE就是双引号，MYSQL默认是`反引号； -->
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+		
+		<!-- 添加Model实现Serializable接口 -->
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<!-- 添加toString方法 -->
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.6.133:3306/quartz" password="root" userId="root" />
+
+
+		<javaTypeResolver
+			type="org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl"
+		>
+			<!-- true：使用BigDecimal对应DECIMAL和 NUMERIC数据类型 -->
+			<!-- false：默认,
+				scale>0;length>18：使用BigDecimal;
+				scale=0;length[10,18]：使用Long；
+				scale=0;length[5,9]：使用Integer；
+				scale=0;length<5：使用Short； -->
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 2. 指定JavaBean生成的位置 -->
+		<javaModelGenerator targetPackage="vip.xjdai.domain"
+			targetProject="./src/main/java"
+		>
+			<!-- 没能明白 -->
+			<property name="enableSubPackages" value="true" />
+
+			<!--自动生成一个构造方法，构造方法包含了所有的 属性 -->
+			<property name="constructorBased" value="true" />
+
+			<!--自动生成一个构造方法，构造方法包含了所有的 属性，注意：而不生成set方法 -->
+			<property name="immutable" value="false" />
+
+			<!-- 设置是否在get方法中，对String类型字段调用trim()方法 -->
+			<property name="trimStrings" value="true" />
+
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+
+			<!-- 设置一个父类 -->
+			<property name="rootClass" value="cn.lwb.generator.mybatis.base.BaseModel" />
+		</javaModelGenerator>
+
+
+		<!-- 3. 指定sql映射文件生成的位置 -->
+		<sqlMapGenerator targetPackage="mapper" targetProject="./src/main/resources">
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+
+
+
+
+		<!-- 4. 指定dao接口生成的位置，mapper接口 -->
+		<javaClientGenerator type="XMLMAPPER" targetPackage="vip.xjdai.dao"
+			targetProject="./src/main/java"
+		>
+			<property name="enableSubPackages" value="false" />
+			<!-- 设置一个父接口 -->
+			<property name="rootInterface" value="cn.lwb.generator.mybatis.base.BaseMapper" />
+		</javaClientGenerator>
+
+
+
+		<!--
+			表示所有表
+			<table tableName="%" />
+			表示匹配o后面的所有表
+			<table tableName="o%" />
+			表示值匹配orders一张表
+			<table tableName="orders" />
+		-->
+		<table tableName="%" domainObjectName="TaskScheduleJob"
+			enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false"
+		>
+			<!-- 列替换前缀 -->
+			<!-- <columnRenamingRule searchString="^[^_]+" replaceString="" />
+			-->			<!-- 表替换前缀 -->
+			<!-- <domainObjectRenamingRule searchString="^Tbl" replaceString="" />
+				<columnOverride column="" javaType="" /> -->
+		</table>
+
+	</context>
+</generatorConfiguration>

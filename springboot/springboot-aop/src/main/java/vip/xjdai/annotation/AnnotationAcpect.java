@@ -11,8 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Aspect //表示当前类是一个切面类
 @Component
-public class AnnotationAcpect
-{
+public class AnnotationAcpect {
 
     /**
      * {@link vip.xjdai.annotation.ServiceAnnotation}
@@ -22,16 +21,18 @@ public class AnnotationAcpect
 
 
     @Pointcut(CLASS) //表示当前注解是一个切点
-    public void dynamic() {}
+    public void dynamic() {
+    }
 
     /**
      * 前置通知
+     *
      * @param joinPoint
      * @throws Throwable
      */
     @Before("dynamic()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
-        System.out.println( joinPoint.getThis());
+        System.out.println(joinPoint.getThis());
         System.out.println(joinPoint.getTarget());
     }
 

@@ -1,11 +1,14 @@
 package vip.xjdai.send;
 
+import org.apache.activemq.command.ActiveMQTextMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.jms.JMSException;
 import javax.jms.Queue;
+import javax.jms.TextMessage;
 import javax.jms.Topic;
 
 @RestController("send")
@@ -24,7 +27,10 @@ public class SendDemo {
 
 
     @RequestMapping("sendQueue")
-    public String sendQueue(String name) {
+    public String sendQueue(String name) throws JMSException {
+        // TextMessage textMessage = new ActiveMQTextMessage();
+        // textMessage.setStringProperty("key", "value");
+        // jmsMessagingTemplate.convertAndSend(queue, textMessage);
         //添加消息到消息队列
         jmsMessagingTemplate.convertAndSend(queue, name);
         return "你好";

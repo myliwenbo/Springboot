@@ -1,0 +1,15 @@
+#对于rabbitMQ的支持
+spring:
+  # 配置连接
+  rabbitmq:
+    host: 192.168.117.141
+    port: 5672
+    password: admin
+    username: admin
+    virtual-host: /
+    # 缓存中要维护的通道数
+    cache:
+      channel:
+        size: 5
+    # 开启结果返回机制
+    publisher-returns: true

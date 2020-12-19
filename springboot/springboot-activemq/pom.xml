@@ -5,15 +5,13 @@
     <parent>
         <groupId>vip.xjdai</groupId>
         <artifactId>common-pom</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.5</version>
         <relativePath/>
     </parent>
-    <groupId>vip.xjdia</groupId>
     <artifactId>springboot-activemq</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-activemq</name>
     <packaging>pom</packaging>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -33,8 +31,10 @@
             <artifactId>activemq-pool</artifactId>
         </dependency>
     </dependencies>
-
     <modules>
+        <module>springboot-distributed</module>
         <module>demo</module>
+        <module>springboot</module>
+        <module>springboot-one</module>
     </modules>
 </project>

@@ -8,6 +8,9 @@ import javax.jms.JMSException;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+/**
+ * 发布与订阅， 简单说 1对多.. 一个发布者 多个监听器..
+ */
 @Component
 public class TopicSub {
 
@@ -48,7 +51,8 @@ public class TopicSub {
         try {
             System.out.println("3：" + textMessage.getText());
             // 手动确认
-            message.acknowledge();
+            // message.acknowledge();
+            System.out.println("3：没有手动确认，会发生什么");
         } catch (Exception e) {
             // 此不可省略 重发信息使用
             session.recover();

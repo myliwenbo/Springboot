@@ -1,0 +1,19 @@
+spring:
+  application:
+    #如果指定了spring应用名称，可以缺省dubbo的应用名称，这2个至少要配置1个。缺省dubbo的应用名称时默认值是spring的应用名称
+    #dubbo.application.name=user-service
+    name: order-service
+dubbo:
+  registry:
+    # 端口号可以写在address中，也可以单独写。实质是从address中获取的port是null，后面设置的port覆盖了null
+    # dubbo.registry.port=2181
+    address: zookeeper://192.168.117.141:2181
+    timeout: 10000  #指定注册到zk上超时时间，ms
+  #指定dubbo使用的协议、端口
+  protocol:
+    name: dubbo
+    port: 20881
+server:
+  port: 8092
+
+

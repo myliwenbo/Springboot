@@ -3,15 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>vip.xjdia</groupId>
+        <groupId>vip.xjdai</groupId>
         <artifactId>springboot-activemq</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/>
     </parent>
-    <groupId>vip.xjdai</groupId>
     <artifactId>springboot-distributed</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-distributed</name>
+    <description>Demo project for Spring Boot</description>
     <packaging>pom</packaging>
-
+    <modules>
+        <module>client-one</module>
+        <module>consumer-one</module>
+    </modules>
 </project>

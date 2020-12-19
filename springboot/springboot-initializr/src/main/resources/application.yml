@@ -1,0 +1,303 @@
+initializr:
+  env:
+    boms:
+      azure:
+        groupId: "com.microsoft.azure"
+        artifactId: "azure-spring-boot-bom"
+        versionProperty: "azure.version"
+        mappings:
+          - compatibilityRange: "[2.0.0.RELEASE,2.1.0.RELEASE)"
+            version: "2.0.10"
+          - compatibilityRange: "[2.1.0.RELEASE, 2.2.0.M1)"
+            version: "2.1.10"
+          - compatibilityRange: "[2.2.0.M1, 2.3.0.M1)"
+            version: "2.2.4"
+          - compatibilityRange: "2.3.0.M1"
+            version: "2.3.1"
+      codecentric-spring-boot-admin:
+        groupId: "de.codecentric"
+        artifactId: "spring-boot-admin-dependencies"
+        versionProperty: "spring-boot-admin.version"
+        mappings:
+          - compatibilityRange: "[2.0.0.M1,2.1.0.M1)"
+            version: "2.0.6"
+          - compatibilityRange: "[2.1.0.M1,2.2.0.M1)"
+            version: "2.1.6"
+          - compatibilityRange: "[2.2.0.M1,2.3.0.M1)"
+            version: "2.2.4"
+          - compatibilityRange: "[2.3.0.M1,2.4.0-M1)"
+            version: "2.3.0"
+      solace-spring-boot:
+        groupId: "com.solace.spring.boot"
+        artifactId: "solace-spring-boot-bom"
+        versionProperty: "solace-spring-boot.version"
+        mappings:
+          - compatibilityRange: "[2.2.0.RELEASE, 2.3.0.M1)"
+            version: "1.0.0"
+          - compatibilityRange: "2.3.0.M1"
+            version: "1.1.0"
+      solace-spring-cloud:
+        groupId: "com.solace.spring.cloud"
+        artifactId: "solace-spring-cloud-bom"
+        versionProperty: "solace-spring-cloud.version"
+        mappings:
+          - compatibilityRange: "[2.2.0.RELEASE, 2.3.0.M1)"
+            version: "1.0.0"
+          - compatibilityRange: "2.3.0.M1"
+            version: "1.1.1"
+      spring-cloud:
+        groupId: "org.springframework.cloud"
+        artifactId: "spring-cloud-dependencies"
+        versionProperty: "spring-cloud.version"
+        order: "50"
+        mappings:
+          - compatibilityRange: "[2.0.0.M3, 2.0.0.M5)"
+            version: "Finchley.M2"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.0.M5, 2.0.0.M5]"
+            version: "Finchley.M3"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.0.M6, 2.0.0.M6]"
+            version: "Finchley.M4"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.0.M7, 2.0.0.M7]"
+            version: "Finchley.M5"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.0.RC1, 2.0.0.RC1]"
+            version: "Finchley.M6"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.0.RC2,2.0.0.RC2]"
+            version: "Finchley.M7"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.0.RELEASE,2.0.0.RELEASE]"
+            version: "Finchley.M9"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.1.RELEASE,2.0.2.RELEASE)"
+            version: "Finchley.RC1"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.2.RELEASE,2.0.3.RELEASE)"
+            version: "Finchley.RC2"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.3.RELEASE,2.0.x.BUILD-SNAPSHOT)"
+            version: "Finchley.SR4"
+          - compatibilityRange: "[2.0.x.BUILD-SNAPSHOT,2.1.0.M3)"
+            version: "Finchley.BUILD-SNAPSHOT"
+            repositories:
+              - "spring-snapshots"
+              - "spring-milestones"
+          - compatibilityRange: "[2.1.0.M3,2.1.0.RELEASE)"
+            version: "Greenwich.M1"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.1.0.RELEASE,2.1.x.BUILD-SNAPSHOT)"
+            version: "Greenwich.SR6"
+          - compatibilityRange: "[2.1.x.BUILD-SNAPSHOT,2.2.0.M4)"
+            version: "Greenwich.BUILD-SNAPSHOT"
+            repositories:
+              - "spring-snapshots"
+              - "spring-milestones"
+          - compatibilityRange: "[2.2.0.M4,2.3.x.BUILD-SNAPSHOT)"
+            version: "Hoxton.SR7"
+          - compatibilityRange: "[2.3.x.BUILD-SNAPSHOT, 2.4.0.M1)"
+            version: "Hoxton.BUILD-SNAPSHOT"
+            repositories:
+              - "spring-snapshots"
+              - "spring-milestones"
+          - compatibilityRange: "2.4.0.M1"
+            version: "2020.0.0-SNAPSHOT"
+            repositories:
+              - "spring-snapshots"
+              - "spring-milestones"
+      spring-cloud-alibaba:
+        groupId: "com.alibaba.cloud"
+        artifactId: "spring-cloud-alibaba-dependencies"
+        versionProperty: "spring-cloud-alibaba.version"
+        mappings:
+          - compatibilityRange: "[2.2.0.RELEASE,2.3.0.M1)"
+            version: "2.2.1.RELEASE"
+      spring-cloud-services:
+        groupId: "io.pivotal.spring.cloud"
+        artifactId: "spring-cloud-services-dependencies"
+        versionProperty: "spring-cloud-services.version"
+        additionalBoms:
+          - "spring-cloud"
+        mappings:
+          - compatibilityRange: "[2.0.0.RELEASE,2.1.0.RELEASE)"
+            version: "2.0.3.RELEASE"
+          - compatibilityRange: "[2.1.0.RELEASE,2.2.0.RELEASE)"
+            version: "2.1.7.RELEASE"
+          - compatibilityRange: "[2.2.0.RELEASE,2.3.0.M1)"
+            version: "2.2.3.RELEASE"
+      spring-statemachine:
+        groupId: "org.springframework.statemachine"
+        artifactId: "spring-statemachine-bom"
+        versionProperty: "spring-statemachine.version"
+        mappings:
+          - compatibilityRange: "[2.0.0.RC1,2.0.0.RC1]"
+            version: "2.0.0.M4"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "[2.0.0.RC2,2.0.0.RC2]"
+            version: "2.0.0.M5"
+            repositories:
+              - "spring-milestones"
+          - compatibilityRange: "2.0.0.RELEASE"
+            version: "2.0.1.RELEASE"
+      vaadin:
+        groupId: "com.vaadin"
+        artifactId: "vaadin-bom"
+        versionProperty: "vaadin.version"
+        mappings:
+          - compatibilityRange: "[2.0.0.M1,2.1.0.M1)"
+            version: "10.0.17"
+          - compatibilityRange: "[2.1.0.M1,2.4.0-M1)"
+            version: "14.3.2"
+      wavefront:
+        groupId: "com.wavefront"
+        artifactId: "wavefront-spring-boot-bom"
+        versionProperty: "wavefront.version"
+        mappings:
+          - compatibilityRange: "2.1.0.RELEASE"
+            version: "2.0.0"
+    repositories:
+      spring-snapshots:
+        name: "Spring Snapshots"
+        url: "https://repo.spring.io/snapshot"
+        snapshotsEnabled: "true"
+      spring-milestones:
+        name: "Spring Milestones"
+        url: "https://repo.spring.io/milestone"
+        snapshotsEnabled: "false"
+      sonatype-snapshots:
+        name: "Sonatype Snapshots"
+        url: "https://oss.sonatype.org/content/repositories/snapshots/"
+        snapshotsEnabled: "true"
+    gradle:
+      dependencyManagementPluginVersion: "1.0.9.RELEASE"
+    kotlin:
+      defaultVersion:
+      mappings:
+        - compatibilityRange: "[1.5.0.RELEASE,2.0.0.M1)"
+          version: "1.2.51"
+    maven:
+      # 定义父包
+      parent:
+        groupId: vip.xjdai
+        artifactId:  common-pom
+        version: 1.0.5
+        includeSpringBootBom: "true"
+    platform:
+      compatibilityRange: "2.0.0.RELEASE"
+      v1FormatCompatibilityRange: "[2.0.0.RELEASE,2.4.0-M1)"
+      v2FormatCompatibilityRange: "2.4.0-M1"
+# 项目类型.
+  types:
+    - name: "Maven Project"
+      id: "maven-project"
+      description: "Generate a Maven based project archive."
+      action: "/starter.zip"
+      tags:
+        build: "maven"
+        format: "project"
+      default: "true"
+    - name: "Maven POM"
+      id: "maven-build"
+      description: "Generate a Maven pom.xml."
+      action: "/pom.xml"
+      tags:
+        build: "maven"
+        format: "build"
+      default: "false"
+#    - name: "Gradle Project"
+#      id: "gradle-project"
+#      description: "Generate a Gradle based project archive."
+#      action: "/starter.zip"
+#      tags:
+#        build: "gradle"
+#        format: "project"
+#      default: "false"
+#    - name: "Gradle Config"
+#      id: "gradle-build"
+#      description: "Generate a Gradle build file."
+#      action: "/build.gradle"
+#      tags:
+#        build: "gradle"
+#        format: "build"
+#      default: "false"
+  # springboot 版本选择...
+  bootVersions:
+    - name: "2.4.0 (SNAPSHOT)"
+      id: "2.4.0-SNAPSHOT"
+      default: "false"
+    - name: "2.4.0 (M1)"
+      id: "2.4.0-M1"
+      default: "false"
+    - name: "2.3.3 (SNAPSHOT)"
+      id: "2.3.3.BUILD-SNAPSHOT"
+      default: "false"
+    - name: "2.3.2"
+      id: "2.3.2.RELEASE"
+      default: "true"
+    - name: "2.2.10 (SNAPSHOT)"
+      id: "2.2.10.BUILD-SNAPSHOT"
+      default: "false"
+    - name: "2.2.9"
+      id: "2.2.9.RELEASE"
+      default: "false"
+    - name: "2.1.17 (SNAPSHOT)"
+      id: "2.1.17.BUILD-SNAPSHOT"
+      default: "false"
+    - name: "2.1.16"
+      id: "2.1.16.RELEASE"
+      default: "false"
+  # 打包方式
+  packagings:
+    - name: "Jar"
+      id: "jar"
+      default: "true"
+    - name: "pom"
+      id: "pom"
+      default: "false"
+  #    - name: "War"
+  #      id: "war"
+  #      default: "false"
+  # java 版本选择
+  javaVersions:
+    #    - name: "14"
+    #      id: "14"
+    #      default: "false"
+    #    - name: "11"
+    #      id: "11"
+    #      default: "true"
+    - name: "8"
+      id: "1.8"
+      default: "true"
+  # 生成语言选择
+  languages:
+    - name: "Java"
+      id: "java"
+      default: "true"
+  #    - name: "Kotlin"
+  #      id: "kotlin"
+  #      default: "false"
+  #    - name: "Groovy"
+  #      id: "groovy"
+  #      default: "false"
+  group-id:
+    value: vip.xjdai
+  artifact-id:
+    value: springboot-
+    description:
+  name:
+    value: springboot-
+server:
+  port: 7777
