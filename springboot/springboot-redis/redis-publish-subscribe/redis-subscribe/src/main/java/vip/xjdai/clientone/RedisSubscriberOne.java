@@ -24,7 +24,6 @@ public class RedisSubscriberOne extends MessageListenerAdapter {
     @Override
     public void onMessage(Message message, byte[] bytes) {
         System.out.println("订单服务" + message.toString());
-        ConcurrentHashMap value = new ConcurrentHashMap();
         // 调用 仓储服务
     }
 

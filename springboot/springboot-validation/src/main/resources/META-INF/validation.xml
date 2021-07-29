@@ -1,9 +1,0 @@
-<validation-config
-        version="1.1"
-        xmlns="http://jboss.org/xml/ns/javax/validation/configuration"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/configuration">
-
-    <default-provider>vip.xjdai.validation.increase.ICustomHibernateValidator</default-provider>
-
-</validation-config>

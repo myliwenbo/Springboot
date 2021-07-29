@@ -1,6 +1,6 @@
 package vip.xjdai.spi;
 
-public   class JavaDeveloper implements Developer {
+public class JavaDeveloper implements Developer {
 
     @Override
     public void sayHi() {

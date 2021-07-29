@@ -21,6 +21,7 @@ public class AnnotatedBeanDefinitionReaderContext {
 
     public static void main(String[] args) throws LifecycleException {
         File base = new File(System.getProperty("java.io.tmpdir"));
+        // 构建tomcat 启动对象
         Tomcat tomcat = new Tomcat();
         setConnector(tomcat);
         Context context = tomcat.addContext("/", base.getAbsolutePath());
@@ -36,6 +37,7 @@ public class AnnotatedBeanDefinitionReaderContext {
         //设置Tomcat的端口tomcat.setPort(9091)。两种写法都可以设置端口
         Connector connector = tomcat.getConnector();
         connector.setPort(8080);
+        // connector.setProtocol("HTTP/1.1"); // 通过构造函数的方式设置..
 
     }
 
@@ -44,7 +46,7 @@ public class AnnotatedBeanDefinitionReaderContext {
         ServletConfig servletConfig = webSevletOne.getServletConfig();
         Wrapper wrapper = tomcat.addServlet("/", "app", new WebSevletOne());
         wrapper.setLoadOnStartup(1);
-        wrapper.addMapping("/");
+        wrapper.addMapping("/app");
     }
 
     private static void configureFilters(Context context) {

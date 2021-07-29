@@ -10,4 +10,5 @@ public class SpringbootThreadPoolApplication {
         SpringApplication.run(SpringbootThreadPoolApplication.class, args);
     }
 
+
 }

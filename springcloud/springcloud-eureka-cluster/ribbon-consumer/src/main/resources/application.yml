@@ -1,9 +1,0 @@
-server:
-  port: 9000
-spring:
-  application:
-    name: ribbon-consumer
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://one:8011/eureka/  #访问集群

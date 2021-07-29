@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url:
-    username:
-    password:
+    url: jdbc:mysql://192.168.117.150:3306/quartz?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+    username: root
+    password: root
     # 配置MySQL的驱动程序类，这里需要注意一下驱动
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 配置当前要使用的数据源的操作类型
