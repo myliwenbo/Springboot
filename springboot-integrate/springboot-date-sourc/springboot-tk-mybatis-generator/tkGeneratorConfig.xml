@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+      PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+      "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+		<!-- 生成的Java文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+
+		<!--beginningDelimiter和endingDelimiter：指明数据库的用于标记数据库对象名的符号，比如ORACLE就是双引号，MYSQL默认是`反引号； -->
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+
+
+		<!-- 生成的pojo将implements实现Serializable -->
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<!-- 添加toString方法 -->
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+
+		<!--通用 Mapper 插件，其实就是自定义插件 -->
+		<plugin type="cn.lwb.generator.tk.plugin.CustomizationPlugin">
+			<!-- 要继承的接口 -->
+			<property name="mappers" value="cn.lwb.generator.tk.base.BaseMapper" />
+			<property name="caseSensitive" value="true" />
+			<property name="forceAnnotation" value="true" />
+		</plugin>
+
+		<!-- 数据库连接 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://192.168.6.133:3306/quartz" userId="root" password="root" />
+
+		<!-- Model生成 -->
+		<javaModelGenerator targetPackage="test.model" targetProject="./src/main/java" />
+
+		<!-- mapper文件 -->
+		<sqlMapGenerator targetPackage="mapper" targetProject="./src/main/resources" />
+
+		<!-- 接口 -->
+		<javaClientGenerator targetPackage="test.mapper"
+			targetProject="./src/main/java" type="XMLMAPPER" />
+		<!-- 表明 -->
+		<!-- <table tableName="tbltable"> 单个表示是一张 -->
+		<!-- <table tableName="tbl_%">表示模糊 -->
+		<table tableName="schedule_job" domainObjectName="ScheduleJob" />
+
+	</context>
+</generatorConfiguration>

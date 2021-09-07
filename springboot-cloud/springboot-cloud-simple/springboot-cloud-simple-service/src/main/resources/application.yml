@@ -1,0 +1,31 @@
+server:
+  port: 8011  #注册中心端口号
+spring:
+  application:
+    name: eureka-service
+#  cloud:
+#    inetutils:
+#      timeout-seconds: 5  # 读取网卡超时时间
+# 服务注册到哪里
+eureka:
+  instance:
+    # 修改 注册中心 中该服务的描述
+    instance-id: 我是一个描述
+  server:
+    # 关闭自我保护机制
+    enable-self-preservation: true
+    # 默认180s
+    # eureka server缓存 readWriteCacheMap 失效时间，这个只有在这个时间过去后缓存才会失效，失效前不会更新，过期后从registry重新读取注册服务信息，registry是一个ConcurrentHashMap。
+    # 由于启用了evict其实就用不太上改这个配置了
+    response-cache-auto-expiration-in-seconds: 60
+    # 启用主动失效，并且每次主动失效检测间隔为3s
+    eviction-interval-timer-in-ms: 10000
+  client:
+    #是否将自己注册到Eureka Server 默认为true
+    fetch-registry: true
+    #是否从Eureka Server查询注册信息
+    register-with-eureka: true
+    serviceUrl:
+      #配置注册中心的地址
+      defaultZone: http://127.0.0.1:8081/eureka/
+

@@ -1,0 +1,50 @@
+package ${package.VoEntity};
+
+
+import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
+import javax.validation.constraints.NotNull;
+import lombok.EqualsAndHashCode;
+#if(${entityLombokModel})
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import lombok.EqualsAndHashCode;
+import lombok.Data;
+#end
+
+/**
+ * <p>
+ * $!{table.comment}
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@EqualsAndHashCode(callSuper = true)
+#if(${entityLombokModel})
+@Data
+#end
+public class ${table.voEntity} extends BaseVo {
+
+## 默认生成id字段
+@NotNull(message = "ID不能传递为空", groups = {Update.class, Delete.class, Select.class})
+private Long id;
+
+## ----------  BEGIN 字段循环遍历  ----------
+#foreach($field in ${table.fields})
+
+    #if(${field.keyFlag})
+        #set($keyPropertyName=${field.propertyName})
+    #end
+    #if("$!field.comment" != "")
+    @ApiModelProperty(value = "${field.comment}")
+    #end
+private ${field.propertyType} ${field.propertyName};
+#end
+
+@ApiModelProperty(value = "修改日期")
+private Long opTime;
+@ApiModelProperty(value = "创建日期")
+private Long createTime;
+}

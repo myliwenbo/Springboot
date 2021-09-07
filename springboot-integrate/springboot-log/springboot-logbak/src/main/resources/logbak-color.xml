@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+	<!-- 文件大小 -->
+	<property name="CODING" value="UTF-8" />
+	<!-- 彩色日志，依赖的渲染类 -->
+	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+	<conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+
+	<property name="LOG_FORMAT"
+		value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+	<!-- 控制台输出 -->
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>${LOG_FORMAT}</pattern>
+			<charset>${CODING}</charset>
+		</encoder>
+		<!--
+			ThresholdFilter：临界值过滤器，控制输出级别。
+			例如：配置的是INFO 那么 ERROR和WARN和INFO的日志都会输出
+		-->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+	</appender>
+	<!-- 级别依次为【从高到低】： ERROR > WARN > INFO > DEBUG > TRACE -->
+	<!--
+		level="输出级别" 配置输出的级别，
+		如果<appender>也配置了级别，那么就按照谁的级别高就输出谁的，
+		比如：appender配了ERROR 那么root配INFO，那么会按照 appender的输出级别
+		比如：root配了ERROR，appender配了INFO，那么会按照 root的输出级别
+	-->
+	<root level="ERROR">
+		<!--ref="appender的name值"-->
+		<appender-ref ref="consoleAppender" />
+	</root>
+</configuration>

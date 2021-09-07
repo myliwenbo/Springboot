@@ -1,0 +1,7 @@
+logging:
+  level:
+   vip.xjdai.springbootlogtest.congtoller.LogControoler: error
+#   vip.xjdai.springbootlogtest.congtoller.LogControoler.log2: debug
+  file:
+    path: ../logs/
+

@@ -1,0 +1,4 @@
+myvalue:
+  name: ${name:张三}
+server:
+  port: 8081

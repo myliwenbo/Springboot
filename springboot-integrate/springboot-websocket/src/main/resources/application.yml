@@ -1,0 +1,29 @@
+server:
+  port: 18092
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.117.128:3306/webscoket?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+    username: root
+    password: root
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      filters: start
+      max-active: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
+mybatis:
+  config-location: classpath:mybatis-config.xml # 配置mybatis文件所在
+  typeAliasesPackage: vip.xjdai.springbootwebsocket.mapper #配置要扫描的包
+  mapper-locations: classpath:mapper/*.xml # 配置mapper文件

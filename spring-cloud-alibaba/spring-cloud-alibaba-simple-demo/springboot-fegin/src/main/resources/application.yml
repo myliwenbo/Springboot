@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: client-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 114.55.3.21:8848

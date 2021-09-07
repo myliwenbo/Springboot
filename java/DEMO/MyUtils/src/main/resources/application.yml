@@ -1,0 +1,12 @@
+server:
+  port: 8088
+spring:
+logging:
+  level:
+    com:
+      looedu:
+        mapper: info
+  config: classpath:logback.xml
+
+
+

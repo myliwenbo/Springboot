@@ -1,0 +1,24 @@
+# 服务网关名称
+spring:
+  application:
+    name: gateway
+  cloud:
+    inetutils:
+      timeout-seconds: 10  # 超时时间
+    gateway:
+      routes: # 路由数组[路由 就是指定当请求满足什么条件的时候转到哪个微服务]
+        - id: gorit # 当前路由的标识, 要求唯一
+          uri: lb://service-order # lb指的是从nacos中按照名称获取微服务,并遵循负载均 衡策略
+          order: 1 # 路由优先级
+          predicates: # 断言，就是路由转发要满足的条件..
+            - Path=/test/** # 匹配规则
+          filters:  #过滤器配置
+          - StripPrefix=1  #开启过滤器
+      discovery:
+        locator:
+          enabled: true # 让gateway可以发现nacos中的微服务
+    nacos:
+      discovery:
+        server-addr: 114.55.3.21:8848
+        password: nacos
+        username: nacos

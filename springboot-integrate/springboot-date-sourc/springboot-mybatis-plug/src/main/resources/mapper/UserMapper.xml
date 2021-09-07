@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="vip.xjdai.page.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="vip.xjdai.page.mapper.User">
+        <id column="tb_user_id" property="userId" jdbcType="INTEGER"/>
+        <result column="tb_user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="tb_password" property="password" jdbcType="VARCHAR"/>
+        <result column="tb_phone" property="phone" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+		tb_user_id, tb_user_name, tb_password, tb_phone
+	</sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+        where tb_user_id = #{userId,jdbcType=INTEGER}
+    </select>
+    <!-- 这个方法是我自己加的 -->
+    <select id="selectAllUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from t_user
+		where tb_user_id = #{userId,jdbcType=INTEGER}
+	</delete>
+    <insert id="insert" parameterType="vip.xjdai.page.mapper.User">
+		insert into t_user (tb_user_id, tb_user_name, tb_password,
+		tb_phone)
+		values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR},
+		#{tb_password,jdbcType=VARCHAR},
+		#{tb_phone,jdbcType=VARCHAR})
+	</insert>
+    <insert id="insertSelective" parameterType="vip.xjdai.page.mapper.User">
+        insert into t_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                tb_user_id,
+            </if>
+            <if test="userName != null">
+                tb_user_name,
+            </if>
+            <if test="tb_password != null">
+                tb_password,
+            </if>
+            <if test="tb_phone != null">
+                tb_phone,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="tb_password != null">
+                #{tb_password,jdbcType=VARCHAR},
+            </if>
+            <if test="tb_phone != null">
+                #{tb_phone,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="vip.xjdai.page.mapper.User">
+        update t_user
+        <set>
+            <if test="userName != null">
+                tb_user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="tb_password != null">
+                tb_password = #{tb_password,jdbcType=VARCHAR},
+            </if>
+            <if test="tb_phone != null">
+                tb_phone = #{tb_phone,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where tb_user_id = #{userId,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="vip.xjdai.page.mapper.User">
+		update t_user
+		set tb_user_name = #{userName,jdbcType=VARCHAR},
+		tb_password = #{tb_password,jdbcType=VARCHAR},
+		tb_phone =
+		#{tb_phone,jdbcType=VARCHAR}
+		where tb_user_id =
+		#{userId,jdbcType=INTEGER}
+	</update>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xjdai.springbootwebsocket.mapper.MessageMapper">
+  <resultMap id="BaseResultMap" type="vip.xjdai.springbootwebsocket.model.Message">
+    <!--@mbg.generated-->
+    <!--@Table message-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="message" jdbcType="VARCHAR" property="message" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="message_status" jdbcType="BIGINT" property="messageStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, message, user_id, message_status
+  </sql>
+</mapper>

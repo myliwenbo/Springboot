@@ -1,0 +1,15 @@
+server:
+  port: 8081
+# 服务网关名称
+spring:
+  application:
+    name: client
+  cloud:
+    inetutils:
+      timeout-seconds: 10  # 超时时间
+    nacos:
+      discovery:
+        server-addr: 114.55.3.21:8848
+        password: nacos
+        username: nacos
+

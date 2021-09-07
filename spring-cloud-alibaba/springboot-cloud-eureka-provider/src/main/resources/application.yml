@@ -1,0 +1,14 @@
+server: 
+  port: 8081
+  
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://peer1:1111/eureka/  #,http://peer2:1112/eureka/,http://peer3:1113/eureka/   #注册到刚才那台Eureka Server地址
+  instance:
+    metadata-map: 
+      zone: shanghai
+spring:
+  application:
+    name: hello-service
+  

@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.6.10:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&pinGlobalTxToPhysicalConnection=true&autoReconnect=true
+    username: root
+    password: 12345678
+mybatis:
+  config-location: classpath:mybatis-config.xml # 配置mybatis文件所在
+  typeAliasesPackage: vip.xjdai.demo   #配置要扫描的包
+  #mapper2-locations: classpath*:mybatis/mapper2/*.xml # 配置mapper文件
+

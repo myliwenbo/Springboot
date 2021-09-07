@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xjdai.mapper.StockMapper">
+  <resultMap id="BaseResultMap" type="vip.xjdai.model.Stock">
+    <!--@mbg.generated-->
+    <!--@Table stock-->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="NAME" jdbcType="VARCHAR" property="name" />
+    <result column="int_Value" jdbcType="VARCHAR" property="intValue" />
+    <result column="REVISION" jdbcType="INTEGER" property="revision" />
+    <result column="CREATED_BY" jdbcType="VARCHAR" property="createdBy" />
+    <result column="IS_del" jdbcType="VARCHAR" property="isDel" />
+    <result column="CREATED_TIME" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="UPDATED_BY" jdbcType="VARCHAR" property="updatedBy" />
+    <result column="UPDATED_TIME" jdbcType="TIMESTAMP" property="updatedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, `NAME`, int_Value, REVISION, CREATED_BY, IS_del, CREATED_TIME, UPDATED_BY, UPDATED_TIME
+  </sql>
+</mapper>

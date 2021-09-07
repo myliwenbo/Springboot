@@ -1,0 +1,3 @@
+feign:
+  httpclient:
+    enable: false

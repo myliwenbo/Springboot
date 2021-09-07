@@ -1,0 +1,68 @@
+package ${package.Controller};
+
+import cn.zingfin.finance.manager.${entity}Manager;
+
+import javax.annotation.Resource;
+
+import org.springframework.web.bind.annotation.*;
+import cn.vihost.farmplatform.core.exception.BizException;
+import cn.vihost.farmplatform.core.support.ResultMsg;
+import cn.vihost.farmplatform.core.util.ResultUtil;
+import cn.zingfin.finance.vo.${entity}Vo;
+
+@RestController
+@RequestMapping("/${table.entityPath}")
+public class ${entity}Controller
+{
+
+    @Resource
+    public ${entity}Manager ${table.entityPath}Manager;
+
+    /**
+    *  保存内容
+    * @param ${table.entityPath}Vo
+    * @return
+    * @throws BizException
+    */
+    @RequestMapping(value = "/save", method = { RequestMethod.POST })
+    public ResultMsg save(@RequestBody ${entity}Vo ${table.entityPath}Vo) throws BizException
+    {
+        return ResultUtil.successResult(${table.entityPath}Manager.save(${table.entityPath}Vo));
+    }
+
+    /**
+    * 根据ID 删除对象
+    * @param ${table.entityPath}Vo
+    * @return
+    * @throws BizException
+    */
+    @RequestMapping(value = "/remove", method = { RequestMethod.POST })
+    public ResultMsg remove(@RequestBody ${entity}Vo ${table.entityPath}Vo) throws BizException
+    {
+        return ResultUtil.successResult(${table.entityPath}Manager.remove(${table.entityPath}Vo));
+    }
+
+    /**
+    * 根据ID 修改
+    * @param Vo
+    * @return
+    * @throws BizException
+    */
+    @RequestMapping(value = "/modifyById", method = { RequestMethod.POST })
+    public ResultMsg modifyById(@RequestBody ${entity}Vo ${table.entityPath}Vo) throws BizException
+    {
+        return ResultUtil.successResult(${table.entityPath}Manager.modifyById(${table.entityPath}Vo));
+    }
+
+    /**
+    * 根据ID查询
+    * @param Vo
+    * @return
+    * @throws BizException
+    */
+    @RequestMapping(value = "/findById", method = { RequestMethod.POST })
+    public ResultMsg findById(@RequestBody ${entity}Vo ${table.entityPath}Vo) throws BizException
+    {
+        return ResultUtil.successResult(${table.entityPath}Manager.findById(${table.entityPath}Vo));
+    }
+}
