@@ -22,11 +22,9 @@
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <!-- 数据库连接
         -->
-        <!-- 	<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://rm-uf6r662t6vr8757h7o.mysql.rds.aliyuncs.com:3306/project_logs" userId="logger"
-                password="N7@cFe8Rz8EQVCM7" /> -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://106.14.136.81:3306/db_hospital"
-                        userId="hospital"
-                        password="CBWk6towTd6xc88e"/>
+                        userId=""
+                        password=""/>
 
 
         <!-- Model生成 -->
