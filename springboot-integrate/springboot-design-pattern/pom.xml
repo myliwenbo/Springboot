@@ -12,7 +12,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-design-pattern</name>
     <description>设计模式</description>
-
+    <packaging>pom</packaging>
 
 
 </project>

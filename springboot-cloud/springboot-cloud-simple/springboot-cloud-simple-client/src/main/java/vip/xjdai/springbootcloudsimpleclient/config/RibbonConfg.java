@@ -8,6 +8,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Component
 public class RibbonConfg {
 
@@ -17,7 +18,6 @@ public class RibbonConfg {
     public RestTemplate restTemplate() {
         List<ClientHttpRequestInterceptor> interceptors = new ArrayList<>();
         interceptors.add(new HeaderRequestInterceptor("token", "123"));
-
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.setInterceptors(interceptors);
         return restTemplate;

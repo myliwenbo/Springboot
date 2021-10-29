@@ -8,7 +8,6 @@
         <version>1.0.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
     <artifactId>springboot-date-source</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-date-source</name>

@@ -1,7 +1,6 @@
 package cn.zingfin.finance.bean;
 
-import lombok.Builder;
-import lombok.Data;
+
 
 import java.io.Serializable;
 

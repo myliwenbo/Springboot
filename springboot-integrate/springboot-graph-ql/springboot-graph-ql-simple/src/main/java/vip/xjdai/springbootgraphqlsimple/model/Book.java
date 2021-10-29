@@ -8,6 +8,6 @@ import lombok.Data;
 public class Book {
     private Integer id;
     private String name;
-    private User user;
+    private Author author;
     private String publisher;
 }

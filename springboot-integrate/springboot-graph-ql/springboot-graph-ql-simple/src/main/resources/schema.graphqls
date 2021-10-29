@@ -1,4 +1,4 @@
-type User {
+type Author {
     id: Int
     name: String
     age: Int
@@ -7,6 +7,6 @@ type User {
 type Book {
     id: Int
     name: String
-    user: User
+    author: Author
     publisher: String
 }

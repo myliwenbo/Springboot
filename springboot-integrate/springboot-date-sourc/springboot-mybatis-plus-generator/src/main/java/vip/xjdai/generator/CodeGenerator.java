@@ -6,14 +6,12 @@ import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 
 // 演示例子，执行 main 方法控制台输入模块表名回车自动生成对应项目目录中
-public class CodeGenerator
-{
+public class CodeGenerator {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         // 代码生成器
-        AutoGenerator    mpg = new AutoGenerator();
-        DataSourceConfig ds  = FinancingGenerator.createDateSource(); //数据源
+        AutoGenerator mpg = new AutoGenerator();
+        DataSourceConfig ds = FinancingGenerator.createDateSource(); //数据源
         mpg.setDataSource(ds);
         GlobalConfig gc = FinancingGenerator.createGlobalConfig(); //全局配置
         mpg.setGlobalConfig(gc);

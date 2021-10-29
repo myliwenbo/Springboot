@@ -1,0 +1,12 @@
+#type Query {
+#    findBooks: [Book]
+#}
+#
+# 查询相关接口
+type Query {
+    # 通过id获取用户信息
+    # ! 属于非空，也就说 传递的 id 不能为空
+    getUserById(id: Int!): User
+    # 用户信息列表
+    listUser: [User]
+}

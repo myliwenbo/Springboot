@@ -6,11 +6,10 @@
         <groupId>vip.xjdai</groupId>
         <artifactId>springboot-graph-ql</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <artifactId>springboot-graph-ql-simple</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-graph-ql-simple</name>
-    <description>Demo project for Spring Boot</description>
 
 </project>
