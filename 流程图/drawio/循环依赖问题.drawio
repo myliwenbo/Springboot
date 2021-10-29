@@ -1,0 +1,110 @@
+<mxfile host="app.diagrams.net" modified="2020-09-01T10:11:59.246Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36" etag="9kHD-QXgtaYgtB3KQvC2" version="13.6.5" type="github">
+  <diagram id="meQWTaZsxhBl6FTAAlAJ" name="第 1 页">
+    <mxGraphModel dx="1087" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="W3lo00OeaTuaJELDnTFj-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-1" target="W3lo00OeaTuaJELDnTFj-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-1" value="创建 hotSwappableTargetSource" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="320" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-2" target="W3lo00OeaTuaJELDnTFj-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-2" target="W3lo00OeaTuaJELDnTFj-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-2" value="getSingleton" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="430" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-4" target="W3lo00OeaTuaJELDnTFj-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-4" value="beforeSingletonCreation" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="430" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-8" value="标记 hotSwappableTargetSource正在创建中" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="320" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="W3lo00OeaTuaJELDnTFj-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="600" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-12" value="这里不会有任何问题" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="585" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-17" target="W3lo00OeaTuaJELDnTFj-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-17" target="W3lo00OeaTuaJELDnTFj-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-17" value="循环所有的BeanNames" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-19" target="W3lo00OeaTuaJELDnTFj-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-19" value="获取到&amp;nbsp;依赖 HotSwappableTargetSourceBeanA" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="585" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-22" target="W3lo00OeaTuaJELDnTFj-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-22" value="当循环到 proxyFactoryBean" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="660" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-24" target="W3lo00OeaTuaJELDnTFj-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-24" value="isTypeMatch" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="720" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-26" target="W3lo00OeaTuaJELDnTFj-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-26" value="getTypeForFactoryBean" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="780" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-28" target="W3lo00OeaTuaJELDnTFj-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-28" value="有一个判断是否允许初始...&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="840" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-30" target="W3lo00OeaTuaJELDnTFj-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-30" value="会提前将 proxyFactoryBean 初始..." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="900" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-32" target="W3lo00OeaTuaJELDnTFj-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-32" value="也就说会开始创建&amp;nbsp; proxyFactoryBean&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="960" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-35" target="W3lo00OeaTuaJELDnTFj-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-35" value="而 proxyFactoryBean 依赖了&amp;nbsp;&lt;br&gt;hotSwappableTargetSource" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="1020" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="W3lo00OeaTuaJELDnTFj-37" target="W3lo00OeaTuaJELDnTFj-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-40" value="因为此时正在创建中.... 所以就会抛出异常" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="W3lo00OeaTuaJELDnTFj-39">
+          <mxGeometry x="-0.7793" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="W3lo00OeaTuaJELDnTFj-37" value="当匹配好了啥都没问题但是去获取依赖的时候出现问题了..." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="1110" width="280" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

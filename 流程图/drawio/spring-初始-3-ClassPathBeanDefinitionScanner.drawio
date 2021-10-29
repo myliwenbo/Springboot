@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" modified="2020-08-03T07:41:51.511Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36" etag="LSh2yLclXNJSVNn_fdBw" version="13.5.8" type="github">
+  <diagram id="B3QymRuIR7vAJxMG5xDB" name="第 1 页">
+    <mxGraphModel dx="1363" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="LZFnya7KEDzdjbEUlx65-1" value="AnnotationConfigApplicationContext" style="swimlane;whiteSpace=wrap;swimlaneFillColor=#ffffff;glass=0;shadow=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="29.999999999999886" y="220" width="300" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-3" value="AnnotationConfigApplicationContext" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-1">
+          <mxGeometry x="10.000000000000114" y="50" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-4" value="this()" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-1">
+          <mxGeometry x="10.000000000000114" y="120" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-5" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-1" source="LZFnya7KEDzdjbEUlx65-3" target="LZFnya7KEDzdjbEUlx65-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-10" value="创建：ClassPathBeanDefinitionScanner" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-1">
+          <mxGeometry x="10.000000000000114" y="180" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-11" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-1" source="LZFnya7KEDzdjbEUlx65-4" target="LZFnya7KEDzdjbEUlx65-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-6" value="ClassPathBeanDefinitionScanner" style="swimlane;whiteSpace=wrap;swimlaneFillColor=#ffffff;glass=0;shadow=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="389.9999999999999" y="220" width="300" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-7" value="ClassPathBeanDefinitionScanner" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-6">
+          <mxGeometry x="10.000000000000114" y="50" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-8" value="this(registry, true)" style="whiteSpace=wrap;html=1;align=center;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-6">
+          <mxGeometry x="10" y="100" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-9" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-6" source="LZFnya7KEDzdjbEUlx65-7" target="LZFnya7KEDzdjbEUlx65-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-16" value="this(registry, true,environment)" style="whiteSpace=wrap;html=1;align=center;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-6">
+          <mxGeometry x="10" y="230" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-20" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-6" source="LZFnya7KEDzdjbEUlx65-18" target="LZFnya7KEDzdjbEUlx65-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-18" value="getOrCreateEnvironment&lt;br&gt;创建或者获取，之前已经创建过这里直接获取" style="whiteSpace=wrap;html=1;align=center;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-6">
+          <mxGeometry x="10" y="160" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-19" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-6" source="LZFnya7KEDzdjbEUlx65-8" target="LZFnya7KEDzdjbEUlx65-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-21" value="&lt;span style=&quot;font-size: 13.3333px&quot;&gt;this(registry, true,environment,&lt;/span&gt;&lt;span style=&quot;font-size: 13.3333px&quot;&gt;registry&lt;/span&gt;&lt;span style=&quot;font-size: 13.3333px&quot;&gt;)&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=center;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-6">
+          <mxGeometry x="10" y="290" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-22" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-6" source="LZFnya7KEDzdjbEUlx65-16" target="LZFnya7KEDzdjbEUlx65-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-33" value="&lt;span style=&quot;font-size: 13.3333px&quot;&gt;super&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=center;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-6">
+          <mxGeometry x="10" y="340" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-34" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-6" source="LZFnya7KEDzdjbEUlx65-21" target="LZFnya7KEDzdjbEUlx65-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-12" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LZFnya7KEDzdjbEUlx65-10" target="LZFnya7KEDzdjbEUlx65-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-23" value="ClassPathBeanDefinitionScanner" style="swimlane;whiteSpace=wrap;swimlaneFillColor=#ffffff;glass=0;shadow=0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="759.9999999999999" y="220" width="300" height="570" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-24" value="ClassPathScanningCandidateComponentProvider" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-23">
+          <mxGeometry x="10.000000000000114" y="50" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-40" value="&lt;span style=&quot;font-size: 13.3333px&quot;&gt;registerDefaultFilters&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=center;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-23">
+          <mxGeometry x="10" y="380" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-45" value="&lt;span style=&quot;font-size: 13.3333px&quot;&gt;setEnvironment&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=center;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-23">
+          <mxGeometry x="10" y="430" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-46" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-23" source="LZFnya7KEDzdjbEUlx65-40" target="LZFnya7KEDzdjbEUlx65-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-47" value="&lt;span style=&quot;font-size: 13.3333px&quot;&gt;setResourceLoader&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=center;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-23">
+          <mxGeometry x="10" y="480" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-48" value="" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-23" source="LZFnya7KEDzdjbEUlx65-45" target="LZFnya7KEDzdjbEUlx65-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="LZFnya7KEDzdjbEUlx65-23" source="LZFnya7KEDzdjbEUlx65-52" target="LZFnya7KEDzdjbEUlx65-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-52" value="&lt;span style=&quot;font-size: 13.3333px&quot;&gt;主要是添加几个注解放到集合当中&lt;/span&gt;" style="whiteSpace=wrap;html=1;align=center;rounded=1;" vertex="1" parent="LZFnya7KEDzdjbEUlx65-23">
+          <mxGeometry x="10" y="300" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-35" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="LZFnya7KEDzdjbEUlx65-33" target="LZFnya7KEDzdjbEUlx65-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="736" y="570" />
+              <mxPoint x="736" y="285" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="LZFnya7KEDzdjbEUlx65-51" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="LZFnya7KEDzdjbEUlx65-33" target="LZFnya7KEDzdjbEUlx65-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
