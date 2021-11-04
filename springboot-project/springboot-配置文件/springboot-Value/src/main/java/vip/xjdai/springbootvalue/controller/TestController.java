@@ -12,7 +12,7 @@ public class TestController {
     @Autowired
     private ContigValue contigValue;
 
-    @RequestMapping("test")
+    @RequestMapping(value = "test", headers = "context")
     public ContigValue test() {
         return contigValue.read();
     }

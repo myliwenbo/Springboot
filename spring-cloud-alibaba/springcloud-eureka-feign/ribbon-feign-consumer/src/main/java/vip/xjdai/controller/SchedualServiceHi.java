@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface SchedualServiceHi {
 
     //服务提供者的接口，以及参数
-    @RequestMapping(value = "/hello",method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     String sayHiFromClientOne(@RequestParam(value = "name") String name);
 }
