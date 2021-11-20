@@ -10,8 +10,7 @@ import javax.validation.ConstraintValidatorContext;
 import java.util.Date;
 
 @Data
-public class CheckTimeIntervalValidator implements
-        ConstraintValidator<CheckTimeInterval, Object> {
+public class CheckTimeIntervalValidator implements ConstraintValidator<CheckTimeInterval, Object> {
 
     private String startTime;
 
@@ -19,6 +18,7 @@ public class CheckTimeIntervalValidator implements
 
     /**
      * 获取注解
+     *
      * @param checkTimeInterval
      */
     @Override
@@ -29,6 +29,7 @@ public class CheckTimeIntervalValidator implements
 
     /**
      * 校验内容
+     *
      * @param value
      * @param context
      * @return
