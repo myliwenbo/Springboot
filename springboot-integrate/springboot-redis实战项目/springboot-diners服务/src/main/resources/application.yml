@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: diners
+eureka:
+  client:
+    service-url:
+      #      注册中心地址
+      defaultZone: http://localhost:8080/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}

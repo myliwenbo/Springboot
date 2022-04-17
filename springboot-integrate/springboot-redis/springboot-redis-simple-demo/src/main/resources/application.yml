@@ -3,7 +3,7 @@ server:
 spring:
   redis:
     database: 0 # Redis数据库索引（默认为0）
-    host: 192.168.117.141 # Redis服务器地址
+    host: 192.168.117.128 # Redis服务器地址
     #    password:  # Redis服务器连接密码（默认为空）
     port: 6379
     timeout: 1100000 # 连接超时时间（毫秒）

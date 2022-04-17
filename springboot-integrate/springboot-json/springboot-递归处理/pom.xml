@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>vip.xjdai</groupId>
+        <artifactId>common-pom</artifactId>
+        <version>1.0.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>vip.xjdai</groupId>
+    <artifactId>springboot-recursion</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springboot-recursion</name>
+    <description>springboot-recursion</description>
+
+    <properties>
+        <kailas.common.version>2.1.9-d-SNAPSHOT</kailas.common.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <!-- kailas-common -->
+        <dependency>
+            <groupId>pro.shushi.pamirs.kailas</groupId>
+            <artifactId>kailas-common-eip-auth-api</artifactId>
+            <version>${kailas.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>pro.shushi.pamirs.kailas</groupId>
+            <artifactId>kailas-common-eip-auth-core</artifactId>
+            <version>${kailas.common.version}</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>aliyun-central</id>
+            <name>aliyun-central</name>
+            <url>https://maven.aliyun.com/nexus/content/repositories/central</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>shushi-releases</id>
+            <name>Repository for pamirs releases</name>
+            <url>http://39.100.49.246:8081/repository/releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>shushi-snapshots</id>
+            <name>Repository for pamirs snapshots</name>
+            <url>http://39.100.49.246:8081/repository/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun-plugin</id>
+            <name>aliyun-plugin</name>
+            <url>https://maven.aliyun.com/nexus/content/repositories/central</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+        <pluginRepository>
+            <id>shushi-plugin</id>
+            <name>shushi-plugin</name>
+            <url>http://39.100.49.246:8081/repository/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

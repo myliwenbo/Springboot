@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xjdai.springbootoauth2.mapper.RestaurantMapper">
+  <resultMap id="BaseResultMap" type="vip.xjdai.springbootcommons.model.dao.Restaurant">
+    <!--@mbg.generated-->
+    <!--@Table t_restaurant-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="CnName" jdbcType="VARCHAR" property="cnname" />
+    <result column="X" jdbcType="DOUBLE" property="x" />
+    <result column="Y" jdbcType="DOUBLE" property="y" />
+    <result column="Location" jdbcType="VARCHAR" property="location" />
+    <result column="CnLocation" jdbcType="VARCHAR" property="cnlocation" />
+    <result column="Area" jdbcType="VARCHAR" property="area" />
+    <result column="CnArea" jdbcType="VARCHAR" property="cnarea" />
+    <result column="Traffic" jdbcType="VARCHAR" property="traffic" />
+    <result column="Telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="Email" jdbcType="VARCHAR" property="email" />
+    <result column="Website" jdbcType="VARCHAR" property="website" />
+    <result column="Cuisine" jdbcType="VARCHAR" property="cuisine" />
+    <result column="AveragePrice" jdbcType="VARCHAR" property="averageprice" />
+    <result column="AvgLunchPrice" jdbcType="DECIMAL" property="avglunchprice" />
+    <result column="Introduction" jdbcType="VARCHAR" property="introduction" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+    <result column="CreateDT" jdbcType="TIMESTAMP" property="createdt" />
+    <result column="IsValid" jdbcType="SMALLINT" property="isvalid" />
+    <result column="Thumbnail" jdbcType="VARCHAR" property="thumbnail" />
+    <result column="OpenHours" jdbcType="VARCHAR" property="openhours" />
+    <result column="LikeVotes" jdbcType="INTEGER" property="likevotes" />
+    <result column="DislikeVotes" jdbcType="INTEGER" property="dislikevotes" />
+    <result column="Amenities" jdbcType="VARCHAR" property="amenities" />
+    <result column="Tags" jdbcType="VARCHAR" property="tags" />
+    <result column="OpenDate" jdbcType="TIMESTAMP" property="opendate" />
+    <result column="closeDate" jdbcType="TIMESTAMP" property="closedate" />
+    <result column="CityId" jdbcType="INTEGER" property="cityid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `Name`, CnName, X, Y, `Location`, CnLocation, Area, CnArea, Traffic, Telephone, 
+    Email, Website, Cuisine, AveragePrice, AvgLunchPrice, Introduction, `Status`, CreateDT, 
+    IsValid, Thumbnail, OpenHours, LikeVotes, DislikeVotes, Amenities, Tags, OpenDate, 
+    closeDate, CityId
+  </sql>
+</mapper>

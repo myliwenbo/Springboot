@@ -1,0 +1,508 @@
+[
+    {
+        "barCode": "6971808580060",
+        "code": "SK00001508",
+        "createDate": 1645154283000,
+        "createUid": 10086,
+        "currency": {
+            "code": "CNY"
+        },
+        "currencyCode": "CNY",
+        "id": 304575728905428645,
+        "invSkuBarCode": "6971808580060",
+        "invSkuCode": "101011020005",
+        "invSkuName": "悦刻一代换弹雾化套装-1杆2弹-经典黑-中文版-无二维码",
+        "item": {
+            "id": 304575728905428644
+        },
+        "itemId": 304575728905428644,
+        "itemOutId": "301579400805803976",
+        "libraItem": {
+            "id": 304575728905428644
+        },
+        "name": "悦刻一代换弹雾化套装-1杆2弹-经典黑-中文版-无二维码",
+        "outCode": "P2201000024001THW000101",
+        "outId": "301579400805803979",
+        "sellerPartnerId": 281058571050889603,
+        "shopCode": "T3950",
+        "writeDate": 1645154283000,
+        "writeUid": 10086
+    },
+    {
+        "barCode": "6974491921752",
+        "code": "SK00001507",
+        "createDate": 1645154283000,
+        "createUid": 10086,
+        "currency": {
+            "code": "CNY"
+        },
+        "currencyCode": "CNY",
+        "id": 304575728905428643,
+        "invSku": {
+            "barCode": "6974491921752",
+            "baseUnit": {
+                "id": 281300008342481309
+            },
+            "baseUnitId": 281300008342481309,
+            "boxPropertyStr": "尺寸：0.00*0.00*0.00",
+            "category": {
+                "code": "09"
+            },
+            "categoryCode": "09",
+            "chName": "RELX Essential换弹雾化杆-单杆-蓝色-埃及版",
+            "code": "102081000065",
+            "codeStatus": "ON_CODE",
+            "createDate": 1642559520000,
+            "createUid": 10001,
+            "currency": {
+                "code": "CNY"
+            },
+            "currencyCode": "CNY",
+            "dataStatus": "ENABLED",
+            "enName": "RELX Essential Device-Single Device-Blue-EGY",
+            "id": 292970993559140423,
+            "invUnit": {
+                "id": 281300008342481309
+            },
+            "invUnitId": 281300008342481309,
+            "isCombined": false,
+            "isEntity": true,
+            "kind": {
+                "id": 281300008342481320
+            },
+            "kindId": 281300008342481320,
+            "maxOrderQuantity": 9999999.000000,
+            "minOrderQuantity": 1.000000,
+            "name": "RELX Essential换弹雾化杆-单杆-蓝色-埃及版",
+            "saleStatus": "ON_SALE",
+            "saleUnit": {
+                "id": 281300008342481309
+            },
+            "saleUnitId": 281300008342481309,
+            "saleUnitPrice": 0.000000,
+            "sellerPartnerId": 281058571050889603,
+            "series": {
+                "id": 292970989264173555
+            },
+            "skuType": "NORMAL",
+            "status": "ENABLED",
+            "stepQuantity": 0.000000,
+            "storageKind": {
+                "id": 281300008342481361
+            },
+            "storageKindId": 281300008342481361,
+            "synchronizationInfoList": [
+                {
+                    "displayName": "金蝶K3",
+                    "interfaceName": "SynchroizationInfoLibraSKUKingdee",
+                    "modelModel": "libra.item.LibraInventorySku",
+                    "synchronizationStatus": "SUCCESS"
+                }
+            ],
+            "type": "OUT_SOURCING",
+            "useArea": "OVERSEAS",
+            "writeDate": 1645669247000,
+            "writeUid": 282613538190618625
+        },
+        "invSkuBarCode": "6974491921752",
+        "invSkuCode": "102081000065",
+        "invSkuName": "RELX Essential换弹雾化杆-单杆-蓝色-埃及版",
+        "item": {
+            "id": 304575728905428642
+        },
+        "itemId": 304575728905428642,
+        "itemOutId": "301579400805803977",
+        "libraItem": {
+            "id": 304575728905428642
+        },
+        "name": "RELX Essential换弹雾化杆-单杆-蓝色-埃及版",
+        "outCode": "P2201000033001THW000101",
+        "outId": "301579400805803981",
+        "sellerPartnerId": 281058571050889603,
+        "shopCode": "T3950",
+        "writeDate": 1645154283000,
+        "writeUid": 10086
+    },
+    {
+        "barCode": "6974491922247",
+        "code": "SK00001506",
+        "createDate": 1645154283000,
+        "createUid": 10086,
+        "currency": {
+            "code": "CNY"
+        },
+        "currencyCode": "CNY",
+        "id": 304575728905428641,
+        "invSku": {
+            "barCode": "6974491922247",
+            "baseUnit": {
+                "id": 281300008342481309
+            },
+            "baseUnitId": 281300008342481309,
+            "boxPropertyStr": "尺寸：0.00*0.00*0.00",
+            "category": {
+                "code": "09"
+            },
+            "categoryCode": "09",
+            "code": "101171000023",
+            "codeStatus": "ON_CODE",
+            "createDate": 1642559519000,
+            "createUid": 10001,
+            "currency": {
+                "code": "CNY"
+            },
+            "currencyCode": "CNY",
+            "dataStatus": "ENABLED",
+            "id": 292970993559140407,
+            "invUnit": {
+                "id": 281300008342481309
+            },
+            "invUnitId": 281300008342481309,
+            "isCombined": false,
+            "isEntity": true,
+            "kind": {
+                "id": 281300008342481320
+            },
+            "kindId": 281300008342481320,
+            "maxOrderQuantity": 9999999.000000,
+            "minOrderQuantity": 1.000000,
+            "name": "悦刻星河-艺术家-换弹雾化杆-单杆-千锤纹-中文版",
+            "saleStatus": "ON_SALE",
+            "saleUnit": {
+                "id": 281300008342481309
+            },
+            "saleUnitId": 281300008342481309,
+            "saleUnitPrice": 0.000000,
+            "sellerPartnerId": 281058571050889603,
+            "series": {
+                "id": 292970989264173554
+            },
+            "skuType": "NORMAL",
+            "status": "ENABLED",
+            "stepQuantity": 0.000000,
+            "storageKind": {
+                "id": 281300008342481361
+            },
+            "storageKindId": 281300008342481361,
+            "synchronizationInfoList": [
+                {
+                    "displayName": "金蝶K3",
+                    "interfaceName": "SynchroizationInfoLibraSKUKingdee",
+                    "modelModel": "libra.item.LibraInventorySku",
+                    "synchronizationStatus": "SUCCESS"
+                },
+                {
+                    "displayName": "奇门",
+                    "interfaceName": "SynchroizationInfoLibraSKUQimen",
+                    "message": "java.lang.NullPointerException\n\tat pro.shushi.kailas.libra.eip.api.thrid.alibaba.qimen.syncinfo.SynchroizationInfoLibraSKUQimen.push(SynchroizationInfoLibraSKUQimen.java:49)\n\tat pro.shushi.pamirs.eip.api.behavior.util.SynchronizationBehavior.execute(SynchronizationBehavior.java:73)\n\tat pro.shushi.pamirs.eip.api.behavior.util.SynchronizationBehavior.execute(SynchronizationBehavior.java:64)\n\tat pro.shushi.kailas.libra.item.service.impl.LibraInventorySkuServiceImpl.syncToQimenSingle(LibraInventorySkuServiceImpl.java:422)\n\tat pro.shushi.kailas.libra.item.service.impl.LibraInventorySkuServiceImpl$$FastClassBySpringCGLIB$$2e6c9f5e.invoke(<generated>)\n\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)\n\tat org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)\n\tat pro.shushi.pamirs.trigger.spring.XAsyncAspect.around(XAsyncAspect.java:68)\n\tat sun.reflect.GeneratedMethodAccessor1080.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)\n\tat org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)\n\tat org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)\n\tat org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)\n\tat pro.shushi.pamirs.framework.faas.fun.manage.ManagementAspect.around(ManagementAspect.java:66)\n\tat sun.reflect.GeneratedMethodAccessor341.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)\n\tat org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)\n\tat org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)\n\tat org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)\n\tat pro.shushi.kailas.libra.item.service.impl.LibraInventorySkuServiceImpl$$EnhancerBySpringCGLIB$$6577b4c6.syncToQimenSingle(<generated>)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)\n\tat pro.shushi.pamirs.framework.faas.computer.SpringComputer.compute(SpringComputer.java:44)\n\tat pro.shushi.pamirs.framework.faas.FunEngine.run(FunEngine.java:80)\n\tat pro.shushi.pamirs.framework.faas.fun.DefaultFunApi.lambda$run$0(DefaultFunApi.java:124)\n\tat pro.shushi.pamirs.framework.faas.fun.FunctionManager.lambda$runProxy$1(FunctionManager.java:60)\n\tat pro.shushi.pamirs.framework.connectors.data.tx.transaction.PamirsNonTransactionTemplate.execute(PamirsNonTransactionTemplate.java:27)\n\tat pro.shushi.pamirs.framework.faas.fun.FunctionManager.runProxy(FunctionManager.java:60)\n\tat pro.shushi.pamirs.framework.faas.fun.DefaultFunApi.run(DefaultFunApi.java:124)\n\tat pro.shushi.pamirs.meta.api.Fun.run(Fun.java:31)\n\tat pro.shushi.pamirs.core.common.function.FunctionHelper.lambda$invoke$1(FunctionHelper.java:117)\n\tat pro.shushi.pamirs.meta.api.core.orm.systems.DirectiveApi.run(DirectiveApi.java:76)\n\tat pro.shushi.pamirs.core.common.function.FunctionHelper.invoke(FunctionHelper.java:117)\n\tat pro.shushi.pamirs.core.common.function.FunctionHelper.invoke(FunctionHelper.java:89)\n\tat pro.shushi.pamirs.trigger.spring.XAsyncAspect.executeExecuteTaskAction(XAsyncAspect.java:111)\n\tat pro.shushi.pamirs.trigger.spring.XAsyncExecutor.execute(XAsyncExecutor.java:33)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.BaseScheduleNoTransactionTask.execute0(BaseScheduleNoTransactionTask.java:18)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.AbstractLocalScheduleTaskDealSingle.execute0(AbstractLocalScheduleTaskDealSingle.java:40)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.AbstractScheduleTaskDealSingle.lambda$execute$0(AbstractScheduleTaskDealSingle.java:47)\n\tat pro.shushi.pamirs.trigger.tbschedule.spi.ScheduleTaskActionExecuteSession.around(ScheduleTaskActionExecuteSession.java:26)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.AbstractScheduleTaskDealSingle.execute(AbstractScheduleTaskDealSingle.java:47)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.AbstractScheduleTaskDealSingle.execute(AbstractScheduleTaskDealSingle.java:27)\n\tat com.taobao.pamirs.schedule.taskmanager.TBScheduleProcessorSleep.run(TBScheduleProcessorSleep.java:235)\n\tat java.lang.Thread.run(Thread.java:748)\n",
+                    "modelModel": "libra.item.LibraInventorySku",
+                    "synchronizationStatus": "EXCEPTION"
+                }
+            ],
+            "type": "OUT_SOURCING",
+            "useArea": "INTERNAL",
+            "writeDate": 1645668024000,
+            "writeUid": 282613538190618625
+        },
+        "invSkuBarCode": "6974491922247",
+        "invSkuCode": "101171000023",
+        "invSkuName": "悦刻星河-艺术家-换弹雾化杆-单杆-千锤纹-中文版",
+        "item": {
+            "id": 304575728905428640
+        },
+        "itemId": 304575728905428640,
+        "itemOutId": "301579400805803978",
+        "libraItem": {
+            "id": 304575728905428640
+        },
+        "name": "悦刻星河-艺术家-换弹雾化杆-单杆-千锤纹-中文版",
+        "outCode": "P2201000042001THW000101",
+        "outId": "301579400805803980",
+        "sellerPartnerId": 281058571050889603,
+        "shopCode": "T3950",
+        "writeDate": 1645154283000,
+        "writeUid": 10086
+    },
+    {
+        "barCode": "6971808581999",
+        "code": "SK00001505",
+        "createDate": 1645154283000,
+        "createUid": 10086,
+        "currency": {
+            "code": "CNY"
+        },
+        "currencyCode": "CNY",
+        "id": 304575728905428639,
+        "invSkuBarCode": "6971808581999",
+        "invSkuCode": "101011020006",
+        "invSkuName": "RELX0_无二维码套装_仙女蓝_TiffanyBlue_简易版",
+        "item": {
+            "id": 304575728905428638
+        },
+        "itemId": 304575728905428638,
+        "itemOutId": "301579400805803982",
+        "libraItem": {
+            "id": 304575728905428638
+        },
+        "name": "RELX0_无二维码套装_仙女蓝_TiffanyBlue_简易版",
+        "outCode": "P2201000025001THW000101",
+        "outId": "301579400805803983",
+        "sellerPartnerId": 281058571050889603,
+        "shopCode": "T3950",
+        "writeDate": 1645154283000,
+        "writeUid": 10086
+    },
+    {
+        "barCode": "6971808580084",
+        "code": "SK00001504",
+        "createDate": 1645154283000,
+        "createUid": 10086,
+        "currency": {
+            "code": "CNY"
+        },
+        "currencyCode": "CNY",
+        "id": 304575728905428637,
+        "invSkuBarCode": "6971808580084",
+        "invSkuCode": "101011020004",
+        "invSkuName": "悦刻一代换弹雾化套装-1杆2弹-星空灰-中文版-无二维码",
+        "item": {
+            "id": 304575728905428636
+        },
+        "itemId": 304575728905428636,
+        "itemOutId": "301579400805803988",
+        "libraItem": {
+            "id": 304575728905428636
+        },
+        "name": "悦刻一代换弹雾化套装-1杆2弹-星空灰-中文版-无二维码",
+        "outCode": "P2201000023001THW000101",
+        "outId": "301579400805803989",
+        "sellerPartnerId": 281058571050889603,
+        "shopCode": "T3950",
+        "writeDate": 1645154283000,
+        "writeUid": 10086
+    },
+    {
+        "barCode": "6974491922797",
+        "code": "SK00001503",
+        "createDate": 1645154283000,
+        "createUid": 10086,
+        "currency": {
+            "code": "CNY"
+        },
+        "currencyCode": "CNY",
+        "id": 304575728905428635,
+        "invSku": {
+            "barCode": "6974491922797",
+            "baseUnit": {
+                "id": 281300008342481308
+            },
+            "baseUnitId": 281300008342481308,
+            "boxPropertyStr": "尺寸：0.00*0.00*0.00",
+            "brand": {
+                "code": "100"
+            },
+            "brandCode": "100",
+            "category": {
+                "code": "20"
+            },
+            "categoryCode": "20",
+            "code": "101050020037",
+            "codeStatus": "NO_CODE",
+            "createDate": 1642556244000,
+            "createUid": 10001,
+            "currency": {
+                "code": "CNY"
+            },
+            "currencyCode": "CNY",
+            "dataStatus": "ENABLED",
+            "id": 292970989264173492,
+            "invUnit": {
+                "id": 281300008342481308
+            },
+            "invUnitId": 281300008342481308,
+            "isCombined": false,
+            "isEntity": true,
+            "kind": {
+                "id": 281300008342481319
+            },
+            "kindId": 281300008342481319,
+            "maxOrderQuantity": 9999999.000000,
+            "minOrderQuantity": 1.000000,
+            "name": "悦刻灵点雾化弹-2颗装-鲜橙芒芒-30mg/g-中文版",
+            "saleStatus": "ON_SALE",
+            "saleUnit": {
+                "id": 281300008342481308
+            },
+            "saleUnitId": 281300008342481308,
+            "saleUnitPrice": 0.000000,
+            "sellerPartnerId": 281058571050889603,
+            "skuType": "NORMAL",
+            "status": "ENABLED",
+            "stepQuantity": 0.000000,
+            "storageKind": {
+                "id": 281300008342481325
+            },
+            "storageKindId": 281300008342481325,
+            "synchronizationInfoList": [
+                {
+                    "displayName": "金蝶K3",
+                    "interfaceName": "SynchroizationInfoLibraSKUKingdee",
+                    "modelModel": "libra.item.LibraInventorySku",
+                    "synchronizationStatus": "SUCCESS"
+                }
+            ],
+            "type": "OUT_SOURCING",
+            "useArea": "INTERNAL",
+            "writeDate": 1645669178000,
+            "writeUid": 282613538190618625
+        },
+        "invSkuBarCode": "6974491922797",
+        "invSkuCode": "101050020037",
+        "invSkuName": "悦刻灵点雾化弹-2颗装-鲜橙芒芒-30mg/g-中文版",
+        "item": {
+            "id": 304575728905428634
+        },
+        "itemId": 304575728905428634,
+        "itemOutId": "301579400805803990",
+        "libraItem": {
+            "id": 304575728905428634
+        },
+        "name": "悦刻灵点雾化弹-2颗装-鲜橙芒芒-30mg/g-中文版",
+        "outCode": "P2201000097001THW000101",
+        "outId": "301579400805803993",
+        "sellerPartnerId": 281058571050889603,
+        "shopCode": "T3950",
+        "writeDate": 1645154283000,
+        "writeUid": 10086
+    },
+    {
+        "barCode": "6974491922780",
+        "code": "SK00001502",
+        "createDate": 1645154283000,
+        "createUid": 10086,
+        "currency": {
+            "code": "CNY"
+        },
+        "currencyCode": "CNY",
+        "id": 304575728905428633,
+        "invSku": {
+            "barCode": "6974491922780",
+            "baseUnit": {
+                "id": 281300008342481308
+            },
+            "baseUnitId": 281300008342481308,
+            "boxPropertyStr": "尺寸：0.00*0.00*0.00",
+            "brand": {
+                "code": "100"
+            },
+            "brandCode": "100",
+            "category": {
+                "code": "20"
+            },
+            "categoryCode": "20",
+            "code": "101050020036",
+            "codeStatus": "NO_CODE",
+            "createDate": 1642556244000,
+            "createUid": 10001,
+            "currency": {
+                "code": "CNY"
+            },
+            "currencyCode": "CNY",
+            "dataStatus": "ENABLED",
+            "id": 292970989264173494,
+            "invUnit": {
+                "id": 281300008342481308
+            },
+            "invUnitId": 281300008342481308,
+            "isCombined": false,
+            "isEntity": true,
+            "kind": {
+                "id": 281300008342481319
+            },
+            "kindId": 281300008342481319,
+            "maxOrderQuantity": 9999999.000000,
+            "minOrderQuantity": 1.000000,
+            "name": "悦刻灵点雾化弹-2颗装-金桔百香果-30mg/g-中文版",
+            "saleStatus": "ON_SALE",
+            "saleUnit": {
+                "id": 281300008342481308
+            },
+            "saleUnitId": 281300008342481308,
+            "saleUnitPrice": 0.000000,
+            "sellerPartnerId": 281058571050889603,
+            "skuType": "NORMAL",
+            "status": "ENABLED",
+            "stepQuantity": 0.000000,
+            "storageKind": {
+                "id": 281300008342481325
+            },
+            "storageKindId": 281300008342481325,
+            "synchronizationInfoList": [
+                {
+                    "displayName": "金蝶K3",
+                    "interfaceName": "SynchroizationInfoLibraSKUKingdee",
+                    "modelModel": "libra.item.LibraInventorySku",
+                    "synchronizationStatus": "SUCCESS"
+                },
+                {
+                    "displayName": "奇门",
+                    "interfaceName": "SynchroizationInfoLibraSKUQimen",
+                    "message": "java.lang.NullPointerException\n\tat pro.shushi.kailas.libra.eip.api.thrid.alibaba.qimen.syncinfo.SynchroizationInfoLibraSKUQimen.push(SynchroizationInfoLibraSKUQimen.java:49)\n\tat pro.shushi.pamirs.eip.api.behavior.util.SynchronizationBehavior.execute(SynchronizationBehavior.java:73)\n\tat pro.shushi.pamirs.eip.api.behavior.util.SynchronizationBehavior.execute(SynchronizationBehavior.java:64)\n\tat pro.shushi.kailas.libra.item.service.impl.LibraInventorySkuServiceImpl.syncToQimenSingle(LibraInventorySkuServiceImpl.java:422)\n\tat pro.shushi.kailas.libra.item.service.impl.LibraInventorySkuServiceImpl$$FastClassBySpringCGLIB$$2e6c9f5e.invoke(<generated>)\n\tat org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)\n\tat org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)\n\tat pro.shushi.pamirs.trigger.spring.XAsyncAspect.around(XAsyncAspect.java:68)\n\tat sun.reflect.GeneratedMethodAccessor1080.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)\n\tat org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)\n\tat org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)\n\tat org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)\n\tat pro.shushi.pamirs.framework.faas.fun.manage.ManagementAspect.around(ManagementAspect.java:66)\n\tat sun.reflect.GeneratedMethodAccessor341.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)\n\tat org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)\n\tat org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:175)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)\n\tat org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)\n\tat org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)\n\tat org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)\n\tat org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)\n\tat pro.shushi.kailas.libra.item.service.impl.LibraInventorySkuServiceImpl$$EnhancerBySpringCGLIB$$6577b4c6.syncToQimenSingle(<generated>)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)\n\tat pro.shushi.pamirs.framework.faas.computer.SpringComputer.compute(SpringComputer.java:44)\n\tat pro.shushi.pamirs.framework.faas.FunEngine.run(FunEngine.java:80)\n\tat pro.shushi.pamirs.framework.faas.fun.DefaultFunApi.lambda$run$0(DefaultFunApi.java:124)\n\tat pro.shushi.pamirs.framework.faas.fun.FunctionManager.lambda$runProxy$1(FunctionManager.java:60)\n\tat pro.shushi.pamirs.framework.connectors.data.tx.transaction.PamirsNonTransactionTemplate.execute(PamirsNonTransactionTemplate.java:27)\n\tat pro.shushi.pamirs.framework.faas.fun.FunctionManager.runProxy(FunctionManager.java:60)\n\tat pro.shushi.pamirs.framework.faas.fun.DefaultFunApi.run(DefaultFunApi.java:124)\n\tat pro.shushi.pamirs.meta.api.Fun.run(Fun.java:31)\n\tat pro.shushi.pamirs.core.common.function.FunctionHelper.lambda$invoke$1(FunctionHelper.java:117)\n\tat pro.shushi.pamirs.meta.api.core.orm.systems.DirectiveApi.run(DirectiveApi.java:76)\n\tat pro.shushi.pamirs.core.common.function.FunctionHelper.invoke(FunctionHelper.java:117)\n\tat pro.shushi.pamirs.core.common.function.FunctionHelper.invoke(FunctionHelper.java:89)\n\tat pro.shushi.pamirs.trigger.spring.XAsyncAspect.executeExecuteTaskAction(XAsyncAspect.java:111)\n\tat pro.shushi.pamirs.trigger.spring.XAsyncExecutor.execute(XAsyncExecutor.java:33)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.BaseScheduleNoTransactionTask.execute0(BaseScheduleNoTransactionTask.java:18)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.AbstractLocalScheduleTaskDealSingle.execute0(AbstractLocalScheduleTaskDealSingle.java:40)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.AbstractScheduleTaskDealSingle.lambda$execute$0(AbstractScheduleTaskDealSingle.java:47)\n\tat pro.shushi.pamirs.trigger.tbschedule.spi.ScheduleTaskActionExecuteSession.around(ScheduleTaskActionExecuteSession.java:26)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.AbstractScheduleTaskDealSingle.execute(AbstractScheduleTaskDealSingle.java:47)\n\tat pro.shushi.pamirs.middleware.schedule.core.tasks.AbstractScheduleTaskDealSingle.execute(AbstractScheduleTaskDealSingle.java:27)\n\tat com.taobao.pamirs.schedule.taskmanager.TBScheduleProcessorSleep.run(TBScheduleProcessorSleep.java:235)\n\tat java.lang.Thread.run(Thread.java:748)\n",
+                    "modelModel": "libra.item.LibraInventorySku",
+                    "synchronizationStatus": "EXCEPTION"
+                }
+            ],
+            "type": "OUT_SOURCING",
+            "useArea": "INTERNAL",
+            "writeDate": 1645669204000,
+            "writeUid": 282613538190618625
+        },
+        "invSkuBarCode": "6974491922780",
+        "invSkuCode": "101050020036",
+        "invSkuName": "悦刻灵点雾化弹-2颗装-金桔百香果-30mg/g-中文版",
+        "item": {
+            "id": 304575728905428632
+        },
+        "itemId": 304575728905428632,
+        "itemOutId": "301579400805803991",
+        "libraItem": {
+            "id": 304575728905428632
+        },
+        "name": "悦刻灵点雾化弹-2颗装-金桔百香果-30mg/g-中文版",
+        "outCode": "P2201000096001THW000101",
+        "outId": "301579400805803995",
+        "sellerPartnerId": 281058571050889603,
+        "shopCode": "T3950",
+        "writeDate": 1645154283000,
+        "writeUid": 10086
+    },
+    {
+        "barCode": "101011020003",
+        "code": "SK00001501",
+        "createDate": 1645154283000,
+        "createUid": 10086,
+        "currency": {
+            "code": "CNY"
+        },
+        "currencyCode": "CNY",
+        "id": 304575728905428631,
+        "invSkuBarCode": "101011020003",
+        "invSkuCode": "101011020003",
+        "invSkuName": "RELX0_无二维码新手套装_深海蓝_蓝色(新)",
+        "item": {
+            "id": 304575728905428630
+        },
+        "itemId": 304575728905428630,
+        "itemOutId": "301579400805803992",
+        "libraItem": {
+            "id": 304575728905428630
+        },
+        "name": "RELX0_无二维码新手套装_深海蓝_蓝色(新)",
+        "outCode": "P2201000022001THW000101",
+        "outId": "301579400805803994",
+        "sellerPartnerId": 281058571050889603,
+        "shopCode": "T3950",
+        "writeDate": 1645154283000,
+        "writeUid": 10086
+    }
+]

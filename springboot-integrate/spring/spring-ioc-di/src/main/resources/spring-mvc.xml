@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+>
+
+
+	<!-- use-default-filters="false" 默认值是true
+		如果配置了就仅仅扫描@Controller，
+		如果不配置则会扫描@Component, @Repository, @Service等注解
+	-->
+	<context:component-scan base-package="vip.xjdai.ioc" use-default-filters="false">
+		<!-- 配置只扫描@Controller注解 -->
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+</beans>

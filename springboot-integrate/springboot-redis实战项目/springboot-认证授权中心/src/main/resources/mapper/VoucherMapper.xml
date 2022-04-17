@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xjdai.springbootoauth2.mapper.VoucherMapper">
+  <resultMap id="BaseResultMap" type="vip.xjdai.springbootcommons.model.dao.Voucher">
+    <!--@mbg.generated-->
+    <!--@Table t_voucher-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="thumbnail" jdbcType="VARCHAR" property="thumbnail" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="expire_time" jdbcType="TIMESTAMP" property="expireTime" />
+    <result column="redeem_restaurant_id" jdbcType="INTEGER" property="redeemRestaurantId" />
+    <result column="stock" jdbcType="INTEGER" property="stock" />
+    <result column="stock_left" jdbcType="INTEGER" property="stockLeft" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="clause" jdbcType="VARCHAR" property="clause" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="is_valid" jdbcType="BOOLEAN" property="isValid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, title, thumbnail, amount, price, `status`, expire_time, redeem_restaurant_id, 
+    stock, stock_left, description, clause, create_date, update_date, is_valid
+  </sql>
+</mapper>

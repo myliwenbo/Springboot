@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xjdai.springbootoauth2.mapper.VoucherOrderMapper">
+  <resultMap id="BaseResultMap" type="vip.xjdai.springbootcommons.model.dao.VoucherOrder">
+    <!--@mbg.generated-->
+    <!--@Table t_voucher_order-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_no" jdbcType="INTEGER" property="orderNo" />
+    <result column="fk_voucher_id" jdbcType="INTEGER" property="fkVoucherId" />
+    <result column="fk_diner_id" jdbcType="INTEGER" property="fkDinerId" />
+    <result column="qrcode" jdbcType="VARCHAR" property="qrcode" />
+    <result column="payment" jdbcType="TINYINT" property="payment" />
+    <result column="status" jdbcType="BOOLEAN" property="status" />
+    <result column="fk_seckill_id" jdbcType="INTEGER" property="fkSeckillId" />
+    <result column="order_type" jdbcType="INTEGER" property="orderType" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, order_no, fk_voucher_id, fk_diner_id, qrcode, payment, `status`, fk_seckill_id, 
+    order_type, create_date, update_date, is_valid
+  </sql>
+</mapper>

@@ -1,0 +1,7 @@
+management:
+  auditevents:
+    enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*" #启动所有端点

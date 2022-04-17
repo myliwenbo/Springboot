@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="vip.xjdai.springbootoauth2.mapper.DictionaryMapper">
+  <resultMap id="BaseResultMap" type="vip.xjdai.springbootcommons.model.dao.Dictionary">
+    <!--@mbg.generated-->
+    <!--@Table t_dictionary-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="data" jdbcType="VARCHAR" property="data" />
+    <result column="display_order" jdbcType="INTEGER" property="displayOrder" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `type`, `data`, display_order
+  </sql>
+</mapper>

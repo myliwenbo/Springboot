@@ -1,0 +1,26 @@
+server:
+  port: 80
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启服务发现
+          lower-case-service-id: true # 将服务明设置转小写..
+      routes:
+        - id: diners
+          uri: lb://diners
+          predicates: # 断言，就是路由转发要满足的条件..
+            - Path=/diners/** # 匹配规则  127.0.0.1/test/xxxx
+          filters: #过滤器配置
+            - StripPrefix=1  #开启过滤器
+eureka:
+  client:
+    service-url:
+      #      注册中心地址
+      defaultZone: http://localhost:8080/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} # 就是IP:端口

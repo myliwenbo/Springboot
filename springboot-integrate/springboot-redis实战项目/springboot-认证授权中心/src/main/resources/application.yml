@@ -1,0 +1,30 @@
+server:
+  port: 8082 # 端口
+spring:
+  application:
+    name: ms-oauth2-server # 应用名
+  # swagger
+  swagger:
+    base-package: vip.xjdai
+    title: 慕课美食社交食客API接口文档
+  profiles:
+    include:
+      db,oauth2
+# 配置 Eureka Server 注册中心
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+# 指标监控健康检查
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 暴露的端点
+
+#logging:
+#  pattern:
+#    console: '%d{2100-01-01 13:14:00.666} [%thread] %-5level %logger{50} - %msg%n'
