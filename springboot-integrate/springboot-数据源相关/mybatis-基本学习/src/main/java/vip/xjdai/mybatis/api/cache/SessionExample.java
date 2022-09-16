@@ -16,10 +16,9 @@ public class SessionExample {
 
     /**
      * 不同的Session相同的执行语句也是获取缓存中的数据
-     * @throws Exception
      */
     @Test
-    public void testname() throws Exception {
+    public void testname() {
         try {
             UserMapper userMapperSession = MybatisUtisl.getsqlSession(UserMapper.class);
             // User user1 = userMapperSession.selectByPrimaryKey(101);

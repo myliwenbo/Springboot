@@ -24,7 +24,6 @@ public class DesignPatternsTest {
     @Test
     public void SqlSessionFactoryBuilder() throws Exception {
         InputStream inputStream = Resources.getResourceAsStream("mybatis.xml");// 获取xml地址
-
         build.build(inputStream);//通过xml创建会话
     }
 }

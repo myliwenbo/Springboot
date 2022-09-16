@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MyBean implements CommandLineRunner {
+
+    @Override
     public void run(String... args) {
         System.out.println(JSON.toJSONString(args));
     }

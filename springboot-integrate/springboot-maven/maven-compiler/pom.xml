@@ -28,6 +28,54 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <executions>
+                    <execution>
+                        <!-- 一个执行实例的id-->
+                        <id>enforce-versions</id>
+                        <goals>
+                            <!-- 执行的命令-->
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <!-- 一个执行实例的id-->
+                        <id>enforce-dependencyConvergence</id>
+                        <configuration>
+                            <rules>
+                                <!-- 检测依赖关系-->
+                                <DependencyConvergence/>
+                            </rules>
+                            <fail>false</fail>
+                        </configuration>
+                        <goals>
+                            <!-- 执行的命令-->
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- 规则 -->
+                    <rules>
+                        <!-- maven版本-->
+                        <requireMavenVersion>
+                            <message>您正在运行旧版本的 Maven。至少需要 Maven- 3.3.9</message>
+                            <!-- 规则，这里我设置一个3.33333 ，肯定是失败因为我们就没有3.33333这个版本-->
+                            <version>[3.33333.9,)</version>
+                        </requireMavenVersion>
+                        <!-- JDK版本-->
+                        <requireJavaVersion>
+                            <!-- 提示的错误信息-->
+                            <message>您正在运行不兼容的Java版本。JHipster支持JDK 8到15</message>
+                            <!-- 规则，这里我设置一个100 ，肯定是失败因为我们就没有100这个版本-->
+                            <version>[100,)</version>
+                        </requireJavaVersion>
+                    </rules>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 

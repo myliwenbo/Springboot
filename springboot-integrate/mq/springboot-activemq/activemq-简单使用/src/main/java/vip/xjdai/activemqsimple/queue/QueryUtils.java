@@ -5,7 +5,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 
 public class QueryUtils {
-    public static final String BROKERURL = "tcp://192.168.117.128:61616";
+    public static final String BROKERURL = "tcp://192.168.117.129:61616";
 
     /**
      * 获取连接...

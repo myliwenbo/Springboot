@@ -5,7 +5,7 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import javax.jms.*;
 
 public class PubSubUtils {
-    public static final String BROKERURL = "tcp://192.168.117.128:61616";
+    public static final String BROKERURL = "tcp://192.168.117.129:61616";
 
     /**
      * 获取连接...
@@ -30,6 +30,7 @@ public class PubSubUtils {
      * @throws JMSException
      */
     public static Session getSession() throws JMSException {
+        // 获取连接
         Connection connection = getConnection();
         // 是否支持事物：false 不支持， true 支持
         // 当 为true 的时候 ，应答模式是被忽略的，也就是说应答模式只有 不是事物的情况下才有作用
@@ -47,7 +48,7 @@ public class PubSubUtils {
         Topic topic = session.createTopic(topicNmae);
         //6、使用会话对象创建生产者对象
         MessageProducer producer = session.createProducer(topic);
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             //7、使用会话对象创建一个消息对象
             TextMessage textMessage = session.createTextMessage("消息索引：" + i);
             //8、发送消息

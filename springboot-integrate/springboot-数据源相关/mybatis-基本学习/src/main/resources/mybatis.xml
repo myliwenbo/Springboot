@@ -30,8 +30,7 @@
         </environment>
     </environments>
     <mappers>
-        <!--
-            Mapper映射文件的相对路径，相当于classpath下 也就是SRC下 -->
+        <!-- Mapper映射文件的相对路径，相当于classpath下 也就是SRC下 -->
         <mapper resource="mybatis/UserMapper.xml"/>
     </mappers>
 </configuration>

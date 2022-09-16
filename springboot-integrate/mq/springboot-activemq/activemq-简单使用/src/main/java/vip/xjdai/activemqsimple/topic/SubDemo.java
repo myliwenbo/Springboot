@@ -13,6 +13,7 @@ public class SubDemo {
     }
 
     private static void sub(String subName) throws Exception {
+        // 获取到 session
         Session session = PubSubUtils.getSession();
         //5、使用会话对象创建目标对象，包含queue和topic（一对一和一对多）
         Topic topic = session.createTopic(topicName);
@@ -29,7 +30,6 @@ public class SubDemo {
                 }
             }
         });
-
     }
 
 }
